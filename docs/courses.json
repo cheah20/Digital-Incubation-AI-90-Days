@@ -1,0 +1,1085 @@
+[
+ {
+  "id": "mit6100l",
+  "school": "MIT",
+  "code": "6.100L",
+  "title": "Introduction to CS and Programming using Python",
+  "zh": "MIT 计算机科学与 Python 入门",
+  "kind": "uni",
+  "url": "https://ocw.mit.edu/courses/6-100l-introduction-to-cs-and-programming-using-python-fall-2022/",
+  "links": {},
+  "lang": "EN",
+  "lic": "CC BY-NC-SA 4.0 (MIT OCW)",
+  "level": "入门",
+  "phase": 1,
+  "use": [
+   [
+    2,
+    "Lectures on strings, branching and iteration"
+   ],
+   [
+    3,
+    "Lectures on functions and abstraction"
+   ],
+   [
+    9,
+    "Lectures on object-oriented programming"
+   ]
+  ]
+ },
+ {
+  "id": "cs61a",
+  "school": "UC Berkeley",
+  "code": "CS61A",
+  "title": "Structure and Interpretation of Computer Programs",
+  "zh": "伯克利 程序的构造与解释（Python 版）",
+  "kind": "uni",
+  "url": "https://cs61a.org/",
+  "links": {},
+  "lang": "EN",
+  "lic": "Course site",
+  "level": "进阶",
+  "phase": 1,
+  "use": [
+   [
+    3,
+    "Higher-order functions"
+   ],
+   [
+    9,
+    "Objects, inheritance and composition"
+   ]
+  ]
+ },
+ {
+  "id": "mit6006",
+  "school": "MIT",
+  "code": "6.006",
+  "title": "Introduction to Algorithms",
+  "zh": "MIT 算法导论",
+  "kind": "uni",
+  "url": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/",
+  "links": {},
+  "lang": "EN",
+  "lic": "CC BY-NC-SA 4.0 (MIT OCW)",
+  "level": "进阶",
+  "phase": 1,
+  "use": [
+   [
+    4,
+    "Lecture 1: Algorithms and computation (Big-O)"
+   ],
+   [
+    13,
+    "Lecture 4: Hashing"
+   ],
+   [
+    86,
+    "Review the sorting and graph lectures before the mock test"
+   ]
+  ]
+ },
+ {
+  "id": "algs4",
+  "school": "Princeton",
+  "code": "Algorithms",
+  "title": "Algorithms, 4th Edition (Sedgewick and Wayne)",
+  "zh": "普林斯顿 算法（第四版）",
+  "kind": "uni",
+  "url": "https://algs4.cs.princeton.edu/home/",
+  "links": {},
+  "lang": "EN",
+  "lic": "Course site",
+  "level": "进阶",
+  "phase": 1,
+  "use": [
+   [
+    13,
+    "Hash tables chapter"
+   ],
+   [
+    15,
+    "Sorting chapter as DSA practice"
+   ]
+  ]
+ },
+ {
+  "id": "mit1806",
+  "school": "MIT",
+  "code": "18.06",
+  "title": "Linear Algebra (Gilbert Strang)",
+  "zh": "MIT 线性代数（Strang 教授）",
+  "kind": "uni",
+  "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/",
+  "links": {},
+  "lang": "EN",
+  "lic": "CC BY-NC-SA 4.0 (MIT OCW)",
+  "level": "入门",
+  "phase": 2,
+  "use": [
+   [
+    17,
+    "Lectures 1-3: linear equations, elimination, matrix multiplication and inverse"
+   ],
+   [
+    17,
+    "Lectures 15-16: projections and least squares"
+   ]
+  ]
+ },
+ {
+  "id": "mit18065",
+  "school": "MIT",
+  "code": "18.065",
+  "title": "Matrix Methods in Data Analysis, Signal Processing, and Machine Learning",
+  "zh": "MIT 数据分析与机器学习中的矩阵方法",
+  "kind": "uni",
+  "url": "https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/",
+  "links": {},
+  "lang": "EN",
+  "lic": "CC BY-NC-SA 4.0 (MIT OCW)",
+  "level": "进阶",
+  "phase": 2,
+  "use": [
+   [
+    22,
+    "The gradient descent lectures"
+   ],
+   [
+    29,
+    "The SVD and PCA lectures"
+   ]
+  ]
+ },
+ {
+  "id": "stat110",
+  "school": "Harvard",
+  "code": "Stat 110",
+  "title": "Probability (Joe Blitzstein)",
+  "zh": "哈佛 概率论",
+  "kind": "uni",
+  "url": "https://www.youtube.com/playlist?list=PL2SOU6wwxB0uwwH80KTQ6ht66KWxbzTIo",
+  "links": {},
+  "lang": "EN",
+  "lic": "Free videos",
+  "level": "入门",
+  "phase": 2,
+  "use": [
+   [
+    18,
+    "Lectures 1-4: counting, story proofs, conditional probability"
+   ]
+  ]
+ },
+ {
+  "id": "cs229",
+  "school": "Stanford",
+  "code": "CS229",
+  "title": "Machine Learning (Andrew Ng)",
+  "zh": "斯坦福 机器学习",
+  "kind": "uni",
+  "url": "https://cs229.stanford.edu/",
+  "links": {
+   "Lecture notes": "https://cs229.stanford.edu/main_notes.pdf"
+  },
+  "lang": "EN",
+  "lic": "Course site",
+  "level": "进阶",
+  "phase": 2,
+  "use": [
+   [
+    23,
+    "Autumn 2018 Lecture 2: linear regression and gradient descent"
+   ],
+   [
+    24,
+    "Lecture 3: logistic regression"
+   ],
+   [
+    27,
+    "Lecture 10: decision trees and ensemble methods"
+   ]
+  ]
+ },
+ {
+  "id": "mit6390",
+  "school": "MIT",
+  "code": "6.390",
+  "title": "Introduction to Machine Learning",
+  "zh": "MIT 机器学习入门",
+  "kind": "uni",
+  "url": "https://introml.mit.edu/",
+  "links": {},
+  "lang": "EN",
+  "lic": "Course site",
+  "level": "入门",
+  "phase": 2,
+  "use": [
+   [
+    23,
+    "Regression notes"
+   ],
+   [
+    24,
+    "Classification notes"
+   ]
+  ]
+ },
+ {
+  "id": "cs4780",
+  "school": "Cornell",
+  "code": "CS4780",
+  "title": "Machine Learning for Intelligent Systems (Kilian Weinberger)",
+  "zh": "康奈尔 机器学习",
+  "kind": "uni",
+  "url": "https://www.cs.cornell.edu/courses/cs4780/2018fa/",
+  "links": {},
+  "lang": "EN",
+  "lic": "Course site",
+  "level": "进阶",
+  "phase": 2,
+  "use": [
+   [
+    25,
+    "The bias-variance and model selection lectures"
+   ],
+   [
+    27,
+    "The decision tree, bagging and boosting lectures"
+   ]
+  ]
+ },
+ {
+  "id": "cs156",
+  "school": "Caltech",
+  "code": "CS156",
+  "title": "Learning From Data (Yaser Abu-Mostafa)",
+  "zh": "加州理工 从数据中学习",
+  "kind": "uni",
+  "url": "https://work.caltech.edu/telecourse",
+  "links": {},
+  "lang": "EN",
+  "lic": "Free videos",
+  "level": "进阶",
+  "phase": 2,
+  "use": [
+   [
+    25,
+    "The overfitting and validation lectures"
+   ]
+  ]
+ },
+ {
+  "id": "hylee_ml",
+  "school": "National Taiwan University",
+  "code": "ML 2022",
+  "title": "Machine Learning (Hung-yi Lee)",
+  "zh": "台大 李宏毅 机器学习（中文）",
+  "kind": "uni",
+  "url": "https://speech.ee.ntu.edu.tw/~hylee/ml/2022-spring.php",
+  "links": {},
+  "lang": "中文",
+  "lic": "Free videos",
+  "level": "入门",
+  "phase": 2,
+  "use": [
+   [
+    23,
+    "Opening lectures on regression"
+   ],
+   [
+    31,
+    "Deep learning lectures"
+   ],
+   [
+    42,
+    "Self-attention and Transformer lectures"
+   ]
+  ]
+ },
+ {
+  "id": "pumpkin",
+  "school": "Datawhale",
+  "code": "南瓜书",
+  "title": "Pumpkin Book: derivations for Zhou Zhihua's Machine Learning",
+  "zh": "南瓜书：西瓜书公式推导",
+  "kind": "oss",
+  "url": "https://github.com/datawhalechina/pumpkin-book",
+  "links": {},
+  "lang": "中文",
+  "lic": "See repo",
+  "level": "进阶",
+  "phase": 2,
+  "use": [
+   [
+    23,
+    "Chapter 3: linear models"
+   ],
+   [
+    27,
+    "Chapters 4 and 8: decision trees and ensembles"
+   ]
+  ]
+ },
+ {
+  "id": "mlbeginners",
+  "school": "Microsoft",
+  "code": "ML for Beginners",
+  "title": "ML for Beginners (12 weeks, 26 lessons)",
+  "zh": "微软 机器学习入门",
+  "kind": "oss",
+  "url": "https://github.com/microsoft/ML-For-Beginners",
+  "links": {},
+  "lang": "EN",
+  "lic": "MIT",
+  "level": "入门",
+  "phase": 2,
+  "use": [
+   [
+    23,
+    "Regression lessons"
+   ],
+   [
+    24,
+    "Classification lessons"
+   ]
+  ]
+ },
+ {
+  "id": "mlcc",
+  "school": "Google",
+  "code": "MLCC",
+  "title": "Machine Learning Crash Course",
+  "zh": "谷歌 机器学习速成课",
+  "kind": "oss",
+  "url": "https://developers.google.com/machine-learning/crash-course",
+  "links": {},
+  "lang": "EN",
+  "lic": "Free course",
+  "level": "入门",
+  "phase": 2,
+  "use": [
+   [
+    24,
+    "Classification module"
+   ],
+   [
+    26,
+    "Working with data modules"
+   ]
+  ]
+ },
+ {
+  "id": "cs50ai",
+  "school": "Harvard",
+  "code": "CS50 AI",
+  "title": "Introduction to Artificial Intelligence with Python",
+  "zh": "哈佛 CS50 人工智能",
+  "kind": "uni",
+  "url": "https://cs50.harvard.edu/ai/",
+  "links": {},
+  "lang": "EN",
+  "lic": "CC BY-NC-SA 4.0",
+  "level": "入门",
+  "phase": 3,
+  "use": [
+   [
+    31,
+    "Neural networks lecture"
+   ]
+  ]
+ },
+ {
+  "id": "zero2hero",
+  "school": "Andrej Karpathy",
+  "code": "Zero to Hero",
+  "title": "Neural Networks: Zero to Hero",
+  "zh": "Karpathy 从零构建神经网络",
+  "kind": "oss",
+  "url": "https://karpathy.ai/zero-to-hero.html",
+  "links": {
+   "GitHub": "https://github.com/karpathy/nn-zero-to-hero"
+  },
+  "lang": "EN",
+  "lic": "MIT",
+  "level": "进阶",
+  "phase": 3,
+  "use": [
+   [
+    32,
+    "Video 1: micrograd (backpropagation from scratch)"
+   ],
+   [
+    42,
+    "Let's build GPT from scratch"
+   ]
+  ]
+ },
+ {
+  "id": "nyudl",
+  "school": "NYU",
+  "code": "DS-GA 1008",
+  "title": "Deep Learning (Yann LeCun, Alfredo Canziani)",
+  "zh": "纽约大学 深度学习（LeCun）",
+  "kind": "uni",
+  "url": "https://atcold.github.io/NYU-DLSP21/",
+  "links": {
+   "GitHub": "https://github.com/Atcold/NYU-DLSP21"
+  },
+  "lang": "EN",
+  "lic": "See repo",
+  "level": "进阶",
+  "phase": 3,
+  "use": [
+   [
+    36,
+    "Practicum on training a network in PyTorch"
+   ],
+   [
+    38,
+    "Convolutional networks session"
+   ]
+  ]
+ },
+ {
+  "id": "cmu11785",
+  "school": "CMU",
+  "code": "11-785",
+  "title": "Introduction to Deep Learning",
+  "zh": "卡内基梅隆 深度学习导论",
+  "kind": "uni",
+  "url": "https://deeplearning.cs.cmu.edu/",
+  "links": {},
+  "lang": "EN",
+  "lic": "Course site",
+  "level": "进阶",
+  "phase": 3,
+  "use": [
+   [
+    37,
+    "The regularization and optimization lectures"
+   ]
+  ]
+ },
+ {
+  "id": "uvadl",
+  "school": "University of Amsterdam",
+  "code": "UvA DL",
+  "title": "Deep Learning Course Notebooks",
+  "zh": "阿姆斯特丹大学 深度学习实战笔记本",
+  "kind": "uni",
+  "url": "https://uvadlc-notebooks.readthedocs.io/",
+  "links": {
+   "GitHub": "https://github.com/phlippe/uvadlc_notebooks"
+  },
+  "lang": "EN",
+  "lic": "MIT",
+  "level": "进阶",
+  "phase": 3,
+  "use": [
+   [
+    34,
+    "Tutorial 2: Introduction to PyTorch"
+   ],
+   [
+    40,
+    "Tutorials on training at scale"
+   ]
+  ]
+ },
+ {
+  "id": "d2l",
+  "school": "d2l.ai",
+  "code": "D2L",
+  "title": "Dive into Deep Learning",
+  "zh": "动手学深度学习（中英双语）",
+  "kind": "oss",
+  "url": "https://d2l.ai/",
+  "links": {
+   "中文版": "https://zh.d2l.ai/",
+   "GitHub": "https://github.com/d2l-ai/d2l-zh"
+  },
+  "lang": "EN / 中文",
+  "lic": "Apache-2.0",
+  "level": "入门",
+  "phase": 3,
+  "use": [
+   [
+    34,
+    "Preliminaries: data manipulation and autograd"
+   ],
+   [
+    38,
+    "Convolutional neural networks chapter"
+   ],
+   [
+    42,
+    "Attention mechanisms and Transformers chapter"
+   ]
+  ]
+ },
+ {
+  "id": "leedl",
+  "school": "Datawhale",
+  "code": "LeeDL",
+  "title": "LeeDL Tutorial: notes on Hung-yi Lee's deep learning course",
+  "zh": "李宏毅深度学习教程（苹果书）",
+  "kind": "oss",
+  "url": "https://github.com/datawhalechina/leedl-tutorial",
+  "links": {},
+  "lang": "中文",
+  "lic": "See repo",
+  "level": "入门",
+  "phase": 3,
+  "use": [
+   [
+    31,
+    "Deep learning basics chapters"
+   ],
+   [
+    42,
+    "Self-attention and Transformer chapters"
+   ]
+  ]
+ },
+ {
+  "id": "cs224n",
+  "school": "Stanford",
+  "code": "CS224N",
+  "title": "Natural Language Processing with Deep Learning",
+  "zh": "斯坦福 自然语言处理与深度学习",
+  "kind": "uni",
+  "url": "https://web.stanford.edu/class/cs224n/",
+  "links": {},
+  "lang": "EN",
+  "lic": "Course site",
+  "level": "进阶",
+  "phase": 4,
+  "use": [
+   [
+    42,
+    "The Transformers lecture"
+   ],
+   [
+    46,
+    "Lecture 1: word vectors"
+   ]
+  ]
+ },
+ {
+  "id": "cs336",
+  "school": "Stanford",
+  "code": "CS336",
+  "title": "Language Modeling from Scratch",
+  "zh": "斯坦福 从零构建语言模型",
+  "kind": "uni",
+  "url": "https://stanford-cs336.github.io/spring2025/",
+  "links": {
+   "Lectures on GitHub": "https://github.com/stanford-cs336/spring2025-lectures"
+  },
+  "lang": "EN",
+  "lic": "Course site",
+  "level": "高阶",
+  "phase": 4,
+  "use": [
+   [
+    43,
+    "Lecture 1: overview and tokenization"
+   ],
+   [
+    80,
+    "The inference lecture"
+   ]
+  ]
+ },
+ {
+  "id": "cs25",
+  "school": "Stanford",
+  "code": "CS25",
+  "title": "Transformers United",
+  "zh": "斯坦福 Transformer 专题讲座",
+  "kind": "uni",
+  "url": "https://web.stanford.edu/class/cs25/",
+  "links": {},
+  "lang": "EN",
+  "lic": "Course site",
+  "level": "进阶",
+  "phase": 4,
+  "use": [
+   [
+    43,
+    "Pick one recent talk on LLMs"
+   ]
+  ]
+ },
+ {
+  "id": "anlp",
+  "school": "CMU",
+  "code": "11-711",
+  "title": "Advanced NLP (Graham Neubig)",
+  "zh": "卡内基梅隆 高级自然语言处理",
+  "kind": "uni",
+  "url": "https://phontron.com/class/anlp-fall2024/",
+  "links": {},
+  "lang": "EN",
+  "lic": "Course site",
+  "level": "高阶",
+  "phase": 4,
+  "use": [
+   [
+    45,
+    "The prompting lecture"
+   ],
+   [
+    50,
+    "The retrieval-augmented generation lecture"
+   ]
+  ]
+ },
+ {
+  "id": "llmagents",
+  "school": "UC Berkeley",
+  "code": "CS294/194-196",
+  "title": "Large Language Model Agents (MOOC)",
+  "zh": "伯克利 大模型智能体",
+  "kind": "uni",
+  "url": "https://llmagents-learning.org/f24",
+  "links": {
+   "Advanced LLM Agents (Spring 2025)": "https://llmagents-learning.org/sp25"
+  },
+  "lang": "EN",
+  "lic": "Free MOOC",
+  "level": "进阶",
+  "phase": 4,
+  "use": [
+   [
+    53,
+    "First lectures on LLM reasoning and agents"
+   ],
+   [
+    54,
+    "Agent workflow and multi-agent lectures"
+   ]
+  ]
+ },
+ {
+  "id": "cos597g",
+  "school": "Princeton",
+  "code": "COS 597G",
+  "title": "Understanding Large Language Models",
+  "zh": "普林斯顿 理解大语言模型（论文研读）",
+  "kind": "uni",
+  "url": "https://www.cs.princeton.edu/courses/archive/fall22/cos597G/",
+  "links": {},
+  "lang": "EN",
+  "lic": "Course site",
+  "level": "高阶",
+  "phase": 4,
+  "use": [
+   [
+    56,
+    "Reading list: scaling and evaluation papers"
+   ]
+  ]
+ },
+ {
+  "id": "hylee_genai",
+  "school": "National Taiwan University",
+  "code": "GenAI 2024",
+  "title": "Introduction to Generative AI (Hung-yi Lee)",
+  "zh": "台大 李宏毅 生成式 AI 导论（中文）",
+  "kind": "uni",
+  "url": "https://speech.ee.ntu.edu.tw/~hylee/genai/2024-spring.php",
+  "links": {},
+  "lang": "中文",
+  "lic": "Free videos",
+  "level": "入门",
+  "phase": 4,
+  "use": [
+   [
+    43,
+    "Opening lectures on how LLMs work"
+   ],
+   [
+    45,
+    "Prompt engineering lectures"
+   ]
+  ]
+ },
+ {
+  "id": "happyllm",
+  "school": "Datawhale",
+  "code": "Happy-LLM",
+  "title": "Happy-LLM: building a large language model from scratch",
+  "zh": "从零开始的大语言模型原理与实践",
+  "kind": "oss",
+  "url": "https://github.com/datawhalechina/happy-llm",
+  "links": {},
+  "lang": "中文",
+  "lic": "See repo",
+  "level": "进阶",
+  "phase": 4,
+  "use": [
+   [
+    42,
+    "Chapter on the Transformer architecture"
+   ],
+   [
+    43,
+    "Chapters on pre-trained language models"
+   ]
+  ]
+ },
+ {
+  "id": "diyllm",
+  "school": "Datawhale",
+  "code": "DIY-LLM",
+  "title": "DIY-LLM: a Chinese companion to Stanford CS336",
+  "zh": "动手搭建大模型（CS336 中文版）",
+  "kind": "oss",
+  "url": "https://github.com/datawhalechina/diy-llm",
+  "links": {},
+  "lang": "中文",
+  "lic": "See repo",
+  "level": "高阶",
+  "phase": 4,
+  "use": [
+   [
+    43,
+    "Tokenizer and Transformer chapters"
+   ]
+  ]
+ },
+ {
+  "id": "selfllm",
+  "school": "Datawhale",
+  "code": "Self-LLM",
+  "title": "Self-LLM: deploying open-source models",
+  "zh": "开源大模型食用指南（本地部署与微调）",
+  "kind": "oss",
+  "url": "https://github.com/datawhalechina/self-llm",
+  "links": {},
+  "lang": "中文",
+  "lic": "Apache-2.0",
+  "level": "进阶",
+  "phase": 4,
+  "use": [
+   [
+    43,
+    "Run one small open model locally"
+   ]
+  ]
+ },
+ {
+  "id": "llmuniverse",
+  "school": "Datawhale",
+  "code": "LLM Universe",
+  "title": "LLM Universe: building RAG applications",
+  "zh": "动手学大模型应用开发（RAG）",
+  "kind": "oss",
+  "url": "https://github.com/datawhalechina/llm-universe",
+  "links": {},
+  "lang": "中文",
+  "lic": "See repo",
+  "level": "入门",
+  "phase": 4,
+  "use": [
+   [
+    47,
+    "Building the knowledge base"
+   ],
+   [
+    49,
+    "Building a RAG app end to end"
+   ]
+  ]
+ },
+ {
+  "id": "helloagents",
+  "school": "Datawhale",
+  "code": "Hello-Agents",
+  "title": "Hello-Agents: building agents from scratch",
+  "zh": "从零开始构建智能体",
+  "kind": "oss",
+  "url": "https://github.com/datawhalechina/hello-agents",
+  "links": {},
+  "lang": "中文",
+  "lic": "See repo",
+  "level": "进阶",
+  "phase": 4,
+  "use": [
+   [
+    53,
+    "Agent basics chapters"
+   ],
+   [
+    54,
+    "Multi-step agent chapters"
+   ]
+  ]
+ },
+ {
+  "id": "solargelm",
+  "school": "Datawhale",
+  "code": "So-Large-LM",
+  "title": "So-Large-LM: an introduction to large models",
+  "zh": "大模型基础",
+  "kind": "oss",
+  "url": "https://github.com/datawhalechina/so-large-lm",
+  "links": {},
+  "lang": "中文",
+  "lic": "See repo",
+  "level": "入门",
+  "phase": 4,
+  "use": [
+   [
+    56,
+    "Chapters on model capability and evaluation"
+   ]
+  ]
+ },
+ {
+  "id": "genaibeginners",
+  "school": "Microsoft",
+  "code": "GenAI for Beginners",
+  "title": "Generative AI for Beginners (21 lessons)",
+  "zh": "微软 生成式 AI 入门",
+  "kind": "oss",
+  "url": "https://github.com/microsoft/generative-ai-for-beginners",
+  "links": {},
+  "lang": "EN",
+  "lic": "MIT",
+  "level": "入门",
+  "phase": 4,
+  "use": [
+   [
+    44,
+    "Lessons on building with LLM APIs"
+   ],
+   [
+    48,
+    "Lesson on vector databases and RAG"
+   ]
+  ]
+ },
+ {
+  "id": "agentsbeginners",
+  "school": "Microsoft",
+  "code": "AI Agents for Beginners",
+  "title": "AI Agents for Beginners",
+  "zh": "微软 AI 智能体入门",
+  "kind": "oss",
+  "url": "https://github.com/microsoft/ai-agents-for-beginners",
+  "links": {},
+  "lang": "EN",
+  "lic": "MIT",
+  "level": "入门",
+  "phase": 4,
+  "use": [
+   [
+    53,
+    "Tool use lesson"
+   ],
+   [
+    54,
+    "Planning and multi-agent lessons"
+   ]
+  ]
+ },
+ {
+  "id": "cmu15445",
+  "school": "CMU",
+  "code": "15-445",
+  "title": "Database Systems (Andy Pavlo)",
+  "zh": "卡内基梅隆 数据库系统",
+  "kind": "uni",
+  "url": "https://15445.courses.cs.cmu.edu/",
+  "links": {},
+  "lang": "EN",
+  "lic": "Course site",
+  "level": "进阶",
+  "phase": 5,
+  "use": [
+   [
+    60,
+    "The modern SQL lecture"
+   ],
+   [
+    62,
+    "The indexing and transaction lectures"
+   ]
+  ]
+ },
+ {
+  "id": "cs253",
+  "school": "Stanford",
+  "code": "CS253",
+  "title": "Web Security",
+  "zh": "斯坦福 Web 安全",
+  "kind": "uni",
+  "url": "https://web.stanford.edu/class/cs253/",
+  "links": {},
+  "lang": "EN",
+  "lic": "Course site",
+  "level": "进阶",
+  "phase": 5,
+  "use": [
+   [
+    55,
+    "Injection lectures, read next to prompt injection"
+   ],
+   [
+    64,
+    "The authentication and session lectures"
+   ]
+  ]
+ },
+ {
+  "id": "cs329s",
+  "school": "Stanford",
+  "code": "CS329S",
+  "title": "Machine Learning Systems Design (Chip Huyen)",
+  "zh": "斯坦福 机器学习系统设计",
+  "kind": "uni",
+  "url": "https://stanford-cs329s.github.io/",
+  "links": {},
+  "lang": "EN",
+  "lic": "Course site",
+  "level": "进阶",
+  "phase": 6,
+  "use": [
+   [
+    69,
+    "The deployment and serving lecture"
+   ],
+   [
+    76,
+    "The monitoring lecture"
+   ],
+   [
+    77,
+    "The data and model versioning material"
+   ]
+  ]
+ },
+ {
+  "id": "fsdl",
+  "school": "Full Stack Deep Learning",
+  "code": "FSDL 2022",
+  "title": "Full Stack Deep Learning",
+  "zh": "全栈深度学习",
+  "kind": "oss",
+  "url": "https://fullstackdeeplearning.com/course/2022/",
+  "links": {},
+  "lang": "EN",
+  "lic": "Free course",
+  "level": "进阶",
+  "phase": 6,
+  "use": [
+   [
+    74,
+    "Lecture on development infrastructure and tooling"
+   ],
+   [
+    78,
+    "Lecture on deployment"
+   ],
+   [
+    76,
+    "Lecture on continual learning and monitoring"
+   ]
+  ]
+ },
+ {
+  "id": "madewithml",
+  "school": "Made With ML",
+  "code": "MLOps",
+  "title": "Made With ML: MLOps course",
+  "zh": "Made With ML 机器学习工程化",
+  "kind": "oss",
+  "url": "https://madewithml.com/",
+  "links": {},
+  "lang": "EN",
+  "lic": "Free course",
+  "level": "进阶",
+  "phase": 6,
+  "use": [
+   [
+    74,
+    "CI/CD lesson"
+   ],
+   [
+    79,
+    "Serving and release lessons"
+   ]
+  ]
+ },
+ {
+  "id": "dlsys",
+  "school": "CMU",
+  "code": "10-414/714",
+  "title": "Deep Learning Systems",
+  "zh": "卡内基梅隆 深度学习系统",
+  "kind": "uni",
+  "url": "https://dlsyscourse.org/",
+  "links": {},
+  "lang": "EN",
+  "lic": "Course site",
+  "level": "高阶",
+  "phase": 6,
+  "use": [
+   [
+    80,
+    "The hardware acceleration lectures"
+   ]
+  ]
+ },
+ {
+  "id": "efficientml",
+  "school": "MIT",
+  "code": "6.5940",
+  "title": "TinyML and Efficient Deep Learning (Song Han)",
+  "zh": "MIT 高效深度学习与 TinyML",
+  "kind": "uni",
+  "url": "https://efficientml.ai/",
+  "links": {},
+  "lang": "EN",
+  "lic": "Course site",
+  "level": "高阶",
+  "phase": 6,
+  "use": [
+   [
+    41,
+    "The quantization lecture, as a first look"
+   ],
+   [
+    80,
+    "Pruning, quantization and LLM inference lectures"
+   ]
+  ]
+ },
+ {
+  "id": "mit6824",
+  "school": "MIT",
+  "code": "6.5840",
+  "title": "Distributed Systems",
+  "zh": "MIT 分布式系统",
+  "kind": "uni",
+  "url": "https://pdos.csail.mit.edu/6.824/",
+  "links": {},
+  "lang": "EN",
+  "lic": "Course site",
+  "level": "高阶",
+  "phase": 7,
+  "use": [
+   [
+    70,
+    "Lecture 1: introduction and MapReduce"
+   ],
+   [
+    86,
+    "Replication and fault tolerance lectures before the design talk"
+   ]
+  ]
+ }
+]
