@@ -15,9 +15,7 @@
 
 ## 第一次设置（约 10 分钟）
 
-**最简单：** 在 VS Code 打开这个文件夹，对 Claude 说：「读 CLAUDE.md，从第 4 节 S0 开始，一步步帮我把仓库连接到 GitHub。」
-
-或者手动运行：
+手动运行：
 
 ```bash
 # WSL Ubuntu 里（不需要动现有 conda 环境）
@@ -38,3 +36,16 @@ python3 scripts/setup_github.py --start 2026-11-01   # 改成你的 Day 1 日期
    `git commit -m "feat(day012): ruff + mypy config #12"`
 4. 在 Issue 里勾任务，留言写打卡（时数 / 理解 1–5 / 收获 / 问题），然后 **Close issue**。
 5. 复盘日、验收日在 Logbook 的「周复盘小测」「考试与验收」完成，成绩截图贴回 Issue。
+
+## Licence
+
+- **Code** (the site, scripts and workflows): [MIT](LICENSE).
+- **Study content** written for this repo (the 90-lesson plan, tasks, quizzes, exams, rubrics and notes): [CC BY-NC-SA 4.0](LICENSE-CONTENT). You may share and adapt it for non-commercial use with credit, under the same licence.
+- **Linked material** (lectures, slides, videos, books, courses) is not part of this repo and is not covered by either licence. It belongs to its authors and institutions. Only free, official links are listed; nothing is copied or re-hosted.
+
+## Notices
+
+- This is a personal study plan. It is not affiliated with or endorsed by MIT, Stanford, CMU, Harvard or any other school, or by any platform it links to. Names and trademarks belong to their owners.
+- Lessons were matched to lectures by hand and may be wrong. The course's own site is the source of truth.
+- Some links need a free account (for example Kaggle) or are free to read online only. These are marked next to the link. Links can break or change their terms later.
+- If anything is missing or wrong, or you have a copyright or intellectual property concern, please [open an issue](../../issues). I will fix or remove it quickly. Thank you.
