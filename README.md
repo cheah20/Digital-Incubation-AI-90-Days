@@ -1,6 +1,6 @@
 # Digital Incubation: AI 90 Days
 
-[![Live Demo](https://img.shields.io/badge/Logbook-Open-2ea44f?logo=githubpages&logoColor=white)](https://cheah20.github.io/Digital-Incubation/)
+[![Live Demo](https://img.shields.io/badge/Logbook-Open-2ea44f?logo=githubpages&logoColor=white)](https://cheah20.github.io/DigitalIncubation/)
 ![Python](https://img.shields.io/badge/Python-3.11-3776AB?logo=python&logoColor=white)
 ![Days](https://img.shields.io/badge/plan-90%20days-3f6fb6)
 ![GitHub Issues](https://img.shields.io/badge/check--in-GitHub%20Issues-181717?logo=github&logoColor=white)
