@@ -15,5 +15,3 @@ data/raw/
 *.onnx
 .DS_Store
 
-# local notes for Claude, kept private
-CLAUDE.md
