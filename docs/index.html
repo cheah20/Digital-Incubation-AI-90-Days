@@ -3,11 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AI Engineer 90</title>
-<meta name="description" content="A self-paced, bilingual 90-lesson path to becoming an AI engineer, with lectures from MIT, Stanford, CMU and more.">
+<title>AI Engineer Path</title>
+<meta name="description" content="A self-paced, bilingual path to becoming an AI engineer: a 90-lesson plan plus lessons from AI Engineering from Scratch.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600;800&family=Source+Serif+4:opsz,wght@8..60,600;8..60,800&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;700&display=swap">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js" defer></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.6/purify.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js" defer></script>
+<script src="vendor/aiefs/lesson-figures.js" defer></script>
 <style>
 /* paper and fountain-pen ink in light mode, blackboard and chalk in dark mode */
 :root {
@@ -257,11 +263,52 @@ footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wr
   .uni-list li { grid-template-columns: 28px 1fr; } .uni-list li > a { grid-column: 2; } .find { min-width: 0; width: 100% !important; margin-left: 0; } .cell { width: 34px; height: 34px; }
   .peek { display: none; } .kv { grid-template-columns: 1fr; } .qi textarea { margin-left: 0; width: 100%; }
 }
+
+/* path: lessons from AI Engineering from Scratch */
+.phase { margin-top: 40px; }
+.phase h2 { font: 600 22px var(--serif); margin: 0 0 4px; display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.phase h2 small { font: 500 14px var(--sans); color: var(--ink3); }
+.units { list-style: none; margin: 12px 0 0; padding: 0; border-top: 1px solid var(--rule); }
+.units li { display: grid; grid-template-columns: 34px 1fr auto; gap: 12px; align-items: baseline; padding: 10px 0; border-bottom: 1px solid var(--rule); }
+.units .n { font: 500 13px var(--sans); color: var(--ink3); font-variant-numeric: tabular-nums; }
+.units button { border: 0; background: none; padding: 0; text-align: left; cursor: pointer; color: var(--ink); font-weight: 500; }
+.units button:hover { color: var(--pen); }
+.units li.done .n::before { content: "✓ "; color: var(--ok); }
+.units .m { font-size: 13.5px; color: var(--ink3); }
+.ulist { list-style: none; padding: 0; margin: 12px 0; font-size: 14px; max-height: 50vh; overflow: auto; }
+.ulist button { border: 0; background: none; padding: 3px 0; text-align: left; cursor: pointer; color: var(--ink2); width: 100%; }
+.ulist .here button { color: var(--ink); font-weight: 600; }
+.ulist .done button::before { content: "✓ "; color: var(--ok); }
+.doc { margin-top: 28px; --bg: var(--paper); --bg-surface: var(--soft); --ink-soft: var(--ink2); --ink-mute: var(--ink3); --rule-soft: var(--rule); --blueprint: var(--pen); }
+.doc pre code { padding: 0; background: none; }
+.doc h2 { font: 600 22px var(--serif); margin: 40px 0 10px; }
+.doc h3 { font: 600 18px var(--serif); margin: 28px 0 8px; }
+.doc pre { background: var(--soft); border: 1px solid var(--rule); border-radius: 8px; padding: 14px 16px; overflow-x: auto; font-size: 14px; line-height: 1.55; }
+.doc code { font-size: .92em; }
+.doc :not(pre) > code { background: var(--soft); padding: 1px 5px; border-radius: 4px; }
+.doc table { border-collapse: collapse; width: 100%; font-size: 15px; margin: 12px 0; }
+.doc th, .doc td { border-bottom: 1px solid var(--rule); padding: 7px 10px 7px 0; text-align: left; vertical-align: top; }
+.doc blockquote { margin: 16px 0; padding: 2px 16px; border-left: 3px solid var(--mark); color: var(--ink2); }
+.doc img { max-width: 100%; }
+.doc .mermaid { margin: 18px 0; text-align: center; }
+.doc .math-display { overflow-x: auto; margin: 14px 0; }
+.mcq { border-top: 1px solid var(--rule); padding: 16px 0; }
+.mcq .mq { font-weight: 600; margin-bottom: 8px; }
+.mcq .mq small { font-weight: 500; color: var(--ink3); margin-right: 8px; }
+.mcq label { display: flex; gap: 10px; padding: 5px 0; cursor: pointer; }
+.mcq label.right { color: var(--ok); font-weight: 600; }
+.mcq label.wrong { color: var(--bad); }
+.mcq .why { margin: 6px 0 0; color: var(--ink2); font-size: 15px; }
+.doc .en-sec { color: var(--ink2); font-size: 15px; border-left: 2px solid var(--rule); padding-left: 14px; margin: 10px 0 24px; }
+.doc .en-sec h1, .doc .en-sec h2, .doc .en-sec h3 { font-size: 16px; margin: 8px 0; }
+.doc .en-sec pre, .doc .en-sec .lesson-figure, .doc .en-sec .mermaid, .doc .en-sec .math-display, .doc .en-sec img { display: none; }
+.mcq .en { color: var(--ink3); font-size: 14px; margin: 2px 0 0; }
+.credit { margin-top: 48px; padding-top: 14px; border-top: 1px solid var(--rule); font-size: 14px; color: var(--ink3); }
 </style>
 </head>
 <body>
 <header class="mast"><div class="wrap">
-  <div class="title" id="brand">AI Engineer 90</div>
+  <div class="title" id="brand">AI Engineer Path</div>
   <nav id="tabs"></nav>
   <div class="prefs">
     <div class="switch" id="lang" aria-label="Language"><button data-l="zh">中文</button><button data-l="en">English</button><button data-l="both">双语</button></div>
@@ -361,7 +408,7 @@ const cellClass = n => { const s = status(n); return [n === nextLesson() ? "next
 
 // ---------- navigation ----------
 let cur = { view: "overview", lesson: 1, phase: 0, kind: "all", lang: "all", q: "", rtype: "all", rphase: 0, saved: false, exam: null, week: null, bcat: "", blvl: "", blang: "" }, firstPaint = true, review = null, timer = { left: 1500, run: null }, examTimer = null;
-const MAIN = () => [["overview", t("总览", "Overview")], ["lesson", t("课程", "Lessons")], ["courses", t("名校课表", "Courses")], ["resources", t("资源", "Resources")], ["tests", t("考试", "Exams")]];
+const MAIN = () => [["overview", t("总览", "Overview")], ["lesson", t("课程", "Lessons")], ["path", t("课程路线", "Path")], ["courses", t("名校课表", "Courses")], ["resources", t("资源", "Resources")], ["tests", t("考试", "Exams")]];
 const MORE = () => [["weekly", t("周复盘", "Weekly review")], ["projects", t("作品集项目", "Portfolio projects")], ["books", t("电子书库", "Free e-books")], ["report", t("补强与报告", "Catch-up and report")], ["reqs", t("需求与路线", "Goals and roadmap")], ["settings", t("设置与备份", "Settings and backup")]];
 const VIEWS = () => [...MAIN(), ...MORE()].map(x => x[0]);
 
@@ -386,13 +433,14 @@ $("#brand").onclick = () => go("overview");
 function go(v, extra = {}) {
   if (!("q" in extra)) cur.q = "";
   Object.assign(cur, { view: v }, extra);
-  const h = v === "lesson" ? "lesson-" + cur.lesson : v;
+  const h = v === "lesson" ? "lesson-" + cur.lesson : v === "unit" ? "unit-" + cur.unit : v;
   if (location.hash.slice(1) !== h) history.pushState(null, "", "#" + h);
   chrome(); render(); window.scrollTo({ top: 0 });
 }
 function fromHash() {
   const h = location.hash.slice(1), m = /^(?:lesson|day)-(\d{1,2})$/.exec(h);   // day-N keeps the links in the GitHub issues working
   if (m && +m[1] >= 1 && +m[1] <= 90) { cur.view = "lesson"; cur.lesson = +m[1]; }
+  else if (/^unit-\d{2}-\d{2}$/.test(h)) { cur.view = "unit"; cur.unit = h.slice(5); }
   else if (VIEWS().includes(h)) cur.view = h;
   else cur.lesson = nextLesson();
 }
@@ -402,9 +450,10 @@ function toast(msg) { const el = $("#toast"); el.textContent = msg; el.hidden = 
 function render() {
   if (!D) return;
   clearInterval(timer.run); timer.run = null; clearInterval(examTimer); examTimer = null;
-  const views = { overview, lesson, courses, resources, tests, weekly, projects, books, report, reqs, settings };
+  const views = { overview, lesson, path, unit, courses, resources, tests, weekly, projects, books, report, reqs, settings };
   $("#app").innerHTML = views[cur.view]();
   wire();
+  if (cur.view === "path" || cur.view === "unit") wirePath();
   if (cur.view === "overview" && firstPaint) { firstPaint = false; requestAnimationFrame(() => $(".map")?.classList.add("ink")); }
 }
 
@@ -414,6 +463,126 @@ function cellsFor(p) {
   return out.join("");
 }
 const chapCount = i => { const p = PHASES[i]; let k = 0; for (let j = p[0]; j <= p[1]; j++) if (isDone(j)) k++; return [k, p[1] - p[0] + 1]; };
+
+
+// ---------- path: lessons from AI Engineering from Scratch ----------
+let CUR = null, curLoading = false;
+const DONE = new Set(JSON.parse(pref.get("aip-done", "[]")));
+const saveDone = () => pref.set("aip-done", JSON.stringify([...DONE]));
+const unitKey = (p, l) => p.id.slice(0, 2) + "-" + l.id.slice(0, 2);
+const unitName = x => LANG === "en" ? x.en : x.zh || x.en;
+function loadCur() {
+  if (CUR || curLoading) return;
+  curLoading = true;
+  fetch("curriculum/index.json").then(r => r.json()).then(d => { CUR = d; render(); },
+    () => { curLoading = false; $("#app").innerHTML = `<p class="loading">${t("课程路线载入失败，请重新整理。", "Could not load the path. Refresh to try again.")}</p>`; });
+}
+function findUnit(key) {
+  for (const p of CUR.phases) for (const l of p.lessons) if (unitKey(p, l) === key) return [p, l];
+  return [CUR.phases[0], CUR.phases[0].lessons[0]];
+}
+function path() {
+  if (!CUR) { loadCur(); return `<p class="loading">${t("载入中…", "Loading…")}</p>`; }
+  const all = CUR.phases.flatMap(p => p.lessons.map(l => unitKey(p, l))), done = all.filter(k => DONE.has(k)).length;
+  return `<h1 class="page">${t("课程路线", "Learning path")}</h1>
+  <p class="small" style="max-width:62ch">${t("课文、练习代码和测验来自开源课程 AI Engineering from Scratch，中文由社群翻译。按自己的节奏学，进度只存在这部电脑。", "Lessons, code and quizzes come from the open course AI Engineering from Scratch, with a community Chinese translation. Go at your own pace; progress stays on this computer.")}
+  ${done} / ${all.length} ${t("课完成", "lessons done")}</p>
+  ${CUR.phases.map(p => { const k = p.lessons.filter(l => DONE.has(unitKey(p, l))).length;
+    return `<section class="phase"><h2>${esc(unitName(p))}<small>${k} / ${p.lessons.length}</small></h2><ul class="units">${p.lessons.map((l, i) => `
+      <li class="${DONE.has(unitKey(p, l)) ? "done" : ""}"><span class="n">${i + 1}</span><button data-unit="${unitKey(p, l)}">${esc(unitName(l))}</button><span class="m">${l.min ? l.min + " min" : ""}</span></li>`).join("")}</ul></section>`; }).join("")}
+  <p class="credit">${credit()}</p>`;
+}
+function credit() {
+  const s = CUR.source;
+  return t(`课程内容来自 <a href="${s.upstream}" target="_blank" rel="noopener">AI Engineering from Scratch</a>（Rohit Ghumare 与贡献者，MIT 授权），中文翻译来自 <a href="${s.translation}" target="_blank" rel="noopener">ai-engineering-from-scratch-zh</a>（MIT 授权）。`,
+    `Lessons from <a href="${s.upstream}" target="_blank" rel="noopener">AI Engineering from Scratch</a> by Rohit Ghumare and contributors (MIT). Chinese translation from <a href="${s.translation}" target="_blank" rel="noopener">ai-engineering-from-scratch-zh</a> (MIT).`);
+}
+function unit() {
+  if (!CUR) { loadCur(); return `<p class="loading">${t("载入中…", "Loading…")}</p>`; }
+  const [p, l] = findUnit(cur.unit), i = p.lessons.indexOf(l), key = unitKey(p, l);
+  const flat = CUR.phases.flatMap(q => q.lessons.map(x => unitKey(q, x))), at = flat.indexOf(key);
+  const repo = `https://github.com/cheah20/DigitalIncubation/blob/main/docs/curriculum/${p.id}/${l.id}/`;
+  return `<div class="handout">
+    <aside class="margin">
+      <div class="no">${i + 1}</div>
+      <div class="chapname">${esc(unitName(p))}</div>
+      <div class="state">${l.min ? `${l.min} min` : ""}</div>
+      <ul class="ulist">${p.lessons.map(x => `<li class="${unitKey(p, x) === key ? "here" : ""} ${DONE.has(unitKey(p, x)) ? "done" : ""}"><button data-unit="${unitKey(p, x)}">${esc(unitName(x))}</button></li>`).join("")}</ul>
+      <div class="pn">${at > 0 ? `<button class="textlink" data-unit="${flat[at - 1]}">${t("上一课", "Previous")}</button>` : "<span></span>"}${at < flat.length - 1 ? `<button class="textlink" data-unit="${flat[at + 1]}">${t("下一课", "Next")}</button>` : ""}</div>
+      <p class="small"><button class="textlink" data-go="path">${t("回到课程路线", "Back to the path")}</button></p>
+    </aside>
+    <article class="body">
+      <div class="doc" id="doc"><p class="loading">${t("载入课文…", "Loading the lesson…")}</p></div>
+      ${l.code.length ? `<section class="part"><h2>${t("练习代码", "Code")}</h2><ul class="plain">${l.code.map(f => `<li><a href="${repo}${esc(f)}" target="_blank" rel="noopener">${esc(f)}</a></li>`).join("")}</ul></section>` : ""}
+      ${l.quiz ? `<section class="part" id="mcq"><h2>${t("测验", "Quiz")}</h2><div id="quizbox"></div></section>` : ""}
+      <section class="part"><button class="btn ${DONE.has(key) ? "ghost" : ""}" id="udone">${DONE.has(key) ? t("已完成，取消", "Done, undo") : t("标记为完成", "Mark as done")}</button></section>
+      <p class="credit">${credit()}</p>
+    </article>
+  </div>`;
+}
+function bilingual(zt, en) {
+  const cut = md => md.split(/^(?=## )/m), a = cut(zt), b = cut(en);
+  if (a.length !== b.length) return zt + `\n\n<div class="en-sec">\n\n${en}\n\n</div>\n`;
+  return a.map((x, i) => x + `\n\n<div class="en-sec">\n\n${b[i]}\n\n</div>\n\n`).join("");
+}
+// math follows the GitHub dollar rules and is kept away from the markdown parser
+function protectMath(text) {
+  const keep = [];
+  const hold = (tex, display) => { keep.push([tex, display]); return `MATHHOLD${keep.length - 1}X`; };
+  const out = text.split(/(^```[\s\S]*?^```)/m).map((part, i) => i % 2 ? part : part.split(/(`[^`\n]*`)/).map((bit, j) => j % 2 ? bit : bit
+    .replace(/\$\$([\s\S]+?)\$\$/g, (m, tex) => hold(tex, true))
+    .replace(/(^|[^\\$\w])\$(?![\s$])((?:\\.|[^$\\\n])+?)(?<![\s\\])\$(?![\w$])/g, (m, pre, tex) => pre + hold(tex, false))).join("")).join("");
+  return [out, keep];
+}
+function renderDoc(text, base) {
+  const box = $("#doc"), [safe, keep] = protectMath(text);
+  box.innerHTML = DOMPurify.sanitize(marked.parse(safe)).replace(/MATHHOLD(\d+)X/g, (m, k) => window.katex
+    ? katex.renderToString(keep[k][0], { displayMode: keep[k][1], throwOnError: false }) : esc(keep[k][0]));
+  // figure, mermaid and math fences
+  $$("#doc pre code").forEach(c => {
+    const lang = (c.className.match(/language-(\S+)/) || [])[1], pre = c.parentElement, src = c.textContent.trim();
+    if (lang === "figure") { const d = document.createElement("div"); d.className = "lesson-figure"; d.dataset.figure = src; pre.replaceWith(d); }
+    else if (lang === "mermaid") { const d = document.createElement("div"); d.className = "mermaid"; d.textContent = src; pre.replaceWith(d); }
+    else if (lang === "math" && window.katex) { const d = document.createElement("div"); d.className = "math-display"; katex.render(src, d, { displayMode: true, throwOnError: false }); pre.replaceWith(d); }
+  });
+  $$("#doc img").forEach(img => { const s = img.getAttribute("src"); if (s && !/^(https?:|data:)/.test(s)) img.src = base + "docs/" + s; });
+  $$("#doc a[href]").forEach(a => { if (/^https?:/.test(a.getAttribute("href"))) { a.target = "_blank"; a.rel = "noopener"; } });
+  if (window.mermaid) { mermaid.initialize({ startOnLoad: false, theme: getComputedStyle(document.documentElement).colorScheme === "dark" ? "dark" : "neutral" }); mermaid.run({ nodes: $$("#doc .mermaid") }).catch(() => {}); }
+}
+const FIGS = {};
+function loadFigs(files) {
+  return files.reduce((chain, f) => chain.then(() => FIGS[f] ||= new Promise(ok => {
+    const s = document.createElement("script"); s.src = "vendor/aiefs/" + f; s.onload = s.onerror = ok; document.head.appendChild(s);
+  })), Promise.resolve());
+}
+function renderQuiz(qs, en) {
+  const stage = { pre: t("课前", "Before"), check: t("课中", "Check"), post: t("课后", "After") };
+  $("#quizbox").innerHTML = qs.map((q, i) => `<div class="mcq" data-q="${i}"><div class="mq"><small>${esc(stage[q.stage] || "")}</small>${i + 1}. ${esc(q.question)}${en && en[i] ? `<p class="en">${esc(en[i].question)}</p>` : ""}</div>
+    ${q.options.map((o, j) => `<label><input type="radio" name="q${i}" value="${j}"><span>${esc(o)}</span></label>`).join("")}<p class="why" hidden>${esc(q.explanation || "")}${en && en[i] ? `<br><span class="en">${esc(en[i].explanation || "")}</span>` : ""}</p></div>`).join("");
+  $$("#quizbox .mcq").forEach(box => box.onchange = e => {
+    const q = qs[+box.dataset.q], pickd = +e.target.value;
+    box.querySelectorAll("label").forEach((lab, j) => { lab.classList.toggle("right", j === q.correct); lab.classList.toggle("wrong", j === pickd && j !== q.correct); });
+    box.querySelector(".why").hidden = false;
+  });
+}
+function wirePath() {
+  $$("[data-unit]").forEach(b => b.onclick = () => go("unit", { unit: b.dataset.unit }));
+  if (cur.view !== "unit" || !CUR) return;
+  const [p, l] = findUnit(cur.unit), key = unitKey(p, l), base = `curriculum/${p.id}/${l.id}/`, zh = LANG !== "en";
+  $("#udone").onclick = () => { DONE.has(key) ? DONE.delete(key) : DONE.add(key); saveDone(); render(); };
+  const want = cur.unit;
+  const get = f => fetch(base + f).then(r => r.ok ? r.text() : "");
+  Promise.all([get("docs/en.md"), zh ? get("docs/zh.md") : ""])
+    .then(([en, zt]) => LANG === "both" && zt ? bilingual(zt, en) : zt || en)
+    .then(text => loadFigs(l.figs).then(() => {
+      if (cur.view !== "unit" || cur.unit !== want) return;
+      renderDoc(text, base);
+      if (window.mountLessonFigures) mountLessonFigures($("#doc"));
+    }));
+  const quiz = f => fetch(base + f).then(r => r.ok ? r.json() : null).then(d => d && (Array.isArray(d) ? d : d.questions));
+  if (l.quiz) Promise.all([quiz("quiz.json"), zh ? quiz("quiz.zh.json") : null])
+    .then(([en, zq]) => { if (cur.unit === want && $("#quizbox")) renderQuiz(zq || en || [], LANG === "both" && zq ? en : null); });
+}
 
 // ---------- overview ----------
 function pickReview() {
@@ -739,6 +908,7 @@ function settings() {
     <p>${t("欢迎一起学习。想要自己的打卡仓库，可以 fork 这个 repo，跑一次 setup 脚本建好 Issues，再打开你自己的 GitHub Pages。", "Everyone is welcome to learn along. For your own check-in repo, fork this one, run the setup script once to create the issues, then open your own GitHub Pages site.")}</p></section>
   <section class="part notice" id="notice"><h2>${t("版权与声明", "Licence and notices")}</h2>
     <p>${t("本站只列出各大学、作者和平台公开免费的官方链接，没有复制或转载任何讲义、视频和书本内容；这些内容的版权都属于原作者和机构。", "This site only links to free, official pages from universities, authors and platforms. No notes, videos or book content are copied or re-hosted; they belong to their authors and institutions.")}</p>
+    <p>${t("唯一的例外是「课程路线」：课文、代码、测验和图来自 AI Engineering from Scratch（Rohit Ghumare 与贡献者），中文来自 ai-engineering-from-scratch-zh，两者都是 MIT 授权，照授权保留署名，详见 ATTRIBUTION.md。", "The one exception is the Path: its lessons, code, quizzes and figures come from AI Engineering from Scratch by Rohit Ghumare and contributors, with Chinese text from ai-engineering-from-scratch-zh. Both are MIT licensed and kept with credit; see ATTRIBUTION.md.")}</p>
     <p>${t("本项目是个人学习计划，与 MIT、Stanford、CMU、Harvard 等学校以及 Kaggle 等任何平台没有任何关系，也没有得到它们的认可。各学校和平台的名称与商标属于其拥有者。", "This is a personal study plan. It is not affiliated with or endorsed by MIT, Stanford, CMU, Harvard or any other school, or by platforms such as Kaggle. School and platform names and trademarks belong to their owners.")}</p>
     <p>${t("课程和讲次的对应是我自己整理的，可能有错，请以课程官网为准。链接以后可能失效或改为收费，打开前请看清楚网站的条款。", "Lessons were matched to lectures by hand and may be wrong; the course site is always the source of truth. Links can break or become paid later, so check each site's terms.")}</p>
     <p>${t("如果有资料遗漏、链接错误，或任何版权和知识产权问题，请开一个 GitHub Issue 联系我，我会尽快修改或删除。谢谢大家。", "If anything is missing or wrong, or there is any copyright or intellectual property concern, please open a GitHub issue and I will fix or remove it quickly. Thank you.")}</p>
