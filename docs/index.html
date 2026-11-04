@@ -47,9 +47,10 @@ textarea:focus, input:focus, select:focus { outline: none; border-color: var(--i
 
 /* masthead */
 .mast { border-bottom: 1px solid var(--rule); position: sticky; top: 0; z-index: 20; background: color-mix(in srgb, var(--paper) 92%, transparent); backdrop-filter: blur(8px); }
-.mast .wrap { display: flex; align-items: center; gap: 30px; padding-top: 14px; padding-bottom: 12px; }
+.mast .wrap { display: flex; align-items: center; gap: 24px; padding-top: 14px; padding-bottom: 12px; }
 .title { font: 800 21px var(--serif); white-space: nowrap; cursor: pointer; }
-.mast nav { display: flex; gap: 22px; align-items: center; }
+.mast nav { display: flex; gap: 18px; align-items: center; }
+.mast button, .more summary { white-space: nowrap; }
 .mast nav button, .more summary { border: 0; background: none; padding: 2px 0; cursor: pointer; color: var(--ink2); list-style: none; }
 .mast nav button.on, .more.on summary { color: var(--ink); box-shadow: inset 0 -2px 0 var(--ink); }
 .more { position: relative; }
