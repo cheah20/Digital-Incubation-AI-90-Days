@@ -1,0 +1,31 @@
+name: Report a problem
+description: A wrong or broken link, a mistake in a lesson, a site bug, or a copyright concern.
+title: "[Problem] "
+labels: ["feedback"]
+body:
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What kind of problem?
+      options:
+        - Broken or wrong link
+        - Mistake in a lesson or quiz
+        - Site bug
+        - Copyright or licence concern
+        - Something else
+    validations:
+      required: true
+  - type: input
+    id: where
+    attributes:
+      label: Where is it?
+      description: The page link, for example https://cheah20.github.io/DigitalIncubation/#unit-01-04
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What is wrong?
+      description: What you saw, and what you expected instead.
+    validations:
+      required: true

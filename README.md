@@ -107,4 +107,4 @@ DigitalIncubation/
 - This is a personal study plan. It is not affiliated with or endorsed by MIT, Stanford, CMU, Harvard or any other school, or by any platform it links to. Names and trademarks belong to their owners.
 - Lessons were matched to lectures by hand and may be wrong. The course's own site is the source of truth.
 - Some links need a free account (for example Kaggle) or are free to read online only. These are marked next to the link. Links can break or change their terms later.
-- If anything is missing or wrong, or you have a copyright or intellectual property concern, please [open an issue](../../issues). I will fix or remove it quickly. Thank you.
+- If anything is missing or wrong, or you have a copyright or intellectual property concern, please [report a problem](../../issues/new?template=report-a-problem.yml). I will fix or remove it quickly. Thank you.
