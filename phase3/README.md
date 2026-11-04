@@ -1,16 +1,16 @@
-# Phase 3 · Deep Learning 与 GPU / Deep Learning & GPU
+# Phase 3: Deep Learning & GPU
 
-每天的练习代码放在 `dayNNN/` 子文件夹，例如 `phase3/day031/`。
+Exercise code for each lesson goes in its own folder, for example `phase3/day031/`.
 
-- Day 031 · 神经网络直觉：神经元与前向传播
-- Day 032 · 反向传播与 Autograd
-- Day 033 · WSL2 GPU 环境配置（安全版）
-- Day 034 · PyTorch Tensor 与 Autograd
-- Day 035 · 第 5 周复盘 + Dataset 与 DataLoader
-- Day 036 · 训练循环：Module、Loss、Optimizer
-- Day 037 · 过拟合与正则化
-- Day 038 · 卷积神经网络 CNN
-- Day 039 · 迁移学习与预训练模型
-- Day 040 · GPU 性能：Batch Size、显存与 AMP
-- Day 041 · 模型保存、可复现与推理优化入门
-- Day 042 · 第 6 周复盘 + Attention 与 Transformer 直觉 + 第三阶段验收
+- Day 031: NN Intuition: Neurons & Forward Pass
+- Day 032: Backpropagation & Autograd
+- Day 033: WSL2 GPU Setup (Safe Mode)
+- Day 034: PyTorch Tensors & Autograd
+- Day 035: Week 5 Review + Dataset & DataLoader
+- Day 036: Training Loop: Module, Loss & Optimizer
+- Day 037: Overfitting & Regularization
+- Day 038: Convolutional Neural Networks
+- Day 039: Transfer Learning & Pretrained Models
+- Day 040: GPU Performance: Batch Size, VRAM & AMP
+- Day 041: Saving, Reproducibility & Inference Optimization
+- Day 042: Week 6 Review + Attention & Transformers + Phase 3 Checkpoint

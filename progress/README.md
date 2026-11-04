@@ -1,4 +1,4 @@
-# 进度备份
+# Progress Backups
 
-每周在 Logbook「设置与备份」点「下载进度备份」，把 `progress.json` 放在这里并 commit。
-换电脑时在 Logbook 用「恢复进度」导入。
+Once a week, open the logbook's **Settings and backup**, press **Download backup**, put `progress.json` here and commit it.
+On a new computer, use **Restore** in the logbook to load it back.

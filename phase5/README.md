@@ -1,17 +1,17 @@
-# Phase 5 · AI Backend 与数据库 / AI Backend & Databases
+# Phase 5: AI Backend & Databases
 
-每天的练习代码放在 `dayNNN/` 子文件夹，例如 `phase5/day058/`。
+Exercise code for each lesson goes in its own folder, for example `phase5/day058/`.
 
-- Day 058 · HTTP、REST 与 FastAPI 入门
-- Day 059 · Pydantic 校验、响应模型与错误处理
-- Day 060 · SQL 基础
-- Day 061 · PostgreSQL + SQLAlchemy 2.0 ORM
-- Day 062 · Alembic 迁移、事务、索引与时间存储
-- Day 063 · 第 9 周复盘 + FastAPI 连接数据库
-- Day 064 · 认证 Authentication
-- Day 065 · 授权与 RAG 访问控制
-- Day 066 · Async、并发与超时
-- Day 067 · 后台任务、缓存与限流
-- Day 068 · API 测试：集成测试与 Mock
-- Day 069 · 模型服务：批量推理与延迟测量
-- Day 070 · 第 10 周复盘 + 系统设计入门 + 第五阶段验收
+- Day 058: HTTP, REST & FastAPI Basics
+- Day 059: Pydantic Validation, Response Models & Errors
+- Day 060: SQL Fundamentals
+- Day 061: PostgreSQL + SQLAlchemy 2.0 ORM
+- Day 062: Alembic Migrations, Transactions, Indexes & Timestamps
+- Day 063: Week 9 Review + FastAPI with Database
+- Day 064: Authentication
+- Day 065: Authorization & RAG Access Control
+- Day 066: Async, Concurrency & Timeouts
+- Day 067: Background Jobs, Caching & Rate Limiting
+- Day 068: API Testing: Integration Tests & Mocks
+- Day 069: Model Serving: Batch Inference & Latency
+- Day 070: Week 10 Review + System Design Intro + Phase 5 Checkpoint

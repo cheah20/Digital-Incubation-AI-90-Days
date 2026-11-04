@@ -1,4 +1,4 @@
-# DSA 刷题
+# DSA Practice
 
-| 题目 | 难度 | 解法 | 时间复杂度 | 空间复杂度 | 日期 |
+| Problem | Difficulty | Approach | Time | Space | Date |
 |---|---|---|---|---|---|

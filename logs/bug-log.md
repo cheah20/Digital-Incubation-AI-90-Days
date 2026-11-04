@@ -1,4 +1,4 @@
-# Bug 与修复记录
+# Bug Log
 
-| # | 日期 | 现象 | 最小复现 | 根因 | 修复 | 回归测试 | 预防 |
+| # | Date | Symptom | Minimal repro | Root cause | Fix | Regression test | Prevention |
 |---|---|---|---|---|---|---|---|
