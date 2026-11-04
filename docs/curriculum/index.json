@@ -939,6 +939,378 @@
    ]
   },
   {
+   "id": "04-computer-vision",
+   "en": "Phase 4: Computer Vision",
+   "zh": "阶段 4：计算机视觉",
+   "lessons": [
+    {
+     "id": "01-image-fundamentals",
+     "en": "Image Fundamentals — Pixels, Channels, Color Spaces",
+     "zh": "图像基础 —— 像素、通道、色彩空间",
+     "min": 45,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-vision-speech.js"
+     ]
+    },
+    {
+     "id": "02-convolutions-from-scratch",
+     "en": "Convolutions from Scratch",
+     "zh": "从零实现卷积",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-vision-speech.js"
+     ]
+    },
+    {
+     "id": "03-cnns-lenet-to-resnet",
+     "en": "CNNs — LeNet to ResNet",
+     "zh": "CNN —— 从 LeNet 到 ResNet",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-vision-speech.js"
+     ]
+    },
+    {
+     "id": "04-image-classification",
+     "en": "Image Classification",
+     "zh": "图像分类",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-vision-speech.js"
+     ]
+    },
+    {
+     "id": "05-transfer-learning",
+     "en": "Transfer Learning & Fine-Tuning",
+     "zh": "迁移学习与微调",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-foundations2.js"
+     ]
+    },
+    {
+     "id": "06-object-detection-yolo",
+     "en": "Object Detection — YOLO from Scratch",
+     "zh": "目标检测 —— 从零实现 YOLO",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-cv2.js"
+     ]
+    },
+    {
+     "id": "07-semantic-segmentation-unet",
+     "en": "Semantic Segmentation — U-Net",
+     "zh": "语义分割 —— U-Net",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-cv2.js"
+     ]
+    },
+    {
+     "id": "08-instance-segmentation-mask-rcnn",
+     "en": "Instance Segmentation — Mask R-CNN",
+     "zh": "实例分割 —— Mask R-CNN",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-cv3.js"
+     ]
+    },
+    {
+     "id": "09-image-generation-gans",
+     "en": "Image Generation — GANs",
+     "zh": "图像生成 —— GAN",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-cv2.js"
+     ]
+    },
+    {
+     "id": "10-image-generation-diffusion",
+     "en": "Image Generation — Diffusion Models",
+     "zh": "图像生成 —— 扩散模型",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-cv2.js"
+     ]
+    },
+    {
+     "id": "11-stable-diffusion",
+     "en": "Stable Diffusion — Architecture & Fine-Tuning",
+     "zh": "Stable Diffusion —— 架构与微调",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-cv3.js"
+     ]
+    },
+    {
+     "id": "12-video-understanding",
+     "en": "Video Understanding — Temporal Modeling",
+     "zh": "视频理解 —— 时序建模",
+     "min": 45,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-visaudio4.js"
+     ]
+    },
+    {
+     "id": "13-3d-vision-nerf",
+     "en": "3D Vision — Point Clouds & NeRFs",
+     "zh": "3D 视觉 —— 点云与 NeRF",
+     "min": 45,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-cv2.js"
+     ]
+    },
+    {
+     "id": "14-vision-transformers",
+     "en": "Vision Transformers (ViT)",
+     "zh": "视觉 Transformer（ViT）",
+     "min": 45,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-foundations2.js"
+     ]
+    },
+    {
+     "id": "15-real-time-edge",
+     "en": "Real-Time Vision — Edge Deployment",
+     "zh": "实时视觉 —— 边缘部署",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/main.rs"
+     ],
+     "figs": [
+      "figures-vision-speech.js"
+     ]
+    },
+    {
+     "id": "16-vision-pipeline-capstone",
+     "en": "Build a Complete Vision Pipeline — Capstone",
+     "zh": "搭一条完整的视觉流水线 —— 综合项目",
+     "min": 120,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-visaudio4.js"
+     ]
+    },
+    {
+     "id": "17-self-supervised-vision",
+     "en": "Self-Supervised Vision — SimCLR, DINO, MAE",
+     "zh": "自监督视觉 —— SimCLR、DINO、MAE",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-foundations2.js"
+     ]
+    },
+    {
+     "id": "18-open-vocab-clip",
+     "en": "Open-Vocabulary Vision — CLIP",
+     "zh": "开放词表视觉 —— CLIP",
+     "min": 45,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-cv2.js"
+     ]
+    },
+    {
+     "id": "19-ocr-document-understanding",
+     "en": "OCR & Document Understanding",
+     "zh": "OCR 与文档理解",
+     "min": 45,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-cv3.js"
+     ]
+    },
+    {
+     "id": "20-image-retrieval-metric",
+     "en": "Image Retrieval & Metric Learning",
+     "zh": "图像检索与度量学习",
+     "min": 45,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-cv2.js"
+     ]
+    },
+    {
+     "id": "21-keypoint-pose",
+     "en": "Keypoint Detection & Pose Estimation",
+     "zh": "关键点检测与姿态估计",
+     "min": 45,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-cv3.js"
+     ]
+    },
+    {
+     "id": "22-3d-gaussian-splatting",
+     "en": "3D Gaussian Splatting from Scratch",
+     "zh": "从零实现 3D 高斯泼溅",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-cv3.js"
+     ]
+    },
+    {
+     "id": "23-diffusion-transformers-rectified-flow",
+     "en": "Diffusion Transformers & Rectified Flow",
+     "zh": "扩散 Transformer 与 Rectified Flow",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-cv3.js"
+     ]
+    },
+    {
+     "id": "24-sam3-open-vocab-segmentation",
+     "en": "SAM 3 & Open-Vocabulary Segmentation",
+     "zh": "SAM 3 与开放词表分割",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-cv3.js"
+     ]
+    },
+    {
+     "id": "25-vision-language-models",
+     "en": "Vision-Language Models — The ViT-MLP-LLM Pattern",
+     "zh": "视觉-语言模型 —— ViT-MLP-LLM 模式",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-visaudio4.js"
+     ]
+    },
+    {
+     "id": "26-monocular-depth",
+     "en": "Monocular Depth & Geometry Estimation",
+     "zh": "单目深度与几何估计",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-cv2.js"
+     ]
+    },
+    {
+     "id": "27-multi-object-tracking",
+     "en": "Multi-Object Tracking & Video Memory",
+     "zh": "多目标追踪与视频记忆",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-cv3.js"
+     ]
+    },
+    {
+     "id": "28-world-models-video-diffusion",
+     "en": "World Models & Video Diffusion",
+     "zh": "世界模型与视频扩散",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-visaudio4.js"
+     ]
+    }
+   ]
+  },
+  {
    "id": "05-nlp-foundations-to-advanced",
    "en": "Phase 5: NLP, Foundations to Advanced",
    "zh": "阶段 5：NLP，从基础到进阶",
@@ -1326,6 +1698,235 @@
    ]
   },
   {
+   "id": "06-speech-and-audio",
+   "en": "Phase 6: Speech & Audio",
+   "zh": "阶段 6：语音与音频",
+   "lessons": [
+    {
+     "id": "01-audio-fundamentals",
+     "en": "Audio Fundamentals — Waveforms, Sampling, Fourier Transform",
+     "zh": "音频基础 —— 波形、采样、傅里叶变换",
+     "min": 45,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-vision-speech.js"
+     ]
+    },
+    {
+     "id": "02-spectrograms-mel-features",
+     "en": "Spectrograms, Mel Scale & Audio Features",
+     "zh": "频谱图、梅尔标度与音频特征",
+     "min": 45,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-vision-speech.js"
+     ]
+    },
+    {
+     "id": "03-audio-classification",
+     "en": "Audio Classification — From k-NN on MFCCs to AST and BEATs",
+     "zh": "音频分类 —— 从 MFCC 上的 k-NN 到 AST 和 BEATs",
+     "min": 75,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-foundations2.js"
+     ]
+    },
+    {
+     "id": "04-speech-recognition-asr",
+     "en": "Speech Recognition (ASR) — CTC, RNN-T, Attention",
+     "zh": "语音识别（ASR）—— CTC、RNN-T、注意力",
+     "min": 45,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-foundations2.js"
+     ]
+    },
+    {
+     "id": "05-whisper-architecture-finetuning",
+     "en": "Whisper — Architecture & Fine-Tuning",
+     "zh": "Whisper —— 架构与微调",
+     "min": 75,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-speech2.js"
+     ]
+    },
+    {
+     "id": "06-speaker-recognition-verification",
+     "en": "Speaker Recognition & Verification",
+     "zh": "说话人识别与验证",
+     "min": 45,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-speech2.js"
+     ]
+    },
+    {
+     "id": "07-text-to-speech",
+     "en": "Text-to-Speech (TTS) — From Tacotron to F5 and Kokoro",
+     "zh": "文本转语音（TTS）—— 从 Tacotron 到 F5 和 Kokoro",
+     "min": 75,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-speech2.js"
+     ]
+    },
+    {
+     "id": "08-voice-cloning-conversion",
+     "en": "Voice Cloning & Voice Conversion",
+     "zh": "语音克隆与语音转换",
+     "min": 75,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-speech2.js"
+     ]
+    },
+    {
+     "id": "09-music-generation",
+     "en": "Music Generation — MusicGen, Stable Audio, Suno, and the Licensing Earthquake",
+     "zh": "音乐生成 —— MusicGen、Stable Audio、Suno，以及那场版权大地震",
+     "min": 75,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-speech2.js"
+     ]
+    },
+    {
+     "id": "10-audio-language-models",
+     "en": "Audio-Language Models — Qwen2.5-Omni, Audio Flamingo, GPT-4o Audio",
+     "zh": "音频-语言模型 —— Qwen2.5-Omni、Audio Flamingo、GPT-4o Audio",
+     "min": 45,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-visaudio4.js"
+     ]
+    },
+    {
+     "id": "11-real-time-audio-processing",
+     "en": "Real-Time Audio Processing",
+     "zh": "实时音频处理",
+     "min": 75,
+     "quiz": false,
+     "code": [
+      "code/main.py",
+      "code/main.rs"
+     ],
+     "figs": [
+      "figures-vision-speech.js"
+     ]
+    },
+    {
+     "id": "12-voice-assistant-pipeline",
+     "en": "Build a Voice Assistant Pipeline — The Phase 6 Capstone",
+     "zh": "搭一条语音助手流水线 —— 第 6 阶段顶点项目",
+     "min": 120,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-visaudio4.js"
+     ]
+    },
+    {
+     "id": "13-neural-audio-codecs",
+     "en": "Neural Audio Codecs — EnCodec, SNAC, Mimi, DAC and the Semantic-Acoustic Split",
+     "zh": "神经音频编解码 —— EnCodec、SNAC、Mimi、DAC，以及语义-声学的切分",
+     "min": 60,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-systems3.js"
+     ]
+    },
+    {
+     "id": "14-voice-activity-detection-turn-taking",
+     "en": "Voice Activity Detection & Turn-Taking — Silero, Cobra, and the Flush Trick",
+     "zh": "语音活动检测与轮转 —— Silero、Cobra，以及 flush 技巧",
+     "min": 45,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-speech2.js"
+     ]
+    },
+    {
+     "id": "15-streaming-speech-to-speech-moshi-hibiki",
+     "en": "Streaming Speech-to-Speech — Moshi, Hibiki, and Full-Duplex Dialogue",
+     "zh": "流式语音到语音 —— Moshi、Hibiki，以及全双工对话",
+     "min": 75,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-speech2.js"
+     ]
+    },
+    {
+     "id": "16-anti-spoofing-audio-watermarking",
+     "en": "Voice Anti-Spoofing & Audio Watermarking — ASVspoof 5, AudioSeal, WaveVerify",
+     "zh": "语音反欺骗与音频水印 —— ASVspoof 5、AudioSeal、WaveVerify",
+     "min": 75,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-visaudio4.js"
+     ]
+    },
+    {
+     "id": "17-audio-evaluation-metrics",
+     "en": "Audio Evaluation — WER, MOS, UTMOS, MMAU, FAD, and the Open Leaderboards",
+     "zh": "音频评估 —— WER、MOS、UTMOS、MMAU、FAD，以及那些开放排行榜",
+     "min": 60,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-speech2.js"
+     ]
+    }
+   ]
+  },
+  {
    "id": "07-transformers-deep-dive",
    "en": "Phase 7: Transformers Deep Dive",
    "zh": "阶段 7：Transformer 深入剖析",
@@ -1543,6 +2144,371 @@
      ],
      "figs": [
       "figures-llms3.js"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "08-generative-ai",
+   "en": "Phase 8: Generative AI",
+   "zh": "阶段 8：生成式 AI",
+   "lessons": [
+    {
+     "id": "01-generative-models-taxonomy-history",
+     "en": "Generative Models — Taxonomy & History",
+     "zh": "生成模型 —— 分类与历史",
+     "min": 45,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-foundations2.js"
+     ]
+    },
+    {
+     "id": "02-autoencoders-vae",
+     "en": "Autoencoders & Variational Autoencoders (VAE)",
+     "zh": "自编码器与变分自编码器（VAE）",
+     "min": 75,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-genai-rl.js"
+     ]
+    },
+    {
+     "id": "03-gans-generator-discriminator",
+     "en": "GANs — Generator vs Discriminator",
+     "zh": "GAN —— 生成器 vs 判别器",
+     "min": 75,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-genai-rl.js"
+     ]
+    },
+    {
+     "id": "04-conditional-gans-pix2pix",
+     "en": "Conditional GANs & Pix2Pix",
+     "zh": "条件 GAN 与 Pix2Pix",
+     "min": 75,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-genai3.js"
+     ]
+    },
+    {
+     "id": "05-stylegan",
+     "en": "StyleGAN",
+     "zh": "StyleGAN",
+     "min": 45,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-genai3.js"
+     ]
+    },
+    {
+     "id": "06-diffusion-ddpm-from-scratch",
+     "en": "Diffusion Models — DDPM from Scratch",
+     "zh": "扩散模型 —— 从零写 DDPM",
+     "min": 75,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-genai-rl.js"
+     ]
+    },
+    {
+     "id": "07-latent-diffusion-stable-diffusion",
+     "en": "Latent Diffusion & Stable Diffusion",
+     "zh": "潜空间扩散与 Stable Diffusion",
+     "min": 75,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-genai-rl.js"
+     ]
+    },
+    {
+     "id": "08-controlnet-lora-conditioning",
+     "en": "ControlNet, LoRA & Conditioning",
+     "zh": "ControlNet、LoRA 与条件化",
+     "min": 75,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-visaudio4.js"
+     ]
+    },
+    {
+     "id": "09-inpainting-outpainting-editing",
+     "en": "Inpainting, Outpainting & Image Editing",
+     "zh": "图像修补、扩展与编辑",
+     "min": 75,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-systems3.js"
+     ]
+    },
+    {
+     "id": "10-video-generation",
+     "en": "Video Generation",
+     "zh": "视频生成",
+     "min": 45,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-systems3.js"
+     ]
+    },
+    {
+     "id": "11-audio-generation",
+     "en": "Audio Generation",
+     "zh": "音频生成",
+     "min": 45,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-foundations2.js"
+     ]
+    },
+    {
+     "id": "12-3d-generation",
+     "en": "3D Generation",
+     "zh": "3D 生成",
+     "min": 45,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-visaudio4.js"
+     ]
+    },
+    {
+     "id": "13-flow-matching-rectified-flows",
+     "en": "Flow Matching & Rectified Flows",
+     "zh": "流匹配与整流流",
+     "min": 45,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-foundations2.js"
+     ]
+    },
+    {
+     "id": "14-evaluation-fid-clip-score",
+     "en": "Evaluation — FID, CLIP Score, Human Preference",
+     "zh": "评测 —— FID、CLIP 分数、人类偏好",
+     "min": 45,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-genai3.js"
+     ]
+    },
+    {
+     "id": "19-visual-autoregressive-var",
+     "en": "Visual Autoregressive Modeling (VAR): Next-Scale Prediction",
+     "zh": "视觉自回归建模（VAR）：下一尺度预测",
+     "min": 90,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-genai3.js"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "09-reinforcement-learning",
+   "en": "Phase 9: Reinforcement Learning",
+   "zh": "阶段 9：强化学习",
+   "lessons": [
+    {
+     "id": "01-mdps-states-actions-rewards",
+     "en": "MDPs, States, Actions & Rewards",
+     "zh": "MDP、状态、动作与奖励",
+     "min": 45,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-genai-rl.js"
+     ]
+    },
+    {
+     "id": "02-dynamic-programming",
+     "en": "Dynamic Programming — Policy Iteration & Value Iteration",
+     "zh": "动态规划 —— 策略迭代与价值迭代",
+     "min": 75,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-genai-rl.js"
+     ]
+    },
+    {
+     "id": "03-monte-carlo-methods",
+     "en": "Monte Carlo Methods — Learning from Complete Episodes",
+     "zh": "蒙特卡洛方法 —— 从完整 episode 中学习",
+     "min": 75,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-genai-rl.js"
+     ]
+    },
+    {
+     "id": "04-q-learning-sarsa",
+     "en": "Temporal Difference — Q-Learning & SARSA",
+     "zh": "时序差分 —— Q-Learning 与 SARSA",
+     "min": 75,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-genai-rl.js"
+     ]
+    },
+    {
+     "id": "05-dqn",
+     "en": "Deep Q-Networks (DQN)",
+     "zh": "深度 Q 网络（DQN）",
+     "min": 75,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-foundations3.js"
+     ]
+    },
+    {
+     "id": "06-policy-gradients-reinforce",
+     "en": "Policy Gradient — REINFORCE from Scratch",
+     "zh": "策略梯度 —— 从零写 REINFORCE",
+     "min": 75,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-genai-rl.js"
+     ]
+    },
+    {
+     "id": "07-actor-critic-a2c-a3c",
+     "en": "Actor-Critic — A2C and A3C",
+     "zh": "Actor-Critic —— A2C 与 A3C",
+     "min": 75,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-alignment2.js"
+     ]
+    },
+    {
+     "id": "08-ppo",
+     "en": "Proximal Policy Optimization (PPO)",
+     "zh": "近端策略优化（PPO）",
+     "min": 75,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-alignment2.js"
+     ]
+    },
+    {
+     "id": "09-reward-modeling-rlhf",
+     "en": "Reward Modeling & RLHF",
+     "zh": "奖励建模与 RLHF",
+     "min": 45,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-alignment2.js"
+     ]
+    },
+    {
+     "id": "10-multi-agent-rl",
+     "en": "Multi-Agent RL",
+     "zh": "多 agent RL",
+     "min": 45,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-foundations3.js"
+     ]
+    },
+    {
+     "id": "11-sim-to-real-transfer",
+     "en": "Sim-to-Real Transfer",
+     "zh": "从仿真到现实的迁移",
+     "min": 45,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-foundations3.js"
+     ]
+    },
+    {
+     "id": "12-rl-for-games",
+     "en": "RL for Games — AlphaZero, MuZero, and the LLM-Reasoning Era",
+     "zh": "RL 攻克游戏 —— AlphaZero、MuZero 与 LLM 推理时代",
+     "min": 120,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-foundations3.js"
      ]
     }
    ]
@@ -2099,6 +3065,338 @@
      ],
      "figs": [
       "figures-llmstack5.js"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "12-multimodal-ai",
+   "en": "Phase 12: Multimodal AI",
+   "zh": "阶段 12：多模态 AI",
+   "lessons": [
+    {
+     "id": "01-vision-transformer-patch-tokens",
+     "en": "Vision Transformers and the Patch-Token Primitive",
+     "zh": "Vision Transformer 与 patch-token 原语",
+     "min": 120,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-llms-systems.js"
+     ]
+    },
+    {
+     "id": "02-clip-contrastive-pretraining",
+     "en": "CLIP and Contrastive Vision-Language Pretraining",
+     "zh": "CLIP 与对比式视觉-语言预训练",
+     "min": 180,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-llms-systems.js"
+     ]
+    },
+    {
+     "id": "03-blip2-qformer-bridge",
+     "en": "From CLIP to BLIP-2 — Q-Former as Modality Bridge",
+     "zh": "从 CLIP 到 BLIP-2 —— Q-Former 作为模态桥",
+     "min": 180,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-multimodal.js"
+     ]
+    },
+    {
+     "id": "04-flamingo-gated-cross-attention",
+     "en": "Flamingo and Gated Cross-Attention for Few-Shot VLMs",
+     "zh": "Flamingo 与用于少样本 VLM 的门控交叉注意力",
+     "min": 120,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-multimodal.js"
+     ]
+    },
+    {
+     "id": "05-llava-visual-instruction-tuning",
+     "en": "LLaVA and Visual Instruction Tuning",
+     "zh": "LLaVA 与视觉指令微调",
+     "min": 180,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-multimodal2.js"
+     ]
+    },
+    {
+     "id": "06-any-resolution-patch-n-pack",
+     "en": "Any-Resolution Vision: Patch-n'-Pack and NaFlex",
+     "zh": "任意分辨率视觉：Patch-n'-Pack 与 NaFlex",
+     "min": 120,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-multimodal2.js"
+     ]
+    },
+    {
+     "id": "07-open-weight-vlm-recipes",
+     "en": "Open-Weight VLM Recipes: What Actually Matters",
+     "zh": "开放权重 VLM 配方：到底什么才重要",
+     "min": 180,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-llmstack5.js"
+     ]
+    },
+    {
+     "id": "08-llava-onevision-single-multi-video",
+     "en": "LLaVA-OneVision: Single-Image, Multi-Image, Video in One Model",
+     "zh": "LLaVA-OneVision：单图、多图、视频于一个模型",
+     "min": 180,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-llmstack5.js"
+     ]
+    },
+    {
+     "id": "09-qwen-vl-family-dynamic-fps",
+     "en": "Qwen-VL Family and Dynamic-FPS Video",
+     "zh": "Qwen-VL 家族与动态 FPS 视频",
+     "min": 120,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-multimodal2.js"
+     ]
+    },
+    {
+     "id": "10-internvl3-native-multimodal",
+     "en": "InternVL3: Native Multimodal Pretraining",
+     "zh": "InternVL3：原生多模态预训练",
+     "min": 120,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-llmstack5.js"
+     ]
+    },
+    {
+     "id": "11-chameleon-early-fusion-tokens",
+     "en": "Chameleon and Early-Fusion Token-Only Multimodal Models",
+     "zh": "Chameleon 与早融合的纯 token 多模态模型",
+     "min": 180,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-multimodal.js"
+     ]
+    },
+    {
+     "id": "12-emu3-next-token-for-generation",
+     "en": "Emu3: Next-Token Prediction for Image and Video Generation",
+     "zh": "Emu3：用下一 token 预测做图像和视频生成",
+     "min": 120,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-llmstack5.js"
+     ]
+    },
+    {
+     "id": "13-transfusion-autoregressive-diffusion",
+     "en": "Transfusion: Autoregressive Text + Diffusion Image in One Transformer",
+     "zh": "Transfusion：一个 transformer 里的自回归文本 + 扩散图像",
+     "min": 180,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-multimodal.js"
+     ]
+    },
+    {
+     "id": "14-show-o-discrete-diffusion-unified",
+     "en": "Show-o and Discrete-Diffusion Unified Models",
+     "zh": "Show-o 与离散扩散统一模型",
+     "min": 120,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-systems3.js"
+     ]
+    },
+    {
+     "id": "15-janus-pro-decoupled-encoders",
+     "en": "Janus-Pro: Decoupled Encoders for Unified Multimodal Models",
+     "zh": "Janus-Pro：用于统一多模态模型的解耦编码器",
+     "min": 120,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-llmstack5.js"
+     ]
+    },
+    {
+     "id": "16-mio-any-to-any-streaming",
+     "en": "MIO and Any-to-Any Streaming Multimodal Models",
+     "zh": "MIO 与任意到任意的流式多模态模型",
+     "min": 120,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-systems3.js"
+     ]
+    },
+    {
+     "id": "17-video-language-temporal-grounding",
+     "en": "Video-Language Models: Temporal Tokens and Grounding",
+     "zh": "视频-语言模型：时间 token 与 grounding",
+     "min": 180,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-multimodal.js"
+     ]
+    },
+    {
+     "id": "18-long-video-million-token",
+     "en": "Long-Video Understanding at Million-Token Context",
+     "zh": "百万 token 上下文下的长视频理解",
+     "min": 180,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-multimodal2.js"
+     ]
+    },
+    {
+     "id": "19-audio-language-whisper-to-af3",
+     "en": "Audio-Language Models: the Whisper to Audio Flamingo 3 Arc",
+     "zh": "音频-语言模型：从 Whisper 到 Audio Flamingo 3 的弧线",
+     "min": 180,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-multimodal.js"
+     ]
+    },
+    {
+     "id": "20-omni-models-thinker-talker",
+     "en": "Omni Models: Qwen2.5-Omni and the Thinker-Talker Split",
+     "zh": "Omni 模型：Qwen2.5-Omni 与 Thinker-Talker 拆分",
+     "min": 180,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-llmstack5.js"
+     ]
+    },
+    {
+     "id": "21-embodied-vlas-openvla-pi0-groot",
+     "en": "Embodied VLAs: RT-2, OpenVLA, π0, GR00T",
+     "zh": "具身 VLA：RT-2、OpenVLA、π0、GR00T",
+     "min": 180,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-multimodal2.js"
+     ]
+    },
+    {
+     "id": "22-document-diagram-understanding",
+     "en": "Document and Diagram Understanding",
+     "zh": "文档与图表理解",
+     "min": 180,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-multimodal2.js"
+     ]
+    },
+    {
+     "id": "23-colpali-vision-native-rag",
+     "en": "ColPali and Vision-Native Document RAG",
+     "zh": "ColPali 与视觉原生文档 RAG",
+     "min": 180,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-multimodal2.js"
+     ]
+    },
+    {
+     "id": "24-multimodal-rag-cross-modal",
+     "en": "Multimodal RAG and Cross-Modal Retrieval",
+     "zh": "多模态 RAG 与跨模态检索",
+     "min": 180,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-multimodal.js"
+     ]
+    },
+    {
+     "id": "25-multimodal-agents-computer-use",
+     "en": "Multimodal Agents and Computer-Use (Capstone)",
+     "zh": "多模态 agent 与 computer-use（综合实战）",
+     "min": 240,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-multimodal2.js"
      ]
     }
    ]
@@ -3960,6 +5258,631 @@
       "code/tests/test_main.py"
      ],
      "figs": []
+    }
+   ]
+  },
+  {
+   "id": "15-autonomous-systems",
+   "en": "Phase 15: Autonomous Systems",
+   "zh": "阶段 15：自主系统",
+   "lessons": [
+    {
+     "id": "01-long-horizon-agents",
+     "en": "The Shift from Chatbots to Long-Horizon Agents",
+     "zh": "从聊天机器人到长程 agent 的转变",
+     "min": 45,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-frontier.js"
+     ]
+    },
+    {
+     "id": "02-star-family-reasoning",
+     "en": "STaR, V-STaR, Quiet-STaR — Self-Taught Reasoning",
+     "zh": "STaR、V-STaR、Quiet-STaR —— 自学推理",
+     "min": 60,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-frontier.js"
+     ]
+    },
+    {
+     "id": "03-alphaevolve-evolutionary-coding",
+     "en": "AlphaEvolve — Evolutionary Coding Agents",
+     "zh": "AlphaEvolve —— 进化式编码 agent",
+     "min": 60,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-autonomous2.js"
+     ]
+    },
+    {
+     "id": "04-darwin-godel-machine",
+     "en": "Darwin Godel Machine — Open-Ended Self-Modifying Agents",
+     "zh": "Darwin Godel Machine —— 开放式自我修改 agent",
+     "min": 60,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-autonomous2.js"
+     ]
+    },
+    {
+     "id": "05-ai-scientist-v2",
+     "en": "AI Scientist v2 — Workshop-Level Autonomous Research",
+     "zh": "AI Scientist v2 —— workshop 级别的自主研究",
+     "min": 60,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-misc2.js"
+     ]
+    },
+    {
+     "id": "06-automated-alignment-research",
+     "en": "Automated Alignment Research (Anthropic AAR)",
+     "zh": "自动化对齐研究（Anthropic AAR）",
+     "min": 60,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-autonomous2.js"
+     ]
+    },
+    {
+     "id": "07-recursive-self-improvement",
+     "en": "Recursive Self-Improvement — Capability vs Alignment",
+     "zh": "递归自我改进 —— 能力 vs 对齐",
+     "min": 60,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-frontier.js"
+     ]
+    },
+    {
+     "id": "08-bounded-self-improvement",
+     "en": "Bounded Self-Improvement Designs",
+     "zh": "有界自我改进的设计",
+     "min": 60,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-autonomous2.js"
+     ]
+    },
+    {
+     "id": "09-coding-agent-landscape",
+     "en": "The Autonomous Coding Agent Landscape (2026)",
+     "zh": "自主编码 agent 全景（2026）",
+     "min": 45,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-autoswarm5.js"
+     ]
+    },
+    {
+     "id": "10-claude-code-permission-modes",
+     "en": "Permission Modes for Autonomous Agents",
+     "zh": "自主 Agent 的权限模式",
+     "min": 45,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-frontier.js"
+     ]
+    },
+    {
+     "id": "11-browser-agents",
+     "en": "Browser Agents and Long-Horizon Web Tasks",
+     "zh": "浏览器 agent 与长程网页任务",
+     "min": 45,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-autonomous2.js"
+     ]
+    },
+    {
+     "id": "12-durable-execution",
+     "en": "Long-Running Background Agents: Durable Execution",
+     "zh": "长时运行的后台 agent：持久化执行",
+     "min": 60,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-frontier.js"
+     ]
+    },
+    {
+     "id": "13-cost-governors",
+     "en": "Action Budgets, Iteration Caps, and Cost Governors",
+     "zh": "动作预算、迭代上限与成本调控器",
+     "min": 60,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-autonomous2.js"
+     ]
+    },
+    {
+     "id": "14-kill-switches-canaries",
+     "en": "Kill Switches, Circuit Breakers, and Canary Tokens",
+     "zh": "急停开关、断路器与金丝雀 token",
+     "min": 60,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-autonomous2.js"
+     ]
+    },
+    {
+     "id": "15-propose-then-commit",
+     "en": "Human-in-the-Loop: Propose-Then-Commit",
+     "zh": "人在回路：先提议后提交（Propose-Then-Commit）",
+     "min": 60,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-misc2.js"
+     ]
+    },
+    {
+     "id": "16-checkpoints-rollback",
+     "en": "Checkpoints and Rollback",
+     "zh": "Checkpoint 与回滚",
+     "min": 60,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-autonomous2.js"
+     ]
+    },
+    {
+     "id": "17-constitutional-ai",
+     "en": "Constitutional AI and Rule Overrides",
+     "zh": "Constitutional AI 与规则覆盖",
+     "min": 60,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-misc2.js"
+     ]
+    },
+    {
+     "id": "18-llama-guard",
+     "en": "Llama Guard and Input/Output Classification",
+     "zh": "Llama Guard 与输入/输出分类",
+     "min": 45,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-autoswarm5.js"
+     ]
+    },
+    {
+     "id": "19-anthropic-rsp",
+     "en": "Anthropic Responsible Scaling Policy v3.0",
+     "zh": "Anthropic 负责任扩展政策 v3.0",
+     "min": 45,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-autoswarm5.js"
+     ]
+    },
+    {
+     "id": "20-openai-preparedness-deepmind-fsf",
+     "en": "OpenAI Preparedness Framework and DeepMind Frontier Safety Framework",
+     "zh": "OpenAI Preparedness Framework 与 DeepMind Frontier Safety Framework",
+     "min": 45,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-autoswarm5.js"
+     ]
+    },
+    {
+     "id": "21-metr-external-evaluation",
+     "en": "METR Time Horizons and External Capability Evaluation",
+     "zh": "METR 时间跨度与外部能力评估",
+     "min": 60,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-autoswarm5.js"
+     ]
+    },
+    {
+     "id": "22-cais-caisi-societal-risk",
+     "en": "CAIS, CAISI, and Societal-Scale Risk",
+     "zh": "CAIS、CAISI 与社会尺度风险",
+     "min": 45,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-autoswarm5.js"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "16-multi-agent-and-swarms",
+   "en": "Phase 16: Multi-Agent & Swarms",
+   "zh": "阶段 16：多 Agent 与群体",
+   "lessons": [
+    {
+     "id": "01-why-multi-agent",
+     "en": "Why Multi-Agent?",
+     "zh": "为什么要用多 agent？",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/single_vs_multi.ts"
+     ],
+     "figs": [
+      "figures-agents-alignment.js"
+     ]
+    },
+    {
+     "id": "02-fipa-acl-heritage",
+     "en": "Heritage of FIPA-ACL and Speech Acts",
+     "zh": "FIPA-ACL 与言语行为理论的遗产",
+     "min": 60,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-swarms3.js"
+     ]
+    },
+    {
+     "id": "03-communication-protocols",
+     "en": "Communication Protocols",
+     "zh": "通信协议",
+     "min": 120,
+     "quiz": true,
+     "code": [
+      "code/main.ts"
+     ],
+     "figs": [
+      "figures-swarms2.js"
+     ]
+    },
+    {
+     "id": "04-primitive-model",
+     "en": "The Multi-Agent Primitive Model",
+     "zh": "多 agent 原语模型",
+     "min": 60,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-autoswarm5.js"
+     ]
+    },
+    {
+     "id": "05-supervisor-orchestrator-pattern",
+     "en": "Supervisor / Orchestrator-Worker Pattern",
+     "zh": "Supervisor / Orchestrator-Worker 模式",
+     "min": 75,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-agents-alignment.js"
+     ]
+    },
+    {
+     "id": "06-hierarchical-architecture",
+     "en": "Hierarchical Architecture and Its Failure Mode",
+     "zh": "层级架构及其故障模式",
+     "min": 60,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-swarms2.js"
+     ]
+    },
+    {
+     "id": "07-society-of-mind-debate",
+     "en": "Society of Mind and Multi-Agent Debate",
+     "zh": "心智社会与多 agent 辩论",
+     "min": 60,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-agents2.js"
+     ]
+    },
+    {
+     "id": "08-role-specialization",
+     "en": "Role Specialization — Planner, Critic, Executor, Verifier",
+     "zh": "角色专精 —— Planner、Critic、Executor、Verifier",
+     "min": 60,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-swarms2.js"
+     ]
+    },
+    {
+     "id": "09-parallel-swarm-networks",
+     "en": "Parallel / Swarm / Networked Architectures",
+     "zh": "并行 / Swarm / 网络化架构",
+     "min": 75,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-swarms3.js"
+     ]
+    },
+    {
+     "id": "10-group-chat-speaker-selection",
+     "en": "Group Chat and Speaker Selection",
+     "zh": "群聊与发言者选择",
+     "min": 60,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-swarms2.js"
+     ]
+    },
+    {
+     "id": "11-handoffs-and-routines",
+     "en": "Handoffs and Routines — Stateless Orchestration",
+     "zh": "Handoff 与 Routine —— 无状态 orchestration",
+     "min": 60,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-swarms3.js"
+     ]
+    },
+    {
+     "id": "12-a2a-protocol",
+     "en": "A2A — The Agent-to-Agent Protocol",
+     "zh": "A2A —— Agent 对 Agent 协议",
+     "min": 75,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-swarms3.js"
+     ]
+    },
+    {
+     "id": "13-shared-memory-blackboard",
+     "en": "Shared Memory and Blackboard Patterns",
+     "zh": "共享内存与黑板模式",
+     "min": 75,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-swarms2.js"
+     ]
+    },
+    {
+     "id": "14-consensus-and-bft",
+     "en": "Consensus and Byzantine Fault Tolerance for Agents",
+     "zh": "Agent 的共识与拜占庭容错",
+     "min": 75,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-swarms2.js"
+     ]
+    },
+    {
+     "id": "15-voting-debate-topology",
+     "en": "Voting, Self-Consistency, and Debate Topology",
+     "zh": "投票、自洽性与辩论拓扑",
+     "min": 75,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-swarms3.js"
+     ]
+    },
+    {
+     "id": "16-negotiation-bargaining",
+     "en": "Negotiation and Bargaining",
+     "zh": "谈判与议价",
+     "min": 75,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-autoswarm5.js"
+     ]
+    },
+    {
+     "id": "17-generative-agents-simulation",
+     "en": "Generative Agents and Emergent Simulation",
+     "zh": "生成式 agent 与涌现式仿真",
+     "min": 75,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-autoswarm5.js"
+     ]
+    },
+    {
+     "id": "18-theory-of-mind-coordination",
+     "en": "Theory of Mind and Emergent Coordination",
+     "zh": "心智理论与涌现式协调",
+     "min": 75,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-swarms3.js"
+     ]
+    },
+    {
+     "id": "19-swarm-optimization-pso-aco",
+     "en": "Swarm Optimization for LLMs (PSO, ACO)",
+     "zh": "面向 LLM 的 Swarm 优化（PSO、ACO）",
+     "min": 75,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-swarms2.js"
+     ]
+    },
+    {
+     "id": "20-marl-maddpg-qmix-mappo",
+     "en": "MARL — MADDPG, QMIX, MAPPO",
+     "zh": "多智能体强化学习：MADDPG、QMIX、MAPPO",
+     "min": 90,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-swarms3.js"
+     ]
+    },
+    {
+     "id": "21-agent-economies",
+     "en": "Agent Economies, Token Incentives, Reputation",
+     "zh": "Agent 经济、token 激励、声誉",
+     "min": 75,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-swarms2.js"
+     ]
+    },
+    {
+     "id": "22-production-scaling-queues-checkpoints",
+     "en": "Production Scaling — Queues, Checkpoints, Durability",
+     "zh": "生产环境扩展 —— 队列、检查点、持久性",
+     "min": 75,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-swarms3.js"
+     ]
+    },
+    {
+     "id": "23-failure-modes-mast-groupthink",
+     "en": "Failure Modes — MAST, Groupthink, Monoculture, Cascading Errors",
+     "zh": "故障模式 —— MAST、群体思维、单一栽培、级联错误",
+     "min": 75,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-autoswarm5.js"
+     ]
+    },
+    {
+     "id": "24-evaluation-coordination-benchmarks",
+     "en": "Evaluation and Coordination Benchmarks",
+     "zh": "评估与协调基准",
+     "min": 75,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-autoswarm5.js"
+     ]
+    },
+    {
+     "id": "25-case-studies-2026-sota",
+     "en": "Case Studies and the 2026 State of the Art",
+     "zh": "案例研究与 2026 年的最新进展",
+     "min": 90,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-autoswarm5.js"
+     ]
     }
    ]
   },
