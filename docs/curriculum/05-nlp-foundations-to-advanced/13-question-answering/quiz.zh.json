@@ -1,0 +1,102 @@
+{
+  "lesson": "13-question-answering",
+  "title": "问答系统",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "抽取式 QA 预测什么？",
+      "options": [
+        "一个检索到的段落 ID",
+        "仅一个置信度分数",
+        "答案跨度在给定段落中的起始和结束 token 索引",
+        "一个生成的自然语言答案"
+      ],
+      "correct": 2,
+      "explanation": "抽取式 QA 输出段落中包含答案的那段跨度。"
+    },
+    {
+      "stage": "pre",
+      "question": "哪两个组件定义了一个基础的 RAG 流水线？",
+      "options": [
+        "一个重排器和一个翻译器",
+        "一个检索器（找到相关段落）和一个阅读器（抽取或生成答案）",
+        "tokenizer 和词性标注器",
+        "联合训练的一个编码器和一个解码器"
+      ],
+      "correct": 1,
+      "explanation": "RAG = 检索器（找到相关上下文）加阅读器（基于它作答）。"
+    },
+    {
+      "stage": "check",
+      "question": "在 SQuAD 上，Exact Match (EM) 衡量什么？",
+      "options": [
+        "token 级 F1",
+        "逐词重叠",
+        "编辑距离",
+        "在归一化（转小写、去标点、去冠词）后，预测是否与参考答案完全一致"
+      ],
+      "correct": 3,
+      "explanation": "EM 是经过定义的归一化步骤后的严格相等；部分匹配得零分。"
+    },
+    {
+      "stage": "check",
+      "question": "相比 SQuAD 1.1 模型，deepset/roberta-base-squad2 增加了什么？",
+      "options": [
+        "多语言支持",
+        "在无法回答的问题上训练，使模型能预测空答案",
+        "跨语言检索",
+        "更大的上下文窗口"
+      ],
+      "correct": 1,
+      "explanation": "SQuAD 2.0 包含无法回答的条目；在其上训练的模型能预测“无答案”。"
+    },
+    {
+      "stage": "check",
+      "question": "RAGAS 的哪个维度专门针对幻觉？",
+      "options": [
+        "答案相关性",
+        "上下文召回率",
+        "上下文精确率",
+        "忠实度，通过答案论断与检索到的上下文之间的 NLI 蕴含来衡量"
+      ],
+      "correct": 3,
+      "explanation": "忠实度通过 NLI 蕴含逐条核对答案论断与检索到的上下文。"
+    },
+    {
+      "stage": "post",
+      "question": "为什么在评估阅读器准确率之前应先衡量检索召回率？",
+      "options": [
+        "transformer 要求如此",
+        "阅读器延迟取决于它",
+        "召回率决定 ROUGE",
+        "如果正确段落不在 top-k 内，无论阅读器多好都无法成功"
+      ],
+      "correct": 3,
+      "explanation": "缺了正确段落时阅读器无法作答；检索召回率限定了阅读器性能的上限。"
+    },
+    {
+      "stage": "post",
+      "question": "哪种 prompt 模式能减少 RAG 生成中的幻觉？",
+      "options": [
+        "纳入更多段落",
+        "要求模型发挥创意",
+        "去掉问题",
+        "告诉模型只根据所提供的上下文作答，且当上下文不充分时回复“我不知道”"
+      ],
+      "correct": 3,
+      "explanation": "基于上下文 + 明确的拒答指令能大幅降低幻觉率。"
+    },
+    {
+      "stage": "post",
+      "question": "在 2026 年，什么时候抽取式 QA 仍优于生成式 RAG？",
+      "options": [
+        "多语言支持",
+        "受监管领域（法律、医疗、审计），需要逐字引用权威来源",
+        "开放域常识问答",
+        "对话式 QA"
+      ],
+      "correct": 1,
+      "explanation": "抽取式 QA 提供来自权威语料的逐字引用，这是合规场景所要求的。"
+    }
+  ]
+}

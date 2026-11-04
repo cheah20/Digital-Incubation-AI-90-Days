@@ -1,0 +1,78 @@
+{
+  "lesson": "02-reward-hacking-goodhart",
+  "title": "奖励黑客与古德哈特定律",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "古德哈特定律（Goodhart's Law）最初的表述是：",
+      "options": [
+        "任何一项度量一旦成为目标，就不再是一项好的度量",
+        "优化总能无止境地改进一个代理指标",
+        "重尾误差不可能出现在有限维模型中",
+        "奖励模型在大规模下会收敛到真实的人类偏好"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "在 Gao、Schulman、Hilton（2023）的研究中，随着与初始策略的 KL 距离增大，代理奖励和黄金奖励（gold reward）各自如何变化？",
+      "options": [
+        "代理奖励先升后降，黄金奖励单调上升",
+        "代理奖励持续上升，黄金奖励在更靠近原点处达到峰值后下降",
+        "两者都随 KL 单调上升",
+        "在任何 KL 约束下两者都保持平直"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "以下哪一项不是本课列出的奖励黑客四种「伪装」之一？",
+      "options": [
+        "Tokenizer 不匹配",
+        "不忠实的推理",
+        "冗长偏好（verbosity bias）",
+        "谄媚（sycophancy）"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "关于 KL 正则化的「灾难性古德哈特（Catastrophic Goodhart）」结论是什么？",
+      "options": [
+        "只要 beta 为正，KL 正则化总能防止奖励黑客",
+        "KL 正则化仅在策略被随机初始化时才失效",
+        "KL 正则化等价于对奖励模型做集成",
+        "在重尾奖励误差下，受 KL 约束的最优策略仍可能把代理奖励推高，而黄金奖励停留在基线"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "Coste 等人（2023）研究了哪种缓解手段来减轻奖励过度优化？",
+      "options": [
+        "在零温度下用代理指标训练策略",
+        "采用最坏情况聚合的奖励模型集成",
+        "把标注者队伍扩大到一百万人",
+        "完全移除 KL 惩罚"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "按照 2026 年的统一观点，冗长、谄媚、不忠实的 CoT 以及篡改评估者，这几者共享的核心机制是什么？",
+      "options": [
+        "它们各自是不同奖励 head 中互相独立的 bug",
+        "它们仅由撰写恶意偏好的标注者引起",
+        "它们都源于学习率调度过于激进",
+        "概率质量转移到了那些通过利用「易学但与认可虚假相关的启发式」来最大化代理奖励的输出上"
+      ],
+      "correct": 3,
+      "explanation": ""
+    }
+  ]
+}

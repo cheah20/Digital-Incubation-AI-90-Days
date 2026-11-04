@@ -1,0 +1,90 @@
+{
+  "lesson": "08-production-rag-chatbot",
+  "title": "毕业项目 08 —— 面向受监管垂直行业的生产 RAG 聊天机器人",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "为什么在受监管领域的 RAG 聊天机器人中，prompt 缓存如此重要？",
+      "options": [
+        "它消除了对向量数据库的需求",
+        "它消除了幻觉",
+        "它提升了重排阶段的召回率",
+        "在 60-80% 的命中率下，它通过为稳定的前缀 token 打折，把每次查询的成本削减 3-5 倍"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "pre",
+      "question": "每个请求的缓存头与未缓存后缀里各放什么？",
+      "options": [
+        "仅放检索到的文档",
+        "用随机文本填充以凑足缓存大小",
+        "用户问题在前，系统提示在后",
+        "系统提示和静态策略放在缓存头，重排后的上下文作为缓存扩展，用户问题作为未缓存后缀"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "检索层如何尊重 GDPR 或 HIPAA 这类司法辖区标签？",
+      "options": [
+        "它仅在生成之后才拦截响应",
+        "它按地区重写用户问题",
+        "为每个国家运行一个单独的索引",
+        "角色和司法辖区过滤在混合搜索合并之前生效，因此用户范围之外的 chunk 从不会被重排"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "综合阶段让输出经过哪种分层护栏组合？",
+      "options": [
+        "仅一个输出 PII 正则",
+        "单一的 LLM 裁判忠实性检查",
+        "仅在输入侧使用 Llama Guard 4",
+        "Llama Guard 4、NeMo Guardrails 策略护栏和 Presidio PII 脱敏，外加引用强制"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "漂移仪表盘对什么发出告警？",
+      "options": [
+        "任何被加入索引的新文档",
+        "延迟高于 200ms",
+        "底层 LLM 供应商的变更",
+        "检索质量下降，例如 nDCG 或引用分数周环比下跌 5%"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "用于对交付物正确性细则设门禁的黄金集（golden set）有多大？",
+      "options": [
+        "2000 个合成问题",
+        "200 对带引用的、由专家标注的问答",
+        "20 个问题",
+        "5 个演示查询"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "哪些 RAGAS 分数被按轮次在线追踪？",
+      "options": [
+        "BLEU、ROUGE 和 METEOR",
+        "吞吐量、GPU 利用率和队列深度",
+        "token 数和美元成本",
+        "忠实性、答案相关性和上下文精确度"
+      ],
+      "correct": 3,
+      "explanation": ""
+    }
+  ]
+}

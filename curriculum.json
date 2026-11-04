@@ -1,0 +1,19 @@
+{
+  "upstream": "https://github.com/rohitg00/ai-engineering-from-scratch",
+  "translation": "https://github.com/fancyboi999/ai-engineering-from-scratch-zh",
+  "phases": [
+    "00-setup-and-tooling",
+    "01-math-foundations",
+    "02-ml-fundamentals",
+    "03-deep-learning-core",
+    "05-nlp-foundations-to-advanced",
+    "07-transformers-deep-dive",
+    "10-llms-from-scratch",
+    "11-llm-engineering",
+    "13-tools-and-protocols",
+    "14-agent-engineering",
+    "17-infrastructure-and-production",
+    "18-ethics-safety-alignment",
+    "19-capstone-projects"
+  ]
+}

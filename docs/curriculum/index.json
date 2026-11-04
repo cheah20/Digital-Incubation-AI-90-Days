@@ -1,0 +1,6107 @@
+{
+ "source": {
+  "upstream": "https://github.com/rohitg00/ai-engineering-from-scratch",
+  "upstream_commit": "ddaad269bc5ae3c9c1e73251e0500b9fabd9181b",
+  "translation": "https://github.com/fancyboi999/ai-engineering-from-scratch-zh",
+  "translation_commit": "65c81837d6768d4036a3833f7494822fbb02d8f7"
+ },
+ "phases": [
+  {
+   "id": "00-setup-and-tooling",
+   "en": "Phase 0: Setup & Tooling",
+   "zh": "阶段 0：环境与工具",
+   "lessons": [
+    {
+     "id": "01-dev-environment",
+     "en": "Dev Environment",
+     "zh": "开发环境",
+     "min": 45,
+     "quiz": true,
+     "code": [
+      "code/main.rs",
+      "code/verify.py",
+      "code/verify.ts"
+     ],
+     "figs": [
+      "figures-setup.js"
+     ]
+    },
+    {
+     "id": "02-git-and-collaboration",
+     "en": "Git & Collaboration",
+     "zh": "Git 与协作",
+     "min": 30,
+     "quiz": true,
+     "code": [],
+     "figs": [
+      "figures-setup.js"
+     ]
+    },
+    {
+     "id": "03-gpu-setup-and-cloud",
+     "en": "GPU Setup & Cloud",
+     "zh": "GPU 配置与云端",
+     "min": 45,
+     "quiz": true,
+     "code": [
+      "code/gpu_check.py"
+     ],
+     "figs": [
+      "figures-setup.js"
+     ]
+    },
+    {
+     "id": "04-apis-and-keys",
+     "en": "APIs & Keys",
+     "zh": "API 与密钥",
+     "min": 30,
+     "quiz": true,
+     "code": [
+      "code/first_api_call.py",
+      "code/first_api_call.ts"
+     ],
+     "figs": [
+      "figures-setup.js"
+     ]
+    },
+    {
+     "id": "05-jupyter-notebooks",
+     "en": "Jupyter Notebooks",
+     "zh": "Jupyter 笔记本",
+     "min": 30,
+     "quiz": true,
+     "code": [
+      "code/notebook_tips.py"
+     ],
+     "figs": [
+      "figures-setup.js"
+     ]
+    },
+    {
+     "id": "06-python-environments",
+     "en": "Python Environments",
+     "zh": "Python 环境",
+     "min": 30,
+     "quiz": true,
+     "code": [
+      "code/env_setup.sh"
+     ],
+     "figs": [
+      "figures-setup.js"
+     ]
+    },
+    {
+     "id": "07-docker-for-ai",
+     "en": "Docker for AI",
+     "zh": "AI 开发中的 Docker",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/Dockerfile",
+      "code/docker-compose.yml"
+     ],
+     "figs": [
+      "figures-setup.js"
+     ]
+    },
+    {
+     "id": "08-editor-setup",
+     "en": "Editor Setup",
+     "zh": "编辑器配置",
+     "min": 20,
+     "quiz": true,
+     "code": [
+      "code/vscode/extensions.json",
+      "code/vscode/settings.json"
+     ],
+     "figs": [
+      "figures-setup.js"
+     ]
+    },
+    {
+     "id": "09-data-management",
+     "en": "Data Management",
+     "zh": "数据管理",
+     "min": 45,
+     "quiz": true,
+     "code": [
+      "code/data_utils.py"
+     ],
+     "figs": [
+      "figures-setup.js"
+     ]
+    },
+    {
+     "id": "10-terminal-and-shell",
+     "en": "Terminal & Shell",
+     "zh": "终端与 Shell",
+     "min": 35,
+     "quiz": true,
+     "code": [
+      "code/shell_aliases.sh"
+     ],
+     "figs": [
+      "figures-setup.js"
+     ]
+    },
+    {
+     "id": "11-linux-for-ai",
+     "en": "Linux for AI",
+     "zh": "AI 开发中的 Linux",
+     "min": 30,
+     "quiz": true,
+     "code": [],
+     "figs": [
+      "figures-setup.js"
+     ]
+    },
+    {
+     "id": "12-debugging-and-profiling",
+     "en": "Debugging and Profiling",
+     "zh": "调试与性能分析",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/debug_tools.py"
+     ],
+     "figs": [
+      "figures-setup.js"
+     ]
+    },
+    {
+     "id": "13-python-for-ai-engineering",
+     "en": "Python for AI Engineering",
+     "zh": "AI 工程的 Python 基础",
+     "min": 120,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_main.py"
+     ],
+     "figs": [
+      "figures-python.js"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "01-math-foundations",
+   "en": "Phase 1: Math Foundations",
+   "zh": "阶段 1：数学基础",
+   "lessons": [
+    {
+     "id": "01-linear-algebra-intuition",
+     "en": "Linear Algebra Intuition",
+     "zh": "线性代数直觉",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/vectors.jl",
+      "code/vectors.py"
+     ],
+     "figs": [
+      "figures-math.js"
+     ]
+    },
+    {
+     "id": "02-vectors-matrices-operations",
+     "en": "Vectors, Matrices & Operations",
+     "zh": "向量、矩阵与运算",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/matrices.jl",
+      "code/matrices.py"
+     ],
+     "figs": [
+      "figures-math.js"
+     ]
+    },
+    {
+     "id": "03-matrix-transformations",
+     "en": "Matrix Transformations",
+     "zh": "矩阵变换",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/transformations.jl",
+      "code/transformations.py"
+     ],
+     "figs": [
+      "figures-math.js"
+     ]
+    },
+    {
+     "id": "04-calculus-for-ml",
+     "en": "Calculus for Machine Learning",
+     "zh": "机器学习中的微积分",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/derivatives.py",
+      "code/main.jl"
+     ],
+     "figs": [
+      "figures-math.js"
+     ]
+    },
+    {
+     "id": "05-chain-rule-and-autodiff",
+     "en": "Chain Rule & Automatic Differentiation",
+     "zh": "链式法则与自动微分",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/autodiff.py",
+      "code/main.jl"
+     ],
+     "figs": [
+      "figures-math.js"
+     ]
+    },
+    {
+     "id": "06-probability-and-distributions",
+     "en": "Probability and Distributions",
+     "zh": "概率与分布",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/main.jl",
+      "code/probability.py"
+     ],
+     "figs": [
+      "figures-math.js"
+     ]
+    },
+    {
+     "id": "07-bayes-theorem",
+     "en": "Bayes' Theorem",
+     "zh": "贝叶斯定理",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/bayes.py"
+     ],
+     "figs": [
+      "figures-math.js"
+     ]
+    },
+    {
+     "id": "08-optimization",
+     "en": "Optimization",
+     "zh": "优化",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/main.jl",
+      "code/optimizers.py"
+     ],
+     "figs": []
+    },
+    {
+     "id": "09-information-theory",
+     "en": "Information Theory",
+     "zh": "信息论",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/information_theory.py"
+     ],
+     "figs": [
+      "figures-math.js"
+     ]
+    },
+    {
+     "id": "10-dimensionality-reduction",
+     "en": "Dimensionality Reduction",
+     "zh": "降维",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/dim_reduction.py"
+     ],
+     "figs": [
+      "figures-math.js"
+     ]
+    },
+    {
+     "id": "11-singular-value-decomposition",
+     "en": "Singular Value Decomposition",
+     "zh": "奇异值分解",
+     "min": 120,
+     "quiz": true,
+     "code": [
+      "code/svd.jl",
+      "code/svd.py"
+     ],
+     "figs": [
+      "figures-math2.js"
+     ]
+    },
+    {
+     "id": "12-tensor-operations",
+     "en": "Tensor Operations",
+     "zh": "张量运算",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/tensors.py"
+     ],
+     "figs": [
+      "figures-math2.js"
+     ]
+    },
+    {
+     "id": "13-numerical-stability",
+     "en": "Numerical Stability",
+     "zh": "数值稳定性",
+     "min": 120,
+     "quiz": true,
+     "code": [
+      "code/numerical.py"
+     ],
+     "figs": [
+      "figures-math2.js"
+     ]
+    },
+    {
+     "id": "14-norms-and-distances",
+     "en": "Norms and Distances",
+     "zh": "范数与距离",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/distances.py"
+     ],
+     "figs": [
+      "figures-math2.js"
+     ]
+    },
+    {
+     "id": "15-statistics-for-ml",
+     "en": "Statistics for Machine Learning",
+     "zh": "机器学习中的统计学",
+     "min": 120,
+     "quiz": true,
+     "code": [
+      "code/statistics.py"
+     ],
+     "figs": [
+      "figures-foundations3.js"
+     ]
+    },
+    {
+     "id": "16-sampling-methods",
+     "en": "Sampling Methods",
+     "zh": "采样方法",
+     "min": 120,
+     "quiz": true,
+     "code": [
+      "code/sampling.py"
+     ],
+     "figs": [
+      "figures-math2.js"
+     ]
+    },
+    {
+     "id": "17-linear-systems",
+     "en": "Linear Systems",
+     "zh": "线性方程组",
+     "min": 120,
+     "quiz": true,
+     "code": [
+      "code/linear_systems.py"
+     ],
+     "figs": [
+      "figures-math2.js"
+     ]
+    },
+    {
+     "id": "18-convex-optimization",
+     "en": "Convex Optimization",
+     "zh": "凸优化",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/convex.py"
+     ],
+     "figs": [
+      "figures-math.js"
+     ]
+    },
+    {
+     "id": "19-complex-numbers",
+     "en": "Complex Numbers for AI",
+     "zh": "写给 AI 的复数",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/complex_numbers.py"
+     ],
+     "figs": [
+      "figures-math2.js"
+     ]
+    },
+    {
+     "id": "20-fourier-transform",
+     "en": "The Fourier Transform",
+     "zh": "傅里叶变换",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/fourier.py"
+     ],
+     "figs": [
+      "figures-math.js"
+     ]
+    },
+    {
+     "id": "21-graph-theory",
+     "en": "Graph Theory for Machine Learning",
+     "zh": "写给机器学习的图论",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/graph_theory.py"
+     ],
+     "figs": [
+      "figures-math2.js"
+     ]
+    },
+    {
+     "id": "22-stochastic-processes",
+     "en": "Stochastic Processes",
+     "zh": "随机过程",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/stochastic.py"
+     ],
+     "figs": [
+      "figures-math2.js"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "02-ml-fundamentals",
+   "en": "Phase 2: ML Fundamentals",
+   "zh": "阶段 2：机器学习基础",
+   "lessons": [
+    {
+     "id": "01-what-is-machine-learning",
+     "en": "What Is Machine Learning",
+     "zh": "什么是机器学习",
+     "min": 45,
+     "quiz": true,
+     "code": [
+      "code/ml_intro.py"
+     ],
+     "figs": [
+      "figures-foundations3.js"
+     ]
+    },
+    {
+     "id": "02-linear-regression",
+     "en": "Linear Regression",
+     "zh": "线性回归",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/linear_regression.py",
+      "code/main.jl"
+     ],
+     "figs": [
+      "figures-ml.js"
+     ]
+    },
+    {
+     "id": "03-logistic-regression",
+     "en": "Logistic Regression",
+     "zh": "逻辑回归",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/logistic_regression.py",
+      "code/main.jl"
+     ],
+     "figs": [
+      "figures-ml.js"
+     ]
+    },
+    {
+     "id": "04-decision-trees",
+     "en": "Decision Trees and Random Forests",
+     "zh": "决策树与随机森林",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/trees.py"
+     ],
+     "figs": [
+      "figures-ml.js"
+     ]
+    },
+    {
+     "id": "05-support-vector-machines",
+     "en": "Support Vector Machines",
+     "zh": "支持向量机",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.jl",
+      "code/svm.py"
+     ],
+     "figs": [
+      "figures-ml.js"
+     ]
+    },
+    {
+     "id": "06-knn-and-distances",
+     "en": "K-Nearest Neighbors and Distances",
+     "zh": "K 近邻与距离",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/knn.py"
+     ],
+     "figs": [
+      "figures-ml.js"
+     ]
+    },
+    {
+     "id": "07-unsupervised-learning",
+     "en": "Unsupervised Learning",
+     "zh": "无监督学习",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/clustering.py"
+     ],
+     "figs": [
+      "figures-ml.js"
+     ]
+    },
+    {
+     "id": "08-feature-engineering",
+     "en": "Feature Engineering & Selection",
+     "zh": "特征工程与特征选择",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/features.py"
+     ],
+     "figs": [
+      "figures-ml.js"
+     ]
+    },
+    {
+     "id": "09-model-evaluation",
+     "en": "Model Evaluation",
+     "zh": "模型评估",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/evaluation.py",
+      "code/main.jl"
+     ],
+     "figs": []
+    },
+    {
+     "id": "10-bias-variance",
+     "en": "Bias-Variance Tradeoff",
+     "zh": "偏差-方差权衡",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/bias_variance.py"
+     ],
+     "figs": []
+    },
+    {
+     "id": "11-ensemble-methods",
+     "en": "Ensemble Methods",
+     "zh": "集成方法",
+     "min": 120,
+     "quiz": true,
+     "code": [
+      "code/ensembles.py"
+     ],
+     "figs": [
+      "figures-foundations3.js"
+     ]
+    },
+    {
+     "id": "12-hyperparameter-tuning",
+     "en": "Hyperparameter Tuning",
+     "zh": "超参数调优",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/tuning.py"
+     ],
+     "figs": [
+      "figures-ml.js"
+     ]
+    },
+    {
+     "id": "13-ml-pipelines",
+     "en": "ML Pipelines",
+     "zh": "ML 流水线",
+     "min": 120,
+     "quiz": true,
+     "code": [
+      "code/pipeline.py"
+     ],
+     "figs": [
+      "figures-foundations3.js"
+     ]
+    },
+    {
+     "id": "14-naive-bayes",
+     "en": "Naive Bayes",
+     "zh": "朴素贝叶斯",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/naive_bayes.py"
+     ],
+     "figs": [
+      "figures-ml.js"
+     ]
+    },
+    {
+     "id": "15-time-series",
+     "en": "Time Series Fundamentals",
+     "zh": "时间序列基础",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/time_series.py"
+     ],
+     "figs": [
+      "figures-foundations3.js"
+     ]
+    },
+    {
+     "id": "16-anomaly-detection",
+     "en": "Anomaly Detection",
+     "zh": "异常检测",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/anomaly_detection.py"
+     ],
+     "figs": [
+      "figures-foundations3.js"
+     ]
+    },
+    {
+     "id": "17-imbalanced-data",
+     "en": "Handling Imbalanced Data",
+     "zh": "处理不平衡数据",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/imbalanced.py"
+     ],
+     "figs": [
+      "figures-ml.js"
+     ]
+    },
+    {
+     "id": "18-feature-selection",
+     "en": "Feature Selection",
+     "zh": "特征选择",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/feature_selection.py"
+     ],
+     "figs": [
+      "figures-foundations3.js"
+     ]
+    },
+    {
+     "id": "19-ml-system-design",
+     "en": "ML System Design — From Problem to Deployed Model",
+     "zh": "ML 系统设计 —— 从业务问题到落地模型",
+     "min": 110,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_main.py"
+     ],
+     "figs": [
+      "figures-mlprod.js"
+     ]
+    },
+    {
+     "id": "20-model-monitoring-and-drift",
+     "en": "Monitoring Models in Production — Data Drift and Concept Drift",
+     "zh": "生产环境中的模型监控 —— 数据漂移与概念漂移",
+     "min": 110,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_main.py"
+     ],
+     "figs": [
+      "figures-mlprod.js"
+     ]
+    },
+    {
+     "id": "21-feature-stores-and-training-serving-skew",
+     "en": "Feature Stores and Training-Serving Skew",
+     "zh": "特征平台与训练-推理偏斜",
+     "min": 100,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_main.py"
+     ],
+     "figs": [
+      "figures-mlprod.js"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "03-deep-learning-core",
+   "en": "Phase 3: Deep Learning Core",
+   "zh": "阶段 3：深度学习核心",
+   "lessons": [
+    {
+     "id": "01-the-perceptron",
+     "en": "The Perceptron",
+     "zh": "感知机",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/main.jl",
+      "code/perceptron.py"
+     ],
+     "figs": [
+      "figures-dl.js"
+     ]
+    },
+    {
+     "id": "02-multi-layer-networks",
+     "en": "Multi-Layer Networks and Forward Pass",
+     "zh": "多层网络与前向传播",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-dl.js"
+     ]
+    },
+    {
+     "id": "03-backpropagation",
+     "en": "Backpropagation from Scratch",
+     "zh": "从零实现反向传播",
+     "min": 120,
+     "quiz": true,
+     "code": [
+      "code/main.jl",
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-dl.js"
+     ]
+    },
+    {
+     "id": "04-activation-functions",
+     "en": "Activation Functions",
+     "zh": "激活函数",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/main.jl",
+      "code/main.py"
+     ],
+     "figs": []
+    },
+    {
+     "id": "05-loss-functions",
+     "en": "Loss Functions",
+     "zh": "损失函数",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/main.jl",
+      "code/main.py"
+     ],
+     "figs": []
+    },
+    {
+     "id": "06-optimizers",
+     "en": "Optimizers",
+     "zh": "优化器",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-dl.js"
+     ]
+    },
+    {
+     "id": "07-regularization",
+     "en": "Regularization",
+     "zh": "正则化",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": []
+    },
+    {
+     "id": "08-weight-initialization",
+     "en": "Weight Initialization and Training Stability",
+     "zh": "权重初始化与训练稳定性",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-dl.js"
+     ]
+    },
+    {
+     "id": "09-learning-rate-schedules",
+     "en": "Learning Rate Schedules and Warmup",
+     "zh": "学习率调度与热身",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": []
+    },
+    {
+     "id": "10-mini-framework",
+     "en": "Build Your Own Mini Framework",
+     "zh": "搭一个你自己的迷你框架",
+     "min": 120,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-dl.js"
+     ]
+    },
+    {
+     "id": "11-intro-to-pytorch",
+     "en": "Introduction to PyTorch",
+     "zh": "PyTorch 入门",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/pytorch_intro.py"
+     ],
+     "figs": [
+      "figures-dl.js"
+     ]
+    },
+    {
+     "id": "12-intro-to-jax",
+     "en": "Introduction to JAX",
+     "zh": "JAX 入门",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/jax_intro.py"
+     ],
+     "figs": [
+      "figures-dl.js"
+     ]
+    },
+    {
+     "id": "13-debugging-neural-networks",
+     "en": "Debugging Neural Networks",
+     "zh": "调试神经网络",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/debug_neural_nets.py"
+     ],
+     "figs": [
+      "figures-dl.js"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "05-nlp-foundations-to-advanced",
+   "en": "Phase 5: NLP, Foundations to Advanced",
+   "zh": "阶段 5：NLP，从基础到进阶",
+   "lessons": [
+    {
+     "id": "01-text-processing",
+     "en": "Text Processing — Tokenization, Stemming, Lemmatization",
+     "zh": "文本处理 —— 分词、词干提取、词形还原",
+     "min": 45,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-nlp2.js"
+     ]
+    },
+    {
+     "id": "02-bag-of-words-tfidf",
+     "en": "Bag of Words, TF-IDF, and Text Representation",
+     "zh": "词袋、TF-IDF 与文本表示",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-nlp2.js"
+     ]
+    },
+    {
+     "id": "03-word-embeddings-word2vec",
+     "en": "Word Embeddings — Word2Vec from Scratch",
+     "zh": "词嵌入 —— 从零实现 Word2Vec",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-transformers.js"
+     ]
+    },
+    {
+     "id": "04-glove-fasttext-subword",
+     "en": "GloVe, FastText, and Subword Embeddings",
+     "zh": "GloVe、FastText 与子词嵌入",
+     "min": 45,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-nlp5.js"
+     ]
+    },
+    {
+     "id": "05-sentiment-analysis",
+     "en": "Sentiment Analysis",
+     "zh": "情感分析",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-nlp2.js"
+     ]
+    },
+    {
+     "id": "06-named-entity-recognition",
+     "en": "Named Entity Recognition",
+     "zh": "命名实体识别",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-nlp2.js"
+     ]
+    },
+    {
+     "id": "07-pos-tagging-parsing",
+     "en": "POS Tagging and Syntactic Parsing",
+     "zh": "词性标注与句法分析",
+     "min": 45,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-nlp3.js"
+     ]
+    },
+    {
+     "id": "08-cnns-rnns-for-text",
+     "en": "CNNs and RNNs for Text",
+     "zh": "用于文本的 CNN 与 RNN",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-nlp2.js"
+     ]
+    },
+    {
+     "id": "09-sequence-to-sequence",
+     "en": "Sequence-to-Sequence Models",
+     "zh": "序列到序列模型",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-nlp2.js"
+     ]
+    },
+    {
+     "id": "10-attention-mechanism",
+     "en": "Attention Mechanism — The Breakthrough",
+     "zh": "注意力机制 —— 那次突破",
+     "min": 45,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-transformers.js"
+     ]
+    },
+    {
+     "id": "11-machine-translation",
+     "en": "Machine Translation",
+     "zh": "机器翻译",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-nlp2.js"
+     ]
+    },
+    {
+     "id": "12-text-summarization",
+     "en": "Text Summarization",
+     "zh": "文本摘要",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-nlp3.js"
+     ]
+    },
+    {
+     "id": "13-question-answering",
+     "en": "Question Answering Systems",
+     "zh": "问答系统",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-nlp3.js"
+     ]
+    },
+    {
+     "id": "14-information-retrieval-search",
+     "en": "Information Retrieval and Search",
+     "zh": "信息检索与搜索",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-genai3.js"
+     ]
+    },
+    {
+     "id": "15-topic-modeling",
+     "en": "Topic Modeling — LDA and BERTopic",
+     "zh": "主题建模 —— LDA 与 BERTopic",
+     "min": 45,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-nlp3.js"
+     ]
+    },
+    {
+     "id": "16-text-generation-pre-transformer",
+     "en": "Text Generation Before Transformers — N-gram Language Models",
+     "zh": "transformer 之前的文本生成 —— N-gram 语言模型",
+     "min": 45,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-history.js",
+      "figures-nlp2.js"
+     ]
+    },
+    {
+     "id": "17-chatbots-rule-to-neural",
+     "en": "Chatbots — Rule-Based to Neural to LLM Agents",
+     "zh": "聊天机器人 —— 从规则到神经再到 LLM agent",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-history.js"
+     ]
+    },
+    {
+     "id": "18-multilingual-nlp",
+     "en": "Multilingual NLP",
+     "zh": "多语言 NLP",
+     "min": 45,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-nlp5.js"
+     ]
+    },
+    {
+     "id": "19-subword-tokenization",
+     "en": "Subword Tokenization — BPE, WordPiece, Unigram, SentencePiece",
+     "zh": "子词分词 —— BPE、WordPiece、Unigram、SentencePiece",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/main.ts"
+     ],
+     "figs": [
+      "figures-transformers.js"
+     ]
+    },
+    {
+     "id": "20-structured-outputs-constrained-decoding",
+     "en": "Structured Outputs & Constrained Decoding",
+     "zh": "结构化输出与约束解码",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-nlp3.js"
+     ]
+    },
+    {
+     "id": "21-nli-textual-entailment",
+     "en": "Natural Language Inference — Textual Entailment",
+     "zh": "自然语言推理 —— 文本蕴含",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-nlp3.js"
+     ]
+    },
+    {
+     "id": "22-embedding-models-deep-dive",
+     "en": "Embedding Models — The 2026 Deep Dive",
+     "zh": "嵌入模型 —— 2026 年深入剖析",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-genai3.js"
+     ]
+    },
+    {
+     "id": "23-chunking-strategies-rag",
+     "en": "Chunking Strategies for RAG",
+     "zh": "RAG 的分块策略",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/main.ts"
+     ],
+     "figs": [
+      "figures-nlp5.js"
+     ]
+    },
+    {
+     "id": "24-coreference-resolution",
+     "en": "Coreference Resolution",
+     "zh": "共指消解",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-nlp3.js"
+     ]
+    },
+    {
+     "id": "25-entity-linking",
+     "en": "Entity Linking & Disambiguation",
+     "zh": "实体链接与消歧",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-genai3.js"
+     ]
+    },
+    {
+     "id": "26-relation-extraction-kg",
+     "en": "Relation Extraction & Knowledge Graph Construction",
+     "zh": "关系抽取与知识图谱构建",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-nlp3.js"
+     ]
+    },
+    {
+     "id": "27-llm-evaluation-frameworks",
+     "en": "LLM Evaluation — RAGAS, DeepEval, G-Eval",
+     "zh": "LLM 评估 —— RAGAS、DeepEval、G-Eval",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-nlp5.js"
+     ]
+    },
+    {
+     "id": "28-long-context-evaluation",
+     "en": "Long-Context Evaluation — NIAH, RULER, LongBench, MRCR",
+     "zh": "长上下文评估 —— NIAH、RULER、LongBench、MRCR",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-genai3.js"
+     ]
+    },
+    {
+     "id": "29-dialogue-state-tracking",
+     "en": "Dialogue State Tracking",
+     "zh": "对话状态跟踪",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-nlp5.js"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "07-transformers-deep-dive",
+   "en": "Phase 7: Transformers Deep Dive",
+   "zh": "阶段 7：Transformer 深入剖析",
+   "lessons": [
+    {
+     "id": "01-why-transformers",
+     "en": "Why Transformers — The Problems with RNNs",
+     "zh": "为什么需要 transformer —— RNN 的那些毛病",
+     "min": 45,
+     "quiz": false,
+     "code": [
+      "code/main.jl",
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-llms3.js"
+     ]
+    },
+    {
+     "id": "02-self-attention-from-scratch",
+     "en": "Self-Attention from Scratch",
+     "zh": "从零实现 Self-Attention",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.jl",
+      "code/main.rs",
+      "code/self_attention.py"
+     ],
+     "figs": [
+      "figures-iso.js",
+      "figures-transformers.js",
+      "figures.js"
+     ]
+    },
+    {
+     "id": "03-multi-head-attention",
+     "en": "Multi-Head Attention",
+     "zh": "多头注意力",
+     "min": 75,
+     "quiz": false,
+     "code": [
+      "code/main.py",
+      "code/main.rs"
+     ],
+     "figs": [
+      "figures-transformers.js"
+     ]
+    },
+    {
+     "id": "04-positional-encoding",
+     "en": "Positional Encoding — Sinusoidal, RoPE, ALiBi",
+     "zh": "位置编码：正弦、RoPE、ALiBi",
+     "min": 45,
+     "quiz": false,
+     "code": [
+      "code/main.jl",
+      "code/main.py",
+      "code/main.rs"
+     ],
+     "figs": []
+    },
+    {
+     "id": "05-full-transformer",
+     "en": "The Full Transformer — Encoder + Decoder",
+     "zh": "完整的 Transformer —— Encoder + Decoder",
+     "min": 75,
+     "quiz": false,
+     "code": [
+      "code/main.jl",
+      "code/main.py"
+     ],
+     "figs": [
+      "figures.js"
+     ]
+    },
+    {
+     "id": "06-bert-masked-language-modeling",
+     "en": "BERT — Masked Language Modeling",
+     "zh": "BERT —— 掩码语言建模",
+     "min": 45,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-transformers.js"
+     ]
+    },
+    {
+     "id": "07-gpt-causal-language-modeling",
+     "en": "GPT — Causal Language Modeling",
+     "zh": "GPT —— 因果语言建模",
+     "min": 75,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-history.js",
+      "figures-transformers.js"
+     ]
+    },
+    {
+     "id": "08-t5-bart-encoder-decoder",
+     "en": "T5, BART — Encoder-Decoder Models",
+     "zh": "T5、BART —— 编码器-解码器模型",
+     "min": 45,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-llms3.js"
+     ]
+    },
+    {
+     "id": "09-vision-transformers",
+     "en": "Vision Transformers (ViT)",
+     "zh": "视觉 Transformer（ViT）",
+     "min": 45,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-nlp5.js"
+     ]
+    },
+    {
+     "id": "10-audio-transformers-whisper",
+     "en": "Audio Transformers — Whisper Architecture",
+     "zh": "音频 Transformer —— Whisper 架构",
+     "min": 45,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-nlp5.js"
+     ]
+    },
+    {
+     "id": "11-mixture-of-experts",
+     "en": "Mixture of Experts (MoE)",
+     "zh": "混合专家模型（MoE）",
+     "min": 45,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-llms3.js"
+     ]
+    },
+    {
+     "id": "12-kv-cache-flash-attention",
+     "en": "KV Cache, Flash Attention & Inference Optimization",
+     "zh": "KV Cache、Flash Attention 与推理优化",
+     "min": 75,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-iso.js",
+      "figures-transformers.js"
+     ]
+    },
+    {
+     "id": "13-scaling-laws",
+     "en": "Scaling Laws",
+     "zh": "缩放定律",
+     "min": 45,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": []
+    },
+    {
+     "id": "14-build-a-transformer-capstone",
+     "en": "Build a Transformer from Scratch — The Capstone",
+     "zh": "从零构建一个 Transformer —— 收官项目",
+     "min": 120,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-nlp5.js"
+     ]
+    },
+    {
+     "id": "15-attention-variants",
+     "en": "Attention Variants — Sliding Window, Sparse, Differential",
+     "zh": "Attention 变体 —— 滑动窗口、稀疏、差分",
+     "min": 60,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-transformers.js"
+     ]
+    },
+    {
+     "id": "16-speculative-decoding",
+     "en": "Speculative Decoding — Draft, Verify, Repeat",
+     "zh": "投机解码 —— 草稿、验证、重复",
+     "min": 60,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-llms3.js"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "10-llms-from-scratch",
+   "en": "Phase 10: LLMs from Scratch",
+   "zh": "阶段 10：从零构建 LLM",
+   "lessons": [
+    {
+     "id": "01-tokenizers",
+     "en": "Tokenizers: BPE, WordPiece, SentencePiece",
+     "zh": "分词器：BPE、WordPiece、SentencePiece",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/bpe.py",
+      "code/bpe.rs",
+      "code/main.py"
+     ],
+     "figs": [
+      "figures.js"
+     ]
+    },
+    {
+     "id": "02-building-a-tokenizer",
+     "en": "Building a Tokenizer from Scratch",
+     "zh": "从零构建一个 tokenizer",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-llms2.js"
+     ]
+    },
+    {
+     "id": "03-data-pipelines",
+     "en": "Data Pipelines for Pre-Training",
+     "zh": "预训练的数据流水线",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-llmstack5.js"
+     ]
+    },
+    {
+     "id": "04-pre-training-mini-gpt",
+     "en": "Pre-Training a Mini GPT (124M Parameters)",
+     "zh": "预训练一个 Mini GPT（1.24 亿参数）",
+     "min": 120,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/main.rs"
+     ],
+     "figs": [
+      "figures-iso.js"
+     ]
+    },
+    {
+     "id": "05-scaling-distributed",
+     "en": "Scaling: Distributed Training, FSDP, DeepSpeed",
+     "zh": "规模化：分布式训练、FSDP、DeepSpeed",
+     "min": 120,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-llms2.js"
+     ]
+    },
+    {
+     "id": "06-instruction-tuning-sft",
+     "en": "Instruction Tuning (SFT)",
+     "zh": "指令微调（SFT）",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-llms3.js"
+     ]
+    },
+    {
+     "id": "07-rlhf",
+     "en": "RLHF: Reward Model + PPO",
+     "zh": "RLHF：奖励模型 + PPO",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-llms2.js"
+     ]
+    },
+    {
+     "id": "08-dpo",
+     "en": "DPO: Direct Preference Optimization",
+     "zh": "DPO：直接偏好优化",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-llms2.js"
+     ]
+    },
+    {
+     "id": "09-constitutional-ai-self-improvement",
+     "en": "Constitutional AI and Self-Improvement",
+     "zh": "Constitutional AI 与自我改进",
+     "min": 45,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-llms3.js"
+     ]
+    },
+    {
+     "id": "10-evaluation",
+     "en": "Evaluation: Benchmarks, Evals, LM Harness",
+     "zh": "评估：基准、eval、LM Harness",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-llms-systems.js"
+     ]
+    },
+    {
+     "id": "11-quantization",
+     "en": "Quantization: Making Models Fit",
+     "zh": "量化：把模型塞进去",
+     "min": 120,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/main.rs"
+     ],
+     "figs": []
+    },
+    {
+     "id": "12-inference-optimization",
+     "en": "Inference Optimization",
+     "zh": "推理优化",
+     "min": 120,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/main.rs"
+     ],
+     "figs": [
+      "figures-llms-systems.js"
+     ]
+    },
+    {
+     "id": "13-building-complete-llm-pipeline",
+     "en": "Building a Complete LLM Pipeline",
+     "zh": "构建一条完整的 LLM 流水线",
+     "min": 120,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-llms-systems.js"
+     ]
+    },
+    {
+     "id": "14-open-models-architecture-walkthroughs",
+     "en": "Open Models: Architecture Walkthroughs",
+     "zh": "开放模型：架构走读",
+     "min": 45,
+     "quiz": false,
+     "code": [
+      "code/main.py",
+      "code/test_main.py"
+     ],
+     "figs": [
+      "figures-llms2.js"
+     ]
+    },
+    {
+     "id": "15-speculative-decoding-eagle3",
+     "en": "Speculative Decoding and EAGLE-3",
+     "zh": "推测解码与 EAGLE-3",
+     "min": 75,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-llmstack5.js"
+     ]
+    },
+    {
+     "id": "16-differential-attention-v2",
+     "en": "Differential Attention (V2)",
+     "zh": "差分注意力（V2）",
+     "min": 60,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-llms2.js"
+     ]
+    },
+    {
+     "id": "17-native-sparse-attention",
+     "en": "Native Sparse Attention (DeepSeek NSA)",
+     "zh": "原生稀疏注意力（DeepSeek NSA）",
+     "min": 60,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-llms2.js"
+     ]
+    },
+    {
+     "id": "18-multi-token-prediction",
+     "en": "Multi-Token Prediction (MTP)",
+     "zh": "多 token 预测（MTP）",
+     "min": 60,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-llms3.js"
+     ]
+    },
+    {
+     "id": "19-dualpipe-parallelism",
+     "en": "DualPipe Parallelism",
+     "zh": "DualPipe 并行",
+     "min": 60,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-llms2.js"
+     ]
+    },
+    {
+     "id": "20-deepseek-v3-walkthrough",
+     "en": "DeepSeek-V3 Architecture Walkthrough",
+     "zh": "DeepSeek-V3 架构走读",
+     "min": 75,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-llms-systems.js"
+     ]
+    },
+    {
+     "id": "21-jamba-hybrid-ssm-transformer",
+     "en": "Jamba — Hybrid SSM-Transformer",
+     "zh": "Jamba —— 混合 SSM-Transformer",
+     "min": 60,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-llms2.js"
+     ]
+    },
+    {
+     "id": "22-async-hogwild-inference",
+     "en": "Async and Hogwild! Inference",
+     "zh": "异步与 Hogwild! 推理",
+     "min": 60,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-llms-systems.js"
+     ]
+    },
+    {
+     "id": "25-speculative-decoding",
+     "en": "Speculative Decoding and EAGLE",
+     "zh": "推测解码与 EAGLE",
+     "min": 75,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-llms-systems.js"
+     ]
+    },
+    {
+     "id": "34-gradient-checkpointing",
+     "en": "Gradient Checkpointing and Activation Recomputation",
+     "zh": "梯度检查点与激活重算",
+     "min": 70,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-llms3.js"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "11-llm-engineering",
+   "en": "Phase 11: LLM Engineering",
+   "zh": "阶段 11：LLM 工程",
+   "lessons": [
+    {
+     "id": "01-prompt-engineering",
+     "en": "Prompt Engineering: Techniques & Patterns",
+     "zh": "Prompt Engineering：技巧与模式",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.ts",
+      "code/prompt_engineering.py"
+     ],
+     "figs": [
+      "figures-llmeng.js"
+     ]
+    },
+    {
+     "id": "02-few-shot-cot",
+     "en": "Few-Shot, Chain-of-Thought, Tree-of-Thought",
+     "zh": "少样本提示、思维链与思维树",
+     "min": 45,
+     "quiz": true,
+     "code": [
+      "code/advanced_prompting.py"
+     ],
+     "figs": [
+      "figures-llmeng.js"
+     ]
+    },
+    {
+     "id": "03-structured-outputs",
+     "en": "Structured Outputs: JSON, Schema Validation, Constrained Decoding",
+     "zh": "结构化输出：JSON、Schema 校验、约束解码",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/main.ts"
+     ],
+     "figs": [
+      "figures-misc2.js"
+     ]
+    },
+    {
+     "id": "04-embeddings",
+     "en": "Embeddings & Vector Representations",
+     "zh": "嵌入（embedding）与向量表示",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/embeddings.py",
+      "code/main.ts"
+     ],
+     "figs": []
+    },
+    {
+     "id": "05-context-engineering",
+     "en": "Context Engineering: Windows, Budgets, Memory, and Retrieval",
+     "zh": "Context Engineering：窗口、预算、记忆与检索",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/main.ts"
+     ],
+     "figs": [
+      "figures-llmeng.js"
+     ]
+    },
+    {
+     "id": "06-rag",
+     "en": "RAG (Retrieval-Augmented Generation)",
+     "zh": "RAG（检索增强生成）",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/main.ts"
+     ],
+     "figs": []
+    },
+    {
+     "id": "07-advanced-rag",
+     "en": "Advanced RAG (Chunking, Reranking, Hybrid Search)",
+     "zh": "进阶 RAG（分块、重排、混合搜索）",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-systems3.js"
+     ]
+    },
+    {
+     "id": "08-fine-tuning-lora",
+     "en": "Fine-Tuning with LoRA & QLoRA",
+     "zh": "用 LoRA 和 QLoRA 微调",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/lora.py"
+     ],
+     "figs": []
+    },
+    {
+     "id": "09-function-calling",
+     "en": "Function Calling & Tool Use",
+     "zh": "Function Calling 与 Tool Use",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/function_calling.py",
+      "code/main.ts",
+      "code/tests/test_main.py"
+     ],
+     "figs": [
+      "figures-misc2.js"
+     ]
+    },
+    {
+     "id": "10-evaluation",
+     "en": "Evaluation & Testing LLM Applications",
+     "zh": "评估与测试 LLM 应用",
+     "min": 45,
+     "quiz": true,
+     "code": [
+      "code/eval_framework.py"
+     ],
+     "figs": [
+      "figures-llmeng.js"
+     ]
+    },
+    {
+     "id": "11-caching-cost",
+     "en": "Caching, Rate Limiting & Cost Optimization",
+     "zh": "缓存、限流与成本优化",
+     "min": 45,
+     "quiz": true,
+     "code": [
+      "code/caching_cost.py"
+     ],
+     "figs": [
+      "figures-claude-certifications.js",
+      "figures-llmeng.js"
+     ]
+    },
+    {
+     "id": "12-guardrails",
+     "en": "Guardrails, Safety & Content Filtering",
+     "zh": "护栏、安全与内容过滤",
+     "min": 45,
+     "quiz": true,
+     "code": [
+      "code/guardrails.py",
+      "code/main.ts"
+     ],
+     "figs": [
+      "figures-agents-alignment.js"
+     ]
+    },
+    {
+     "id": "13-production-app",
+     "en": "Building a Production LLM Application",
+     "zh": "构建一个生产级 LLM 应用",
+     "min": 120,
+     "quiz": true,
+     "code": [
+      "code/production_app.py"
+     ],
+     "figs": [
+      "figures-llmstack5.js"
+     ]
+    },
+    {
+     "id": "14-model-context-protocol",
+     "en": "Model Context Protocol (MCP)",
+     "zh": "模型上下文协议（MCP）",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_main.py"
+     ],
+     "figs": [
+      "figures-systems3.js"
+     ]
+    },
+    {
+     "id": "15-prompt-caching",
+     "en": "Prompt Caching and Context Caching",
+     "zh": "Prompt Caching 与上下文缓存",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-claude-certifications.js",
+      "figures-llmeng.js"
+     ]
+    },
+    {
+     "id": "16-langgraph-state-machines",
+     "en": "Agent State Machines — Graphs, Nodes, Checkpoints",
+     "zh": "Agent 状态机——图、节点与检查点",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-llmstack5.js"
+     ]
+    },
+    {
+     "id": "17-agent-framework-tradeoffs",
+     "en": "Agent Framework Tradeoffs — Graph, Role, and Actor Orchestration",
+     "zh": "Agent 框架取舍——图、角色与 Actor 编排",
+     "min": 45,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-llmstack5.js"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "13-tools-and-protocols",
+   "en": "Phase 13: Tools & Protocols",
+   "zh": "阶段 13：工具与协议",
+   "lessons": [
+    {
+     "id": "01-the-tool-interface",
+     "en": "The Tool Interface — Why Agents Need Structured I/O",
+     "zh": "工具接口——为什么 agent 需要结构化 I/O",
+     "min": 45,
+     "quiz": false,
+     "code": [
+      "code/main.py",
+      "code/main.ts"
+     ],
+     "figs": [
+      "figures-tools2.js"
+     ]
+    },
+    {
+     "id": "02-function-calling-deep-dive",
+     "en": "Function Calling Deep Dive — OpenAI, Anthropic, Gemini",
+     "zh": "Function Calling 深入剖析——OpenAI、Anthropic、Gemini",
+     "min": 75,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-llmeng.js"
+     ]
+    },
+    {
+     "id": "03-parallel-and-streaming-tool-calls",
+     "en": "Parallel Tool Calls and Streaming with Tools",
+     "zh": "并行工具调用与带工具的流式",
+     "min": 75,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-tools2.js"
+     ]
+    },
+    {
+     "id": "04-structured-output",
+     "en": "Structured Output — JSON Schema, Pydantic, Zod, Constrained Decoding",
+     "zh": "结构化输出——JSON Schema、Pydantic、Zod、受约束解码",
+     "min": 75,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-llmeng.js"
+     ]
+    },
+    {
+     "id": "05-tool-schema-design",
+     "en": "Tool Schema Design — Naming, Descriptions, Parameter Constraints",
+     "zh": "工具 Schema 设计——命名、描述、参数约束",
+     "min": 45,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-tools2.js"
+     ]
+    },
+    {
+     "id": "06-mcp-fundamentals",
+     "en": "MCP Fundamentals: Stateless Requests and JSON-RPC",
+     "zh": "MCP 基础：无状态请求与 JSON-RPC",
+     "min": 55,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_main.py"
+     ],
+     "figs": [
+      "figures-llms-systems.js",
+      "figures-mcp.js"
+     ]
+    },
+    {
+     "id": "07-building-an-mcp-server",
+     "en": "Building an MCP Server: Stateless Python and TypeScript",
+     "zh": "构建 MCP Server：无状态 Python 与 TypeScript",
+     "min": 85,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/main.ts",
+      "code/tests/test_main.py"
+     ],
+     "figs": [
+      "figures-mcp.js",
+      "figures-tools3.js"
+     ]
+    },
+    {
+     "id": "08-building-an-mcp-client",
+     "en": "Building an MCP Client: Discovery, Routing, and Dual-Era Fallback",
+     "zh": "构建 MCP Client：发现、路由与双时代回退",
+     "min": 85,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_main.py"
+     ],
+     "figs": [
+      "figures-mcp.js",
+      "figures-tools2.js"
+     ]
+    },
+    {
+     "id": "09-mcp-transports",
+     "en": "MCP Transports: stdio and Stateless Streamable HTTP",
+     "zh": "MCP Transports：stdio 与无状态 Streamable HTTP",
+     "min": 65,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_main.py"
+     ],
+     "figs": [
+      "figures-mcp.js",
+      "figures-tools2.js"
+     ]
+    },
+    {
+     "id": "10-mcp-resources-and-prompts",
+     "en": "MCP Resources and Prompts: Addressable Context for Stateless Servers",
+     "zh": "MCP Resources 与 Prompts：为无状态 Server 提供可寻址上下文",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_main.py"
+     ],
+     "figs": [
+      "figures-mcp.js",
+      "figures-tools3.js"
+     ]
+    },
+    {
+     "id": "11-mcp-sampling",
+     "en": "MCP Model Input: Sampling Migration and Stateless MRTR",
+     "zh": "MCP Model Input：Sampling 迁移与无状态 MRTR",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_main.py"
+     ],
+     "figs": [
+      "figures-mcp.js",
+      "figures-tools3.js"
+     ]
+    },
+    {
+     "id": "12-mcp-roots-and-elicitation",
+     "en": "Explicit Scope and Stateless Elicitation",
+     "zh": "显式 Scope 与无状态 Elicitation",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_main.py"
+     ],
+     "figs": [
+      "figures-mcp.js",
+      "figures-tools3.js"
+     ]
+    },
+    {
+     "id": "13-mcp-async-tasks",
+     "en": "MCP Tasks Extension: Durable Work on a Stateless Core",
+     "zh": "MCP Tasks 扩展：无状态核心上的持久工作",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_main.py"
+     ],
+     "figs": [
+      "figures-mcp.js",
+      "figures-tools2.js"
+     ]
+    },
+    {
+     "id": "14-mcp-apps",
+     "en": "MCP Apps on the Stateless Protocol",
+     "zh": "无状态协议上的 MCP Apps",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_main.py"
+     ],
+     "figs": [
+      "figures-mcp.js",
+      "figures-tools3.js"
+     ]
+    },
+    {
+     "id": "15-mcp-security-tool-poisoning",
+     "en": "MCP Security: Poisoned Metadata, Routing, and MRTR State",
+     "zh": "MCP 安全：投毒元数据、路由与 MRTR 状态",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_main.py"
+     ],
+     "figs": [
+      "figures-mcp.js",
+      "figures-tools2.js"
+     ]
+    },
+    {
+     "id": "16-mcp-security-oauth-2-1",
+     "en": "MCP Authorization: CIMD, Issuer Binding, PKCE, and Step-Up",
+     "zh": "MCP 授权：CIMD、签发方绑定、PKCE 与权限升级",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_main.py"
+     ],
+     "figs": [
+      "figures-mcp.js",
+      "figures-tools3.js"
+     ]
+    },
+    {
+     "id": "17-mcp-gateways-and-registries",
+     "en": "Stateless MCP Gateways and Registry Admission",
+     "zh": "无状态 MCP 网关与注册表准入",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_main.py"
+     ],
+     "figs": [
+      "figures-mcp.js",
+      "figures-tools3.js"
+     ]
+    },
+    {
+     "id": "18-mcp-auth-production",
+     "en": "MCP Auth in Production: Issuer-Bound Enrollment and Tokens",
+     "zh": "生产环境中的 MCP Auth：与 issuer 绑定的入册与 token",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_main.py"
+     ],
+     "figs": [
+      "figures-mcp.js",
+      "figures-tools3.js"
+     ]
+    },
+    {
+     "id": "19-a2a-protocol",
+     "en": "A2A — Agent-to-Agent Protocol",
+     "zh": "A2A——Agent-to-Agent 协议",
+     "min": 75,
+     "quiz": false,
+     "code": [
+      "code/main.py",
+      "code/main.ts"
+     ],
+     "figs": [
+      "figures-systems3.js"
+     ]
+    },
+    {
+     "id": "20-opentelemetry-genai",
+     "en": "OpenTelemetry GenAI — Tracing Tool Calls End-to-End",
+     "zh": "OpenTelemetry GenAI——端到端追踪工具调用",
+     "min": 75,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-tools3.js"
+     ]
+    },
+    {
+     "id": "21-llm-routing-layer",
+     "en": "LLM Routing Layer — LiteLLM, OpenRouter, Portkey",
+     "zh": "LLM 路由层——LiteLLM、OpenRouter、Portkey",
+     "min": 45,
+     "quiz": false,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-tools2.js"
+     ]
+    },
+    {
+     "id": "22-skills-and-agent-sdks",
+     "en": "Agent Skills: Portable Contract and Runtime Boundary",
+     "zh": "Agent Skills：可移植契约与运行时边界",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_main.py"
+     ],
+     "figs": [
+      "figures-agent-skills.js"
+     ]
+    },
+    {
+     "id": "23-capstone-tool-ecosystem",
+     "en": "Capstone: Stateless Tool Ecosystem",
+     "zh": "综合项目：无状态工具生态",
+     "min": 120,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_main.py"
+     ],
+     "figs": [
+      "figures-tools3.js"
+     ]
+    },
+    {
+     "id": "24-skill-discovery-and-progressive-disclosure",
+     "en": "Skill Discovery and Progressive Disclosure",
+     "zh": "Skill 发现与渐进式披露",
+     "min": 105,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_main.py"
+     ],
+     "figs": [
+      "figures-agent-skills.js"
+     ]
+    },
+    {
+     "id": "25-skill-invocation-and-routing",
+     "en": "Skill Invocation and Routing",
+     "zh": "Skill 调用与路由",
+     "min": 105,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_main.py"
+     ],
+     "figs": [
+      "figures-agent-skills.js"
+     ]
+    },
+    {
+     "id": "26-skill-permissions-sandboxes-and-trust",
+     "en": "Skill Permissions, Sandboxes, and Trust",
+     "zh": "Skill 权限、沙箱与信任",
+     "min": 120,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/sandbox/Containerfile",
+      "code/sandbox/input/message.txt",
+      "code/sandbox/probe.py",
+      "code/tests/test_main.py"
+     ],
+     "figs": [
+      "figures-agent-skills.js"
+     ]
+    },
+    {
+     "id": "27-skill-evals-packaging-and-portability",
+     "en": "Skill Evals, Packaging, and Portability",
+     "zh": "Skill 评测、打包与可移植性",
+     "min": 150,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_main.py"
+     ],
+     "figs": [
+      "figures-agent-skills.js"
+     ]
+    },
+    {
+     "id": "28-mcp-tool-contracts-and-content",
+     "en": "MCP Tool Contracts and Content",
+     "zh": "MCP 工具契约与内容",
+     "min": 120,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_main.py"
+     ],
+     "figs": [
+      "figures-mcp.js"
+     ]
+    },
+    {
+     "id": "29-mcp-reliability-cancellation-and-flow-control",
+     "en": "MCP Reliability, Cancellation, and Flow Control",
+     "zh": "MCP 可靠性、取消与流量控制",
+     "min": 120,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_main.py"
+     ],
+     "figs": [
+      "figures-mcp.js"
+     ]
+    },
+    {
+     "id": "30-mcp-registry-supply-chain-and-drift",
+     "en": "MCP Registry Supply Chain: Admission, Drift, and Rollback",
+     "zh": "MCP Registry 供应链：准入、漂移与回滚",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_main.py"
+     ],
+     "figs": [
+      "figures-mcp.js"
+     ]
+    },
+    {
+     "id": "31-mcp-conformance-versioning-and-operations",
+     "en": "MCP Conformance Engineering: Versioning, Evidence, and Operations",
+     "zh": "MCP 一致性工程：版本、证据与运维",
+     "min": 100,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_main.py"
+     ],
+     "figs": [
+      "figures-mcp.js"
+     ]
+    },
+    {
+     "id": "32-program-anatomy-elf-from-scratch",
+     "en": "Program Anatomy: An ELF Reader From Scratch",
+     "zh": "程序解剖：从零编写 ELF 读取器",
+     "min": 120,
+     "quiz": true,
+     "code": [
+      "code/fixtures/README.md",
+      "code/fixtures/build_fixtures.sh",
+      "code/fixtures/build_tiny_elf.py",
+      "code/fixtures/ledger-arm64-O1.load-commands.txt",
+      "code/fixtures/ledger-arm64-O1.o",
+      "code/fixtures/ledger-arm64-O1.objdump.txt",
+      "code/fixtures/ledger-x86_64-O0.o",
+      "code/fixtures/ledger-x86_64-O0.objdump.txt",
+      "code/fixtures/ledger-x86_64-O1.o",
+      "code/fixtures/ledger-x86_64-O1.objdump.txt",
+      "code/fixtures/ledger-x86_64-O2.o",
+      "code/fixtures/ledger-x86_64-O2.objdump.txt",
+      "code/fixtures/ledger.c",
+      "code/fixtures/tiny-x86_64",
+      "code/fixtures/tiny-x86_64.objdump.txt",
+      "code/lab.py",
+      "code/lab_answers.json",
+      "code/main.py",
+      "code/tests/test_lab.py",
+      "code/tests/test_main.py"
+     ],
+     "figs": [
+      "figures-re-32.js"
+     ]
+    },
+    {
+     "id": "33-disassembly-and-control-flow",
+     "en": "Disassembly and Control Flow: From Bytes to a Graph You Can Check",
+     "zh": "反汇编与控制流：从字节到可核验的图",
+     "min": 150,
+     "quiz": true,
+     "code": [
+      "code/fixtures/README.md",
+      "code/fixtures/ledger-x86_64-O0.o",
+      "code/fixtures/ledger-x86_64-O0.objdump.txt",
+      "code/fixtures/ledger-x86_64-O1.o",
+      "code/fixtures/ledger-x86_64-O1.objdump.txt",
+      "code/fixtures/ledger-x86_64-O2.o",
+      "code/fixtures/ledger-x86_64-O2.objdump.txt",
+      "code/fixtures/ledger.c",
+      "code/fixtures/sweep-trap.o",
+      "code/fixtures/sweep-trap.objdump.txt",
+      "code/fixtures/sweep-trap.s",
+      "code/lab.py",
+      "code/lab_answers.json",
+      "code/main.py",
+      "code/tests/test_lab.py",
+      "code/tests/test_main.py"
+     ],
+     "figs": [
+      "figures-re-33.js"
+     ]
+    },
+    {
+     "id": "34-lifting-to-pseudocode",
+     "en": "Lifting to Pseudocode: IR, SSA, and Structuring From Scratch",
+     "zh": "提升为伪代码：从零实现 IR、SSA 与结构恢复",
+     "min": 150,
+     "quiz": true,
+     "code": [
+      "code/fixtures/README.md",
+      "code/fixtures/ghidra/grade.json",
+      "code/fixtures/ghidra/ledger-x86_64-O1.ghidra-repaired.c",
+      "code/fixtures/ghidra/ledger-x86_64-O1.ghidra.c",
+      "code/fixtures/ghidra/percent_change.json",
+      "code/fixtures/ghidra/total.json",
+      "code/fixtures/ledger-x86_64-O0.o",
+      "code/fixtures/ledger-x86_64-O0.objdump.txt",
+      "code/fixtures/ledger-x86_64-O1.o",
+      "code/fixtures/ledger-x86_64-O1.objdump.txt",
+      "code/fixtures/ledger.c",
+      "code/lab.py",
+      "code/lab_answers.json",
+      "code/main.py",
+      "code/tests/test_lab.py",
+      "code/tests/test_main.py"
+     ],
+     "figs": [
+      "figures-re-34.js"
+     ]
+    },
+    {
+     "id": "35-evidence-confidence-and-unknowns",
+     "en": "Evidence, Confidence, and Unknowns in Binary Analysis",
+     "zh": "二进制分析中的证据、置信度与未知项",
+     "min": 105,
+     "quiz": true,
+     "code": [
+      "code/fixtures/README.md",
+      "code/fixtures/harness.c",
+      "code/fixtures/ledger-x86_64-O1.o",
+      "code/fixtures/ledger.c",
+      "code/fixtures/rea-evidence-grade.json",
+      "code/fixtures/rea-evidence-percent-change.json",
+      "code/fixtures/rea-snapshot.json",
+      "code/fixtures/run-evidence.json",
+      "code/lab.py",
+      "code/lab_answers.json",
+      "code/main.py",
+      "code/tests/test_lab.py",
+      "code/tests/test_main.py"
+     ],
+     "figs": [
+      "figures-re-35.js"
+     ]
+    },
+    {
+     "id": "36-rebuild-and-prove-equal",
+     "en": "Rebuild and Prove Equal: Differential Tests, Byte Comparison, and the Evidence Loop",
+     "zh": "重建并证明等价：差分测试、字节比较与证据循环",
+     "min": 110,
+     "quiz": true,
+     "code": [
+      "code/driver.c",
+      "code/fixtures/README.md",
+      "code/fixtures/candidates/grade_case10_wrong.c",
+      "code/fixtures/candidates/grade_case10_wrong.o",
+      "code/fixtures/candidates/grade_switch.c",
+      "code/fixtures/candidates/grade_switch.o",
+      "code/fixtures/candidates/grade_table.c",
+      "code/fixtures/candidates/grade_table.o",
+      "code/fixtures/candidates/grade_thresholds.c",
+      "code/fixtures/candidates/grade_thresholds.o",
+      "code/fixtures/candidates/percent_change_div_first.c",
+      "code/fixtures/candidates/percent_change_div_first.o",
+      "code/fixtures/candidates/percent_change_mul_first.c",
+      "code/fixtures/candidates/percent_change_mul_first.o",
+      "code/fixtures/candidates/percent_change_split.c",
+      "code/fixtures/candidates/percent_change_split.o",
+      "code/fixtures/candidates/percent_change_wide.c",
+      "code/fixtures/candidates/percent_change_wide.o",
+      "code/fixtures/ledger-x86_64-O1.o",
+      "code/fixtures/ledger.c",
+      "code/fixtures/runs/agent-run.json",
+      "code/fixtures/runs/leg-one-equal-aarch64-darwin.json",
+      "code/fixtures/runs/leg-one-plausible-aarch64-darwin.json",
+      "code/lab.py",
+      "code/lab_answers.json",
+      "code/main.py",
+      "code/tests/fake_rea_server.py",
+      "code/tests/test_lab.py",
+      "code/tests/test_main.py"
+     ],
+     "figs": [
+      "figures-re-36.js"
+     ]
+    },
+    {
+     "id": "37-the-reverse-engineering-landscape",
+     "en": "The Reverse Engineering Landscape: History, Tool Families, and How a Decompiler Is Built",
+     "zh": "逆向工程全景：历史、工具家族与反编译器构造",
+     "min": 150,
+     "quiz": true,
+     "code": [
+      "code/fixtures/ExportAnalysis.java",
+      "code/fixtures/README.md",
+      "code/fixtures/build_fixtures.sh",
+      "code/fixtures/capture_angr.py",
+      "code/fixtures/capture_ir.py",
+      "code/fixtures/capture_tools.py",
+      "code/fixtures/captures.json",
+      "code/fixtures/ir-lifts.json",
+      "code/fixtures/ledger-x86_64-O0.angr.json",
+      "code/fixtures/ledger-x86_64-O0.ghidra.json",
+      "code/fixtures/ledger-x86_64-O0.o",
+      "code/fixtures/ledger-x86_64-O0.objdump.txt",
+      "code/fixtures/ledger-x86_64-O0.radare2.json",
+      "code/fixtures/ledger-x86_64-O0.rizin.json",
+      "code/fixtures/ledger-x86_64-O1.angr.json",
+      "code/fixtures/ledger-x86_64-O1.ghidra.json",
+      "code/fixtures/ledger-x86_64-O1.o",
+      "code/fixtures/ledger-x86_64-O1.objdump.txt",
+      "code/fixtures/ledger-x86_64-O1.radare2.json",
+      "code/fixtures/ledger-x86_64-O1.rizin.json",
+      "code/fixtures/ledger-x86_64-O2.angr.json",
+      "code/fixtures/ledger-x86_64-O2.ghidra.json",
+      "code/fixtures/ledger-x86_64-O2.o",
+      "code/fixtures/ledger-x86_64-O2.objdump.txt",
+      "code/fixtures/ledger-x86_64-O2.radare2.json",
+      "code/fixtures/ledger-x86_64-O2.rizin.json",
+      "code/fixtures/ledger.c",
+      "code/fixtures/sweep-trap.angr.json",
+      "code/fixtures/sweep-trap.ghidra.json",
+      "code/fixtures/sweep-trap.o",
+      "code/fixtures/sweep-trap.objdump.txt",
+      "code/fixtures/sweep-trap.radare2.json",
+      "code/fixtures/sweep-trap.rizin.json",
+      "code/fixtures/sweep-trap.s",
+      "code/main.py",
+      "code/tests/test_main.py"
+     ],
+     "figs": [
+      "figures-re-37.js"
+     ]
+    },
+    {
+     "id": "38-calling-conventions-and-stack-frames",
+     "en": "Calling Conventions and Stack Frames: System V, Windows x64, and AArch64",
+     "zh": "调用约定与栈帧：System V、Windows x64 与 AArch64",
+     "min": 140,
+     "quiz": true,
+     "code": [
+      "code/fixtures/README.md",
+      "code/fixtures/SHA256SUMS.txt",
+      "code/fixtures/angr_cc.py",
+      "code/fixtures/build_fixtures.sh",
+      "code/fixtures/capture_tools.sh",
+      "code/fixtures/convention-aarch64-linux-O0.o",
+      "code/fixtures/convention-aarch64-linux-O0.objdump.txt",
+      "code/fixtures/convention-aarch64-linux-O0.symbols.txt",
+      "code/fixtures/convention-aarch64-linux-O2-eh.eh-frame.txt",
+      "code/fixtures/convention-aarch64-linux-O2-eh.o",
+      "code/fixtures/convention-aarch64-linux-O2.o",
+      "code/fixtures/convention-aarch64-linux-O2.objdump.txt",
+      "code/fixtures/convention-aarch64-linux-O2.symbols.txt",
+      "code/fixtures/convention-arm64-macos-O2.o",
+      "code/fixtures/convention-arm64-macos-O2.objdump.txt",
+      "code/fixtures/convention-arm64-macos-O2.symbols.txt",
+      "code/fixtures/convention-x86_64-linux-O0-noredzone.o",
+      "code/fixtures/convention-x86_64-linux-O0-noredzone.objdump.txt",
+      "code/fixtures/convention-x86_64-linux-O0.o",
+      "code/fixtures/convention-x86_64-linux-O0.objdump.txt",
+      "code/fixtures/convention-x86_64-linux-O0.symbols.txt",
+      "code/fixtures/convention-x86_64-linux-O2-eh.eh-frame.txt",
+      "code/fixtures/convention-x86_64-linux-O2-eh.o",
+      "code/fixtures/convention-x86_64-linux-O2-fp.o",
+      "code/fixtures/convention-x86_64-linux-O2-fp.objdump.txt",
+      "code/fixtures/convention-x86_64-linux-O2.o",
+      "code/fixtures/convention-x86_64-linux-O2.objdump.txt",
+      "code/fixtures/convention-x86_64-linux-O2.symbols.txt",
+      "code/fixtures/convention-x86_64-windows-O0.o",
+      "code/fixtures/convention-x86_64-windows-O0.objdump.txt",
+      "code/fixtures/convention-x86_64-windows-O0.symbols.txt",
+      "code/fixtures/convention-x86_64-windows-O2-seh.o",
+      "code/fixtures/convention-x86_64-windows-O2-seh.objdump.txt",
+      "code/fixtures/convention-x86_64-windows-O2-seh.relocs.txt",
+      "code/fixtures/convention-x86_64-windows-O2-seh.sections.txt",
+      "code/fixtures/convention-x86_64-windows-O2-seh.xdata.txt",
+      "code/fixtures/convention-x86_64-windows-O2.o",
+      "code/fixtures/convention-x86_64-windows-O2.objdump.txt",
+      "code/fixtures/convention-x86_64-windows-O2.symbols.txt",
+      "code/fixtures/convention.c",
+      "code/fixtures/toolchain-versions.txt",
+      "code/fixtures/tools/angr-convention-aarch64-linux-O2.txt",
+      "code/fixtures/tools/angr-convention-x86_64-linux-O2.txt",
+      "code/fixtures/tools/angr-convention-x86_64-windows-O2.txt",
+      "code/fixtures/tools/radare2-convention-aarch64-linux-O2.txt",
+      "code/fixtures/tools/radare2-convention-x86_64-linux-O0.txt",
+      "code/fixtures/tools/radare2-convention-x86_64-linux-O2.txt",
+      "code/fixtures/tools/radare2-convention-x86_64-windows-O2.txt",
+      "code/fixtures/tools/radare2-version.txt",
+      "code/fixtures/tools/rizin-convention-aarch64-linux-O2.txt",
+      "code/fixtures/tools/rizin-convention-x86_64-linux-O0.txt",
+      "code/fixtures/tools/rizin-convention-x86_64-linux-O2.txt",
+      "code/fixtures/tools/rizin-convention-x86_64-windows-O2.txt",
+      "code/fixtures/tools/rizin-version.txt",
+      "code/main.py",
+      "code/tests/test_main.py"
+     ],
+     "figs": [
+      "figures-re-38.js"
+     ]
+    },
+    {
+     "id": "39-compiler-idioms-and-optimization",
+     "en": "Compiler Idioms: What Optimization Does to Your Code and How to Read It Back",
+     "zh": "编译器惯用模式：优化怎样改变代码，又怎样读回源码",
+     "min": 150,
+     "quiz": true,
+     "code": [
+      "code/fixtures/README.md",
+      "code/fixtures/build_fixtures.sh",
+      "code/fixtures/canary-arm64-ssp-O2.o",
+      "code/fixtures/canary-arm64-ssp-O2.objdump.txt",
+      "code/fixtures/canary-arm64-ssp-O2.s",
+      "code/fixtures/canary-x86_64-cet-O2.o",
+      "code/fixtures/canary-x86_64-cet-O2.objdump.txt",
+      "code/fixtures/canary-x86_64-cet-O2.s",
+      "code/fixtures/canary-x86_64-ssp-O2.o",
+      "code/fixtures/canary-x86_64-ssp-O2.objdump.txt",
+      "code/fixtures/canary-x86_64-ssp-O2.s",
+      "code/fixtures/canary.c",
+      "code/fixtures/capture_angr.py",
+      "code/fixtures/capture_lifts.py",
+      "code/fixtures/dispatch-arm64-O2.o",
+      "code/fixtures/dispatch-arm64-O2.objdump.txt",
+      "code/fixtures/dispatch-arm64-O2.s",
+      "code/fixtures/dispatch-x86_64-O2.o",
+      "code/fixtures/dispatch-x86_64-O2.objdump.txt",
+      "code/fixtures/dispatch-x86_64-O2.s",
+      "code/fixtures/dispatch.c",
+      "code/fixtures/idioms-arm64-O0.o",
+      "code/fixtures/idioms-arm64-O0.objdump.txt",
+      "code/fixtures/idioms-arm64-O0.s",
+      "code/fixtures/idioms-arm64-O1.o",
+      "code/fixtures/idioms-arm64-O1.objdump.txt",
+      "code/fixtures/idioms-arm64-O1.s",
+      "code/fixtures/idioms-arm64-O2.o",
+      "code/fixtures/idioms-arm64-O2.objdump.txt",
+      "code/fixtures/idioms-arm64-O2.s",
+      "code/fixtures/idioms-arm64-O3.o",
+      "code/fixtures/idioms-arm64-O3.objdump.txt",
+      "code/fixtures/idioms-arm64-O3.s",
+      "code/fixtures/idioms-arm64-jt4-O2.o",
+      "code/fixtures/idioms-arm64-jt4-O2.objdump.txt",
+      "code/fixtures/idioms-arm64-jt4-O2.s",
+      "code/fixtures/idioms-x86_64-O0.o",
+      "code/fixtures/idioms-x86_64-O0.objdump.txt",
+      "code/fixtures/idioms-x86_64-O0.s",
+      "code/fixtures/idioms-x86_64-O1.o",
+      "code/fixtures/idioms-x86_64-O1.objdump.txt",
+      "code/fixtures/idioms-x86_64-O1.s",
+      "code/fixtures/idioms-x86_64-O2.angr.json",
+      "code/fixtures/idioms-x86_64-O2.lifts.json",
+      "code/fixtures/idioms-x86_64-O2.lldb.txt",
+      "code/fixtures/idioms-x86_64-O2.o",
+      "code/fixtures/idioms-x86_64-O2.objdump.txt",
+      "code/fixtures/idioms-x86_64-O2.radare2.txt",
+      "code/fixtures/idioms-x86_64-O2.rizin.txt",
+      "code/fixtures/idioms-x86_64-O2.s",
+      "code/fixtures/idioms-x86_64-O3.o",
+      "code/fixtures/idioms-x86_64-O3.objdump.txt",
+      "code/fixtures/idioms-x86_64-O3.s",
+      "code/fixtures/idioms-x86_64-nobuiltin-O2.o",
+      "code/fixtures/idioms-x86_64-nobuiltin-O2.objdump.txt",
+      "code/fixtures/idioms-x86_64-nobuiltin-O2.s",
+      "code/fixtures/idioms-x86_64-nofastisel-O0.o",
+      "code/fixtures/idioms-x86_64-nofastisel-O0.objdump.txt",
+      "code/fixtures/idioms-x86_64-nofastisel-O0.s",
+      "code/fixtures/idioms-x86_64-nojt-O2.o",
+      "code/fixtures/idioms-x86_64-nojt-O2.objdump.txt",
+      "code/fixtures/idioms-x86_64-nojt-O2.s",
+      "code/fixtures/idioms-x86_64-novec-O2.o",
+      "code/fixtures/idioms-x86_64-novec-O2.objdump.txt",
+      "code/fixtures/idioms-x86_64-novec-O2.s",
+      "code/fixtures/idioms.c",
+      "code/fixtures/toolchain.txt",
+      "code/main.py",
+      "code/tests/test_main.py"
+     ],
+     "figs": [
+      "figures-re-39.js"
+     ]
+    },
+    {
+     "id": "40-linking-loading-and-stripped-binaries",
+     "en": "Linking, Loading, and Stripped Binaries: PLT, GOT, Imports, Fixups, and Function Identification",
+     "zh": "链接、加载与剥离符号后的二进制：PLT、GOT、导入、修正与函数识别",
+     "min": 160,
+     "quiz": true,
+     "code": [
+      "code/fixtures/README.md",
+      "code/fixtures/build_fixtures.sh",
+      "code/fixtures/build_tiny_dyn_elf.py",
+      "code/fixtures/build_tiny_pe.py",
+      "code/fixtures/ledger-arm64-O0.o",
+      "code/fixtures/ledger-arm64-O0.objdump-r.txt",
+      "code/fixtures/ledger-arm64-O2.o",
+      "code/fixtures/ledger-arm64-O2.objdump-r.txt",
+      "code/fixtures/ledger-x86_64-O1.o",
+      "code/fixtures/ledger-x86_64-O1.objdump.txt",
+      "code/fixtures/ledger-x86_64.obj",
+      "code/fixtures/ledger-x86_64.obj.objdump.txt",
+      "code/fixtures/ledger.c",
+      "code/fixtures/ledger_main",
+      "code/fixtures/ledger_main.chained-fixups.txt",
+      "code/fixtures/ledger_main.dyld-chain-details.txt",
+      "code/fixtures/ledger_main.dyld-fixups.txt",
+      "code/fixtures/ledger_main.dyld-imports.txt",
+      "code/fixtures/ledger_main.nm.txt",
+      "code/fixtures/ledger_main.otool-Iv.txt",
+      "code/fixtures/ledger_main.otool-h.txt",
+      "code/fixtures/ledger_main.otool-l.txt",
+      "code/fixtures/ledger_main.run.txt",
+      "code/fixtures/ledger_main.stripped",
+      "code/fixtures/ledger_main.stripped.nm.txt",
+      "code/fixtures/ledger_main.stripped.otool-l.txt",
+      "code/fixtures/ledger_main.stripped.run.txt",
+      "code/fixtures/ledger_main.stubs.txt",
+      "code/fixtures/ledger_main_nochain",
+      "code/fixtures/ledger_main_nochain.dyld-fixups.txt",
+      "code/fixtures/ledger_main_nochain.otool-h.txt",
+      "code/fixtures/ledger_main_nochain.otool-l.txt",
+      "code/fixtures/libledger.dyld-exports.txt",
+      "code/fixtures/libledger.dylib",
+      "code/fixtures/libledger.nm.txt",
+      "code/fixtures/libledger.stripped.dyld-exports.txt",
+      "code/fixtures/libledger.stripped.dylib",
+      "code/fixtures/libledger.stripped.function-starts.txt",
+      "code/fixtures/libledger.stripped.nm.txt",
+      "code/fixtures/main-arm64-O0.o",
+      "code/fixtures/main-arm64-O0.objdump-r.txt",
+      "code/fixtures/main-arm64-O2.o",
+      "code/fixtures/main-arm64-O2.objdump-r.txt",
+      "code/fixtures/main-x86_64-O1.o",
+      "code/fixtures/main-x86_64-O1.objdump.txt",
+      "code/fixtures/main-x86_64.obj",
+      "code/fixtures/main-x86_64.obj.objdump.txt",
+      "code/fixtures/main.c",
+      "code/fixtures/probe-libs.txt",
+      "code/fixtures/probe_libs.py",
+      "code/fixtures/static-arm64-O0",
+      "code/fixtures/static-arm64-O0.nm.txt",
+      "code/fixtures/static-arm64-O0.stripped",
+      "code/fixtures/static-arm64-O0.stripped.function-starts.txt",
+      "code/fixtures/static-arm64-O0.stripped.nm.txt",
+      "code/fixtures/static-arm64-O0.stripped.objdump.txt",
+      "code/fixtures/static-arm64-O2",
+      "code/fixtures/static-arm64-O2.nm.txt",
+      "code/fixtures/static-arm64-O2.stripped",
+      "code/fixtures/static-arm64-O2.stripped.function-starts.txt",
+      "code/fixtures/static-arm64-O2.stripped.nm.txt",
+      "code/fixtures/static-arm64-O2.stripped.objdump.txt",
+      "code/fixtures/static-arm64-O2.stripped.run.txt",
+      "code/fixtures/tiny-dyn-x86_64",
+      "code/fixtures/tiny-dyn-x86_64.objdump.txt",
+      "code/fixtures/tiny-x86_64.exe",
+      "code/fixtures/tiny-x86_64.exe.objdump.txt",
+      "code/main.py",
+      "code/tests/test_main.py"
+     ],
+     "figs": [
+      "figures-re-40.js"
+     ]
+    },
+    {
+     "id": "41-recovering-data-and-types",
+     "en": "Recovering Data and Types: Structs, Arrays, C++ Objects, and DWARF",
+     "zh": "恢复数据与类型：结构体、数组、C++ 对象和 DWARF",
+     "min": 140,
+     "quiz": true,
+     "code": [
+      "code/fixtures/README.md",
+      "code/fixtures/SHA256SUMS.txt",
+      "code/fixtures/account-native.run.txt",
+      "code/fixtures/account-x86_64-O0-g.dwarfdump-tables.txt",
+      "code/fixtures/account-x86_64-O0-g.dwarfdump.txt",
+      "code/fixtures/account-x86_64-O0-g.o",
+      "code/fixtures/account-x86_64-O0-g.objdump.txt",
+      "code/fixtures/account-x86_64-O0-g.relocs.txt",
+      "code/fixtures/account-x86_64-O1-g.o",
+      "code/fixtures/account-x86_64-O1-g.objdump.txt",
+      "code/fixtures/account-x86_64-O1.o",
+      "code/fixtures/account-x86_64-O1.objdump.txt",
+      "code/fixtures/account-x86_64-O2-g.o",
+      "code/fixtures/account-x86_64-O2-g.objdump.txt",
+      "code/fixtures/account.c",
+      "code/fixtures/build_fixtures.sh",
+      "code/fixtures/capture_tools.sh",
+      "code/fixtures/ghidra/ListTypes.java",
+      "code/fixtures/pyelftools_struct.py",
+      "code/fixtures/shapes-x86_64-O0-g.cxxfilt.txt",
+      "code/fixtures/shapes-x86_64-O0-g.dwarfdump.txt",
+      "code/fixtures/shapes-x86_64-O0-g.mangled.txt",
+      "code/fixtures/shapes-x86_64-O0-g.o",
+      "code/fixtures/shapes-x86_64-O0-g.objdump.txt",
+      "code/fixtures/shapes-x86_64-O0-g.relocs.txt",
+      "code/fixtures/shapes-x86_64-O0-g.symbols.txt",
+      "code/fixtures/shapes-x86_64-O1-g.o",
+      "code/fixtures/shapes-x86_64-O1-g.objdump.txt",
+      "code/fixtures/shapes-x86_64-O1-g.symbols.txt",
+      "code/fixtures/shapes.cpp",
+      "code/fixtures/toolchain-versions.txt",
+      "code/fixtures/tools/ghidra-account-dwarf.txt",
+      "code/fixtures/tools/ghidra-account-nodwarf.txt",
+      "code/fixtures/tools/ghidra-shapes-dwarf.txt",
+      "code/fixtures/tools/ghidra-version.txt",
+      "code/fixtures/tools/lldb-account.txt",
+      "code/fixtures/tools/lldb-shapes.txt",
+      "code/fixtures/tools/lldb-version.txt",
+      "code/fixtures/tools/pyelftools-account.txt",
+      "code/fixtures/tools/pyelftools-version.txt",
+      "code/fixtures/tools/radare2-account.txt",
+      "code/fixtures/tools/radare2-version.txt",
+      "code/fixtures/tools/rizin-account-nodwarf.txt",
+      "code/fixtures/tools/rizin-account.txt",
+      "code/fixtures/tools/rizin-version.txt",
+      "code/main.py",
+      "code/tests/test_main.py"
+     ],
+     "figs": [
+      "figures-re-41.js"
+     ]
+    },
+    {
+     "id": "42-dynamic-analysis-of-your-own-program",
+     "en": "Dynamic Analysis of Your Own Program: Debuggers, Traces, and Confirming Static Claims",
+     "zh": "动态分析自己的程序：调试器、跟踪与静态结论验证",
+     "min": 130,
+     "quiz": true,
+     "code": [
+      "code/fixtures/README.md",
+      "code/fixtures/account-O0",
+      "code/fixtures/account-O0.codesign.txt",
+      "code/fixtures/account-O0.dSYM/Contents/Info.plist",
+      "code/fixtures/account-O0.dSYM/Contents/Resources/DWARF/account-O0",
+      "code/fixtures/account-O0.dSYM/Contents/Resources/Relocations/aarch64/account-O0.yml",
+      "code/fixtures/account-O0.dwarfdump.txt",
+      "code/fixtures/account-O0.nm.txt",
+      "code/fixtures/account-O0.objdump.txt",
+      "code/fixtures/account-O2",
+      "code/fixtures/account-O2.dSYM/Contents/Info.plist",
+      "code/fixtures/account-O2.dSYM/Contents/Resources/DWARF/account-O2",
+      "code/fixtures/account-O2.dSYM/Contents/Resources/Relocations/aarch64/account-O2.yml",
+      "code/fixtures/account-O2.dwarfdump.txt",
+      "code/fixtures/account-O2.nm.txt",
+      "code/fixtures/account-O2.objdump.txt",
+      "code/fixtures/account.c",
+      "code/fixtures/build_fixtures.sh",
+      "code/fixtures/core-load-O0.lldb",
+      "code/fixtures/core-load-O0.lldb.txt",
+      "code/fixtures/core-save-O0.lldb",
+      "code/fixtures/core-save-O0.lldb.txt",
+      "code/fixtures/sandbox-O0.lldb.txt",
+      "code/fixtures/session-O0.lldb",
+      "code/fixtures/session-O0.lldb.txt",
+      "code/fixtures/session-O2.lldb",
+      "code/fixtures/session-O2.lldb.txt",
+      "code/fixtures/types-O0.lldb",
+      "code/fixtures/types-O0.lldb.txt",
+      "code/main.py",
+      "code/tests/test_main.py"
+     ],
+     "figs": [
+      "figures-re-42.js"
+     ]
+    },
+    {
+     "id": "43-bytecode-and-managed-formats",
+     "en": "Beyond Native Code: Python, JVM, .NET, and WebAssembly Bytecode",
+     "zh": "超越原生代码：Python、JVM、.NET 与 WebAssembly 字节码",
+     "min": 150,
+     "quiz": true,
+     "code": [
+      "code/fixtures/README.md",
+      "code/fixtures/build_fixtures.sh",
+      "code/fixtures/dotnet/Ledger.cs",
+      "code/fixtures/dotnet/LedgerNet.csproj",
+      "code/fixtures/dotnet/LedgerNet.dll",
+      "code/fixtures/dotnet/LedgerNet.metadump.txt",
+      "code/fixtures/dotnet/LedgerNet.r2.txt",
+      "code/fixtures/dotnet/MetaDump/MetaDump.csproj",
+      "code/fixtures/dotnet/MetaDump/Program.cs",
+      "code/fixtures/java/Ledger-g.class",
+      "code/fixtures/java/Ledger-g.javap-c.txt",
+      "code/fixtures/java/Ledger-g.javap-v.txt",
+      "code/fixtures/java/Ledger-g.r2.txt",
+      "code/fixtures/java/Ledger-gnone.class",
+      "code/fixtures/java/Ledger-gnone.javap-c.txt",
+      "code/fixtures/java/Ledger-gnone.javap-v.txt",
+      "code/fixtures/java/Ledger-jdk25.class",
+      "code/fixtures/java/Ledger-jdk25.javap-c.txt",
+      "code/fixtures/java/Ledger-jdk25.javap-v.txt",
+      "code/fixtures/java/Ledger.class",
+      "code/fixtures/java/Ledger.java",
+      "code/fixtures/java/Ledger.javap-c.txt",
+      "code/fixtures/java/Ledger.javap-v.txt",
+      "code/fixtures/native/ledger-x86_64-O0.o",
+      "code/fixtures/native/ledger-x86_64-O0.objdump.txt",
+      "code/fixtures/native/ledger.c",
+      "code/fixtures/python/compile_pyc.py",
+      "code/fixtures/python/ledger.cpython-311.dis.txt",
+      "code/fixtures/python/ledger.cpython-311.pyc",
+      "code/fixtures/python/ledger.cpython-311.timestamp.pyc",
+      "code/fixtures/python/ledger.cpython-312.dis.txt",
+      "code/fixtures/python/ledger.cpython-312.pyc",
+      "code/fixtures/python/ledger.cpython-312.timestamp.pyc",
+      "code/fixtures/python/ledger.cpython-313.dis.txt",
+      "code/fixtures/python/ledger.cpython-313.pyc",
+      "code/fixtures/python/ledger.cpython-313.timestamp.pyc",
+      "code/fixtures/python/ledger.cpython-314.adaptive.txt",
+      "code/fixtures/python/ledger.cpython-314.dis-caches.txt",
+      "code/fixtures/python/ledger.cpython-314.dis.txt",
+      "code/fixtures/python/ledger.cpython-314.pyc",
+      "code/fixtures/python/ledger.cpython-314.timestamp.pyc",
+      "code/fixtures/python/ledger.py",
+      "code/fixtures/sha256.txt",
+      "code/fixtures/versions.txt",
+      "code/fixtures/wasm/ledger-names.objdump.txt",
+      "code/fixtures/wasm/ledger-names.wasm",
+      "code/fixtures/wasm/ledger-names.wasm2wat.txt",
+      "code/fixtures/wasm/ledger.objdump.txt",
+      "code/fixtures/wasm/ledger.r2.txt",
+      "code/fixtures/wasm/ledger.wasm",
+      "code/fixtures/wasm/ledger.wasm2wat.txt",
+      "code/fixtures/wasm/ledger.wat",
+      "code/main.py",
+      "code/tests/test_main.py"
+     ],
+     "figs": [
+      "figures-re-43.js"
+     ]
+    },
+    {
+     "id": "44-binary-diffing-and-symbolic-execution",
+     "en": "Binary Diffing and Symbolic Execution: Matching Functions and Solving for Inputs",
+     "zh": "二进制差异分析与符号执行：匹配函数并求解输入",
+     "min": 150,
+     "quiz": true,
+     "code": [
+      "code/fixtures/README.md",
+      "code/fixtures/angr-runs.json",
+      "code/fixtures/build_fixtures.sh",
+      "code/fixtures/capture_angr.py",
+      "code/fixtures/capture_ghidra_vt.sh",
+      "code/fixtures/capture_radiff2.sh",
+      "code/fixtures/capture_z3.py",
+      "code/fixtures/ghidra-version.txt",
+      "code/fixtures/ghidra-vt-O0-vs-O1.txt",
+      "code/fixtures/ghidra-vt-O1-vs-O2.txt",
+      "code/fixtures/ghidra/ListVersionTrackingMatches.java",
+      "code/fixtures/grade_case10_wrong.c",
+      "code/fixtures/grade_case10_wrong.o",
+      "code/fixtures/grade_case10_wrong.objdump.txt",
+      "code/fixtures/ledger-x86_64-O0.o",
+      "code/fixtures/ledger-x86_64-O0.objdump.txt",
+      "code/fixtures/ledger-x86_64-O1.o",
+      "code/fixtures/ledger-x86_64-O1.objdump.txt",
+      "code/fixtures/ledger-x86_64-O2.o",
+      "code/fixtures/ledger-x86_64-O2.objdump.txt",
+      "code/fixtures/ledger.c",
+      "code/fixtures/radiff2-AC-O0-vs-O1.txt",
+      "code/fixtures/radiff2-AC-O1-vs-O1.txt",
+      "code/fixtures/radiff2-AC-O1-vs-O2.txt",
+      "code/fixtures/radiff2-AC-relocs-O0-vs-O1.txt",
+      "code/fixtures/radiff2-AOC-O0-vs-O1.txt",
+      "code/fixtures/radiff2-AOC-O1-vs-O2.txt",
+      "code/fixtures/radiff2-s-O1-vs-O2.txt",
+      "code/fixtures/radiff2-ss-O1-vs-O2.txt",
+      "code/fixtures/radiff2-version.txt",
+      "code/fixtures/z3-runs.json",
+      "code/main.py",
+      "code/tests/test_main.py"
+     ],
+     "figs": [
+      "figures-re-44.js"
+     ]
+    },
+    {
+     "id": "45-ai-assisted-reverse-engineering",
+     "en": "AI-Assisted Reverse Engineering: LLM Decompilers, Analysis Agents, and Ground Truth",
+     "zh": "AI 辅助逆向工程：LLM 反编译器、分析 agent 与真值",
+     "min": 140,
+     "quiz": true,
+     "code": [
+      "code/driver.c",
+      "code/fixtures/README.md",
+      "code/fixtures/build_fixtures.sh",
+      "code/fixtures/candidates/f1_base_64.c",
+      "code/fixtures/candidates/f1_base_64.o",
+      "code/fixtures/candidates/f1_base_64.objdump.txt",
+      "code/fixtures/candidates/f1_base_64.report.json",
+      "code/fixtures/candidates/f1_mul_first.c",
+      "code/fixtures/candidates/f1_mul_first.o",
+      "code/fixtures/candidates/f1_mul_first.objdump.txt",
+      "code/fixtures/candidates/f1_mul_first.report.json",
+      "code/fixtures/candidates/f1_safe_div.c",
+      "code/fixtures/candidates/f1_safe_div.o",
+      "code/fixtures/candidates/f1_safe_div.objdump.txt",
+      "code/fixtures/candidates/f1_safe_div.report.json",
+      "code/fixtures/candidates/f1_wide_long.c",
+      "code/fixtures/candidates/f1_wide_long.o",
+      "code/fixtures/candidates/f1_wide_long.objdump.txt",
+      "code/fixtures/candidates/f1_wide_long.report.json",
+      "code/fixtures/candidates/f2_case10_wrong.c",
+      "code/fixtures/candidates/f2_case10_wrong.o",
+      "code/fixtures/candidates/f2_case10_wrong.objdump.txt",
+      "code/fixtures/candidates/f2_case10_wrong.report.json",
+      "code/fixtures/candidates/f2_clamp.c",
+      "code/fixtures/candidates/f2_clamp.o",
+      "code/fixtures/candidates/f2_clamp.objdump.txt",
+      "code/fixtures/candidates/f2_clamp.report.json",
+      "code/fixtures/candidates/f2_switch.c",
+      "code/fixtures/candidates/f2_switch.o",
+      "code/fixtures/candidates/f2_switch.objdump.txt",
+      "code/fixtures/candidates/f2_switch.report.json",
+      "code/fixtures/candidates/f2_thresholds.c",
+      "code/fixtures/candidates/f2_thresholds.o",
+      "code/fixtures/candidates/f2_thresholds.objdump.txt",
+      "code/fixtures/candidates/f2_thresholds.report.json",
+      "code/fixtures/ledger-poisoned.c",
+      "code/fixtures/ledger-x86_64-O1-g.abbrev.txt",
+      "code/fixtures/ledger-x86_64-O1-g.dwarfdump.txt",
+      "code/fixtures/ledger-x86_64-O1-g.o",
+      "code/fixtures/ledger-x86_64-O1-poisoned.o",
+      "code/fixtures/ledger-x86_64-O1-poisoned.sections.txt",
+      "code/fixtures/ledger-x86_64-O1-renamed.o",
+      "code/fixtures/ledger-x86_64-O1-renamed.objdump.txt",
+      "code/fixtures/ledger-x86_64-O1-renamed.symtab.txt",
+      "code/fixtures/ledger.c",
+      "code/fixtures/runs/scorecards-aarch64-darwin.json",
+      "code/main.py",
+      "code/tests/test_main.py"
+     ],
+     "figs": [
+      "figures-re-45.js"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "14-agent-engineering",
+   "en": "Phase 14: Agent Engineering",
+   "zh": "阶段 14：Agent 工程",
+   "lessons": [
+    {
+     "id": "01-the-agent-loop",
+     "en": "The Agent Loop: Observe, Think, Act",
+     "zh": "Agent 循环：观察、思考、行动",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/main.ts"
+     ],
+     "figs": [
+      "figures-agents-alignment.js"
+     ]
+    },
+    {
+     "id": "02-rewoo-plan-and-execute",
+     "en": "ReWOO and Plan-and-Execute: Decoupled Planning",
+     "zh": "ReWOO 与 Plan-and-Execute：解耦的规划",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-agents2.js"
+     ]
+    },
+    {
+     "id": "03-reflexion-verbal-rl",
+     "en": "Reflexion: Verbal Reinforcement Learning",
+     "zh": "Reflexion：言语强化学习",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-agents-alignment.js"
+     ]
+    },
+    {
+     "id": "04-tree-of-thoughts-lats",
+     "en": "Tree of Thoughts and LATS: Deliberate Search",
+     "zh": "Tree of Thoughts 与 LATS：刻意搜索",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-agents2.js"
+     ]
+    },
+    {
+     "id": "05-self-refine-and-critic",
+     "en": "Self-Refine and CRITIC: Iterative Output Improvement",
+     "zh": "Self-Refine 与 CRITIC：迭代式输出改进",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-agents2.js"
+     ]
+    },
+    {
+     "id": "06-tool-use-and-function-calling",
+     "en": "Tool Use and Function Calling",
+     "zh": "工具使用与函数调用",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/main.ts"
+     ],
+     "figs": [
+      "figures-agents-alignment.js"
+     ]
+    },
+    {
+     "id": "07-memory-virtual-context-memgpt",
+     "en": "Agent Memory — Virtual Context and Memory Paging",
+     "zh": "Agent 记忆——虚拟上下文与记忆分页",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-agents-alignment.js"
+     ]
+    },
+    {
+     "id": "08-memory-blocks-sleep-time-compute",
+     "en": "Memory Blocks and Sleep-Time Compute",
+     "zh": "记忆块与休眠时计算",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-agents2.js"
+     ]
+    },
+    {
+     "id": "09-hybrid-memory-mem0",
+     "en": "Hybrid Memory: Vector + Graph + KV",
+     "zh": "混合记忆：向量 + 图 + KV",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-agents4.js"
+     ]
+    },
+    {
+     "id": "10-skill-libraries-voyager",
+     "en": "Skill Libraries and Lifelong Learning (Voyager)",
+     "zh": "技能库与终身学习（Voyager）",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-agents2.js"
+     ]
+    },
+    {
+     "id": "11-planning-htn-and-evolutionary",
+     "en": "Planning with HTN and Evolutionary Search",
+     "zh": "用 HTN 和演化搜索做规划",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-agents3.js"
+     ]
+    },
+    {
+     "id": "12-anthropic-workflow-patterns",
+     "en": "Anthropic's Workflow Patterns: Simple Over Complex",
+     "zh": "Anthropic 的工作流模式：简单胜过复杂",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-agents3.js"
+     ]
+    },
+    {
+     "id": "13-langgraph-stateful-graphs",
+     "en": "Stateful Graph Orchestration — Durable Execution and Checkpoints",
+     "zh": "有状态图编排——持久执行与检查点",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/main.ts"
+     ],
+     "figs": [
+      "figures-agents2.js"
+     ]
+    },
+    {
+     "id": "14-autogen-actor-model",
+     "en": "The Actor Model for Agents — Async Messages and Typed Runtimes",
+     "zh": "Agent 的 Actor 模型——异步消息与类型化运行时",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-agents3.js"
+     ]
+    },
+    {
+     "id": "15-crewai-role-based-crews",
+     "en": "Role-Based Agent Teams — Roles, Tasks, Processes",
+     "zh": "基于角色的 Agent 团队——角色、任务与流程",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-agents4.js"
+     ]
+    },
+    {
+     "id": "16-openai-agents-sdk",
+     "en": "OpenAI Agents SDK: Handoffs, Guardrails, Tracing",
+     "zh": "OpenAI Agents SDK：交接、护栏与追踪",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-agents4.js"
+     ]
+    },
+    {
+     "id": "17-claude-agent-sdk",
+     "en": "The Harness as a Library — Subagents and Session Store",
+     "zh": "Harness 即库——子 agent 与会话存储",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-agents4.js"
+     ]
+    },
+    {
+     "id": "18-agno-and-mastra-runtimes",
+     "en": "Production Agent Runtimes — Fast Instantiation and Typed Workflows",
+     "zh": "生产级 Agent 运行时——快速实例化与类型化工作流",
+     "min": 45,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/main.ts"
+     ],
+     "figs": [
+      "figures-workbench.js"
+     ]
+    },
+    {
+     "id": "19-benchmarks-swebench-gaia",
+     "en": "Benchmarks: SWE-bench, GAIA, AgentBench",
+     "zh": "基准：SWE-bench、GAIA、AgentBench",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-agents4.js"
+     ]
+    },
+    {
+     "id": "20-benchmarks-webarena-osworld",
+     "en": "Benchmarks: WebArena and OSWorld",
+     "zh": "基准：WebArena 与 OSWorld",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-agents4.js"
+     ]
+    },
+    {
+     "id": "21-computer-use-agents",
+     "en": "Computer Use: Claude, OpenAI CUA, Gemini",
+     "zh": "计算机操作：Claude、OpenAI CUA、Gemini",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-agents3.js"
+     ]
+    },
+    {
+     "id": "22-voice-agents-pipecat-livekit",
+     "en": "Voice Agents: Pipecat and LiveKit",
+     "zh": "语音 Agent：Pipecat 与 LiveKit",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-agents3.js"
+     ]
+    },
+    {
+     "id": "23-otel-genai-conventions",
+     "en": "OpenTelemetry GenAI Semantic Conventions",
+     "zh": "OpenTelemetry GenAI 语义约定",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-agents4.js"
+     ]
+    },
+    {
+     "id": "24-agent-observability-platforms",
+     "en": "Agent Observability: Langfuse, Phoenix, Opik",
+     "zh": "Agent 可观测性：Langfuse、Phoenix、Opik",
+     "min": 45,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-workbench.js"
+     ]
+    },
+    {
+     "id": "25-multi-agent-debate",
+     "en": "Multi-Agent Debate and Collaboration",
+     "zh": "多 Agent 辩论与协作",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-agents3.js"
+     ]
+    },
+    {
+     "id": "26-failure-modes-agentic",
+     "en": "Failure Modes: Why Agents Break",
+     "zh": "失败模式：agent 为什么会坏",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-agents3.js"
+     ]
+    },
+    {
+     "id": "27-prompt-injection-defense",
+     "en": "Prompt Injection and the PVE Defense",
+     "zh": "Prompt 注入与 PVE 防御",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-agents3.js"
+     ]
+    },
+    {
+     "id": "28-orchestration-patterns",
+     "en": "Orchestration Patterns: Supervisor, Swarm, Hierarchical",
+     "zh": "编排模式：Supervisor、Swarm、Hierarchical",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-agents2.js"
+     ]
+    },
+    {
+     "id": "29-production-runtimes",
+     "en": "Production Runtimes: Queue, Event, Cron",
+     "zh": "生产运行时：Queue、Event、Cron",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-workbench.js"
+     ]
+    },
+    {
+     "id": "30-eval-driven-agent-development",
+     "en": "Eval-Driven Agent Development",
+     "zh": "评估驱动的 Agent 开发",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-agents4.js"
+     ]
+    },
+    {
+     "id": "31-agent-workbench-why-models-fail",
+     "en": "Agent Workbench Engineering: Why Capable Models Still Fail",
+     "zh": "Agent 工作台工程：能干的模型为什么还会失败",
+     "min": 45,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-workbench.js"
+     ]
+    },
+    {
+     "id": "32-minimal-agent-workbench",
+     "en": "The Minimal Agent Workbench",
+     "zh": "最小 Agent 工作台",
+     "min": 45,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-workbench.js"
+     ]
+    },
+    {
+     "id": "33-instructions-as-executable-constraints",
+     "en": "Agent Instructions as Executable Constraints",
+     "zh": "Agent 指令即可执行约束",
+     "min": 50,
+     "quiz": true,
+     "code": [
+      "code/agent-rules.md",
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-workbench.js"
+     ]
+    },
+    {
+     "id": "34-repo-memory-and-state",
+     "en": "Repo Memory and Durable State",
+     "zh": "仓库记忆与持久状态",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-workbench.js"
+     ]
+    },
+    {
+     "id": "35-initialization-scripts",
+     "en": "Initialization Scripts for Agents",
+     "zh": "Agent 初始化脚本",
+     "min": 45,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-workbench.js"
+     ]
+    },
+    {
+     "id": "36-scope-contracts",
+     "en": "Scope Contracts and Task Boundaries",
+     "zh": "范围契约与任务边界",
+     "min": 50,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-workbench.js"
+     ]
+    },
+    {
+     "id": "37-runtime-feedback-loops",
+     "en": "Runtime Feedback Loops",
+     "zh": "运行时反馈循环",
+     "min": 50,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-workbench.js"
+     ]
+    },
+    {
+     "id": "38-verification-gates",
+     "en": "Verification Gates",
+     "zh": "验证关卡",
+     "min": 55,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-workbench.js"
+     ]
+    },
+    {
+     "id": "39-reviewer-agent",
+     "en": "Reviewer Agent: Separate Builder from Marker",
+     "zh": "审查者 Agent：把构建者和打分者分开",
+     "min": 55,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-workbench.js"
+     ]
+    },
+    {
+     "id": "40-multi-session-handoff",
+     "en": "Multi-Session Handoff",
+     "zh": "多会话交接",
+     "min": 50,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-workbench.js"
+     ]
+    },
+    {
+     "id": "41-workbench-for-real-repos",
+     "en": "The Workbench on a Real Repo",
+     "zh": "真实仓库上的工作台",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-workbench.js"
+     ]
+    },
+    {
+     "id": "42-agent-workbench-capstone",
+     "en": "Capstone: Ship a Reusable Agent Workbench Pack",
+     "zh": "综合项目：交付一个可复用的 Agent 工作台包",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_main.py"
+     ],
+     "figs": [
+      "figures-workbench.js"
+     ]
+    },
+    {
+     "id": "43-frame-the-task-before-code",
+     "en": "Frame the Task Before the Agent Writes Code",
+     "zh": "在 agent 写代码前框定任务",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_main.py"
+     ],
+     "figs": []
+    },
+    {
+     "id": "44-plan-from-evidence",
+     "en": "Build an Evidence-Backed Execution Plan",
+     "zh": "制定由证据支撑的执行计划",
+     "min": 65,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_main.py"
+     ],
+     "figs": []
+    },
+    {
+     "id": "45-delegate-with-isolation",
+     "en": "Delegate Agent Work with Isolation and Merge Contracts",
+     "zh": "通过隔离与合并契约委派 agent 工作",
+     "min": 70,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_main.py"
+     ],
+     "figs": []
+    },
+    {
+     "id": "46-turn-feedback-into-system",
+     "en": "Turn Every Agent Correction into a System Improvement",
+     "zh": "把每次 agent 纠正变成系统改进",
+     "min": 65,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_main.py"
+     ],
+     "figs": []
+    },
+    {
+     "id": "47-outcomes-before-output",
+     "en": "Define the Outcome Before You Choose the Output",
+     "zh": "在选择产出前定义结果",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_main.py"
+     ],
+     "figs": []
+    },
+    {
+     "id": "48-discover-the-real-workflow",
+     "en": "Discover the Workflow People Actually Perform",
+     "zh": "发现人们实际执行的工作流",
+     "min": 70,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_main.py"
+     ],
+     "figs": []
+    },
+    {
+     "id": "49-map-assumptions-and-risk",
+     "en": "Map Assumptions and Resolve the Riskiest One First",
+     "zh": "绘制假设地图，先化解风险最高的一项",
+     "min": 65,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_main.py"
+     ],
+     "figs": []
+    },
+    {
+     "id": "50-choose-the-smallest-testable-slice",
+     "en": "Choose the Smallest Slice That Can Change the Decision",
+     "zh": "选择能改变决定的最小可测试切片",
+     "min": 65,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_main.py"
+     ],
+     "figs": []
+    },
+    {
+     "id": "51-write-specifications-that-preserve-judgment",
+     "en": "Write Specifications That Preserve Judgment",
+     "zh": "编写保留判断空间的规格说明",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_main.py"
+     ],
+     "figs": []
+    },
+    {
+     "id": "52-design-success-metrics",
+     "en": "Design Success Metrics Before the Result Exists",
+     "zh": "在结果出现前设计成功指标",
+     "min": 70,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_main.py"
+     ],
+     "figs": []
+    },
+    {
+     "id": "53-prototype-pilot-or-production",
+     "en": "Choose Prototype, Pilot, or Production Deliberately",
+     "zh": "有意识地选择原型、试点或生产",
+     "min": 70,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_main.py"
+     ],
+     "figs": []
+    },
+    {
+     "id": "54-build-the-feedback-ratchet",
+     "en": "Build a Feedback Ratchet with Ownership and Retirement",
+     "zh": "构建带所有权与淘汰机制的反馈棘轮",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_main.py"
+     ],
+     "figs": []
+    }
+   ]
+  },
+  {
+   "id": "17-infrastructure-and-production",
+   "en": "Phase 17: Infrastructure & Production",
+   "zh": "阶段 17：基础设施与生产",
+   "lessons": [
+    {
+     "id": "01-managed-llm-platforms",
+     "en": "Managed LLM Platforms — Bedrock, Vertex AI, Azure OpenAI",
+     "zh": "托管 LLM 平台 —— Bedrock、Vertex AI、Azure OpenAI",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-infra4.js"
+     ]
+    },
+    {
+     "id": "02-inference-platform-economics",
+     "en": "Inference Platform Economics — Fireworks, Together, Baseten, Modal, Replicate, Anyscale",
+     "zh": "推理平台经济学 —— Fireworks、Together、Baseten、Modal、Replicate、Anyscale",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-infra.js"
+     ]
+    },
+    {
+     "id": "03-gpu-autoscaling-kubernetes",
+     "en": "GPU Autoscaling on Kubernetes — Karpenter, KAI Scheduler, Gang Scheduling",
+     "zh": "Kubernetes 上的 GPU 自动扩缩 —— Karpenter、KAI Scheduler、Gang Scheduling",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-infra.js"
+     ]
+    },
+    {
+     "id": "04-vllm-serving-internals",
+     "en": "Serving Engine Internals — PagedAttention, Continuous Batching, Chunked Prefill",
+     "zh": "推理服务引擎内部机制——PagedAttention、连续批处理与分块预填充",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-infra.js"
+     ]
+    },
+    {
+     "id": "05-eagle3-speculative-decoding",
+     "en": "EAGLE-3 Speculative Decoding in Production",
+     "zh": "生产环境中的 EAGLE-3 Speculative Decoding",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-misc2.js"
+     ]
+    },
+    {
+     "id": "06-sglang-radixattention",
+     "en": "Prefix-Cache Serving — RadixAttention and KV Reuse",
+     "zh": "前缀缓存推理服务——RadixAttention 与 KV 复用",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-infra.js"
+     ]
+    },
+    {
+     "id": "07-tensorrt-llm-blackwell",
+     "en": "Hardware-Specialized Inference Compilation — FP8 and NVFP4 on Blackwell",
+     "zh": "硬件专用推理编译——Blackwell 上的 FP8 与 NVFP4",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-infra.js"
+     ]
+    },
+    {
+     "id": "08-inference-metrics-goodput",
+     "en": "Inference Metrics — TTFT, TPOT, ITL, Goodput, P99",
+     "zh": "推理指标 —— TTFT、TPOT、ITL、Goodput、P99",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-infra.js"
+     ]
+    },
+    {
+     "id": "09-production-quantization",
+     "en": "Production Quantization — AWQ, GPTQ, GGUF K-quants, FP8, MXFP4/NVFP4",
+     "zh": "生产量化 —— AWQ、GPTQ、GGUF K-quant、FP8、MXFP4/NVFP4",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-infra.js"
+     ]
+    },
+    {
+     "id": "10-cold-start-mitigation",
+     "en": "Cold Start Mitigation for Serverless LLMs",
+     "zh": "Serverless LLM 的冷启动缓解",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-infra2.js"
+     ]
+    },
+    {
+     "id": "11-multi-region-kv-locality",
+     "en": "Multi-Region LLM Serving and KV Cache Locality",
+     "zh": "多区域 LLM 服务与 KV Cache 局部性",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-infra2.js"
+     ]
+    },
+    {
+     "id": "12-edge-inference",
+     "en": "Edge Inference — Apple Neural Engine, Qualcomm Hexagon, WebGPU/WebLLM, Jetson",
+     "zh": "边缘推理 —— Apple Neural Engine、Qualcomm Hexagon、WebGPU/WebLLM、Jetson",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-infra2.js"
+     ]
+    },
+    {
+     "id": "13-llm-observability",
+     "en": "LLM Observability Stack Selection",
+     "zh": "LLM 可观测性栈选型",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/main.ts"
+     ],
+     "figs": [
+      "figures-infra4.js"
+     ]
+    },
+    {
+     "id": "14-prompt-semantic-caching",
+     "en": "Prompt Caching and Semantic Caching Economics",
+     "zh": "Prompt 缓存与语义缓存经济学",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/main.ts"
+     ],
+     "figs": [
+      "figures-infra2.js"
+     ]
+    },
+    {
+     "id": "15-batch-apis",
+     "en": "Batch APIs — the 50% Discount as Industry Standard",
+     "zh": "Batch API —— 5 折成为行业标准",
+     "min": 45,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/main.ts"
+     ],
+     "figs": [
+      "figures-infra2.js"
+     ]
+    },
+    {
+     "id": "16-model-routing",
+     "en": "Model Routing as a Cost-Reduction Primitive",
+     "zh": "模型路由作为降本原语",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/main.ts"
+     ],
+     "figs": [
+      "figures-infra2.js"
+     ]
+    },
+    {
+     "id": "17-disaggregated-prefill-decode",
+     "en": "Disaggregated Prefill/Decode — NVIDIA Dynamo and llm-d",
+     "zh": "分离式 Prefill/Decode —— NVIDIA Dynamo 与 llm-d",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-infra2.js"
+     ]
+    },
+    {
+     "id": "18-vllm-production-stack-lmcache",
+     "en": "Production Serving Stack — KV Offloading and Cache-Aware Routing",
+     "zh": "生产级推理服务栈——KV 卸载与缓存感知路由",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-infra.js"
+     ]
+    },
+    {
+     "id": "19-ai-gateways",
+     "en": "AI Gateways — LiteLLM, Portkey, Kong AI Gateway, Bifrost",
+     "zh": "AI 网关 —— LiteLLM、Portkey、Kong AI Gateway、Bifrost",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/main.ts"
+     ],
+     "figs": [
+      "figures-misc2.js"
+     ]
+    },
+    {
+     "id": "20-shadow-canary-progressive",
+     "en": "Shadow Traffic, Canary Rollout, and Progressive Deployment for LLMs",
+     "zh": "LLM 的影子流量、Canary 上线与渐进式部署",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/main.ts"
+     ],
+     "figs": [
+      "figures-infra4.js"
+     ]
+    },
+    {
+     "id": "21-ab-testing-llm-features",
+     "en": "A/B Testing LLM Features — GrowthBook, Statsig, and the Vibes Problem",
+     "zh": "A/B 测试 LLM 特性 —— GrowthBook、Statsig 与\"凭感觉\"问题",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-misc2.js"
+     ]
+    },
+    {
+     "id": "22-load-testing-llm-apis",
+     "en": "Load Testing LLM APIs — Why k6 and Locust Lie",
+     "zh": "压测 LLM API —— 为什么 k6 和 Locust 会骗你",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-infra2.js"
+     ]
+    },
+    {
+     "id": "23-sre-for-ai",
+     "en": "SRE for AI — Multi-Agent Incident Response, Runbooks, Predictive Detection",
+     "zh": "面向 AI 的 SRE —— 多 agent 事件响应、Runbook、预测性检测",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-infra4.js"
+     ]
+    },
+    {
+     "id": "24-chaos-engineering-llm",
+     "en": "Chaos Engineering for LLM Production",
+     "zh": "LLM 生产环境的混沌工程",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-infra4.js"
+     ]
+    },
+    {
+     "id": "25-security-secrets-audit",
+     "en": "Security — Secrets, API Key Rotation, Audit Logs, Guardrails",
+     "zh": "安全 —— 密钥、API Key 轮换、审计日志、Guardrails",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-infra4.js"
+     ]
+    },
+    {
+     "id": "26-compliance-frameworks",
+     "en": "Compliance — SOC 2, HIPAA, GDPR, PCI-DSS, EU AI Act, ISO 42001",
+     "zh": "合规 —— SOC 2、HIPAA、GDPR、PCI-DSS、EU AI Act、ISO 42001",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-infra4.js"
+     ]
+    },
+    {
+     "id": "27-finops-llms",
+     "en": "FinOps for LLMs — Unit Economics and Multi-Tenant Attribution",
+     "zh": "LLM 的 FinOps —— 单位经济学与多租户归因",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-infra4.js"
+     ]
+    },
+    {
+     "id": "28-self-hosted-serving-selection",
+     "en": "Self-Hosted Serving Selection — Matching Engine to Hardware and Scale",
+     "zh": "自托管推理服务选型——让引擎匹配硬件与规模",
+     "min": 45,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-infra.js"
+     ]
+    },
+    {
+     "id": "29-model-demo-interfaces",
+     "en": "Model Demo Interfaces — From a Function to a Shareable App",
+     "zh": "模型演示接口 —— 从函数到可分享应用",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_main.py"
+     ],
+     "figs": [
+      "figures-demo.js"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "18-ethics-safety-alignment",
+   "en": "Phase 18: Ethics, Safety & Alignment",
+   "zh": "阶段 18：伦理、安全与对齐",
+   "lessons": [
+    {
+     "id": "01-instruction-following-alignment-signal",
+     "en": "Instruction-Following as Alignment Signal",
+     "zh": "把「遵循指令」当作对齐信号",
+     "min": 45,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-alignment3.js"
+     ]
+    },
+    {
+     "id": "02-reward-hacking-goodhart",
+     "en": "Reward Hacking and Goodhart's Law",
+     "zh": "奖励作弊与古德哈特定律",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-agents-alignment.js"
+     ]
+    },
+    {
+     "id": "03-direct-preference-optimization-family",
+     "en": "The Direct Preference Optimization Family",
+     "zh": "直接偏好优化家族",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-agents-alignment.js"
+     ]
+    },
+    {
+     "id": "04-sycophancy-rlhf-amplification",
+     "en": "Sycophancy as RLHF Amplification",
+     "zh": "阿谀奉承：RLHF 的放大效应",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-alignment3.js"
+     ]
+    },
+    {
+     "id": "05-constitutional-ai-rlaif",
+     "en": "Constitutional AI and RLAIF",
+     "zh": "Constitutional AI 与 RLAIF",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-alignment2.js"
+     ]
+    },
+    {
+     "id": "06-mesa-optimization-deceptive-alignment",
+     "en": "Mesa-Optimization and Deceptive Alignment",
+     "zh": "Mesa 优化与欺骗性对齐",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-alignment2.js"
+     ]
+    },
+    {
+     "id": "07-sleeper-agents-persistent-deception",
+     "en": "Sleeper Agents — Persistent Deception",
+     "zh": "潜伏特工 —— 持久的欺骗",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-alignment3.js"
+     ]
+    },
+    {
+     "id": "08-in-context-scheming-frontier-models",
+     "en": "In-Context Scheming in Frontier Models",
+     "zh": "前沿模型中的上下文阴谋",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-alignment3.js"
+     ]
+    },
+    {
+     "id": "09-alignment-faking",
+     "en": "Alignment Faking",
+     "zh": "对齐伪装",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-alignment3.js"
+     ]
+    },
+    {
+     "id": "10-ai-control-subversion",
+     "en": "AI Control — Safety Despite Subversion",
+     "zh": "AI 控制 —— 哪怕被颠覆也要保安全",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-alignment3.js"
+     ]
+    },
+    {
+     "id": "11-scalable-oversight-weak-to-strong",
+     "en": "Scalable Oversight and Weak-to-Strong Generalization",
+     "zh": "可扩展监督与弱到强泛化",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-alignment2.js"
+     ]
+    },
+    {
+     "id": "12-red-teaming-pair-automated-attacks",
+     "en": "Red-Teaming: PAIR and Automated Attacks",
+     "zh": "红队：PAIR 与自动化攻击",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-alignment3.js"
+     ]
+    },
+    {
+     "id": "13-many-shot-jailbreaking",
+     "en": "Many-Shot Jailbreaking",
+     "zh": "多样本越狱",
+     "min": 45,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-alignment2.js"
+     ]
+    },
+    {
+     "id": "14-ascii-art-visual-jailbreaks",
+     "en": "ASCII Art and Visual Jailbreaks",
+     "zh": "ASCII 艺术与视觉越狱",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-alignment3.js"
+     ]
+    },
+    {
+     "id": "15-indirect-prompt-injection",
+     "en": "Indirect Prompt Injection — Production Attack Surface",
+     "zh": "间接提示注入 —— 生产攻击面",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-alignment3.js"
+     ]
+    },
+    {
+     "id": "16-red-team-tooling-garak-llamaguard-pyrit",
+     "en": "Red-Team Tooling — Garak, Llama Guard, PyRIT",
+     "zh": "红队工具 —— Garak、Llama Guard、PyRIT",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-alignment3.js"
+     ]
+    },
+    {
+     "id": "17-wmdp-dual-use-evaluation",
+     "en": "WMDP and Dual-Use Capability Evaluation",
+     "zh": "WMDP 与两用能力评估",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-alignment3.js"
+     ]
+    },
+    {
+     "id": "18-frontier-safety-frameworks-rsp-pf-fsf",
+     "en": "Frontier Safety Frameworks — RSP, PF, FSF",
+     "zh": "前沿安全框架 —— RSP、PF、FSF",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-alignment3.js"
+     ]
+    },
+    {
+     "id": "19-model-welfare-research",
+     "en": "Anthropic's Model Welfare Program",
+     "zh": "Anthropic 的模型福祉项目",
+     "min": 45,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-alignment4.js"
+     ]
+    },
+    {
+     "id": "20-bias-representational-harm",
+     "en": "Bias and Representational Harm in LLMs",
+     "zh": "LLM 中的偏见与表征性危害",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-alignment4.js"
+     ]
+    },
+    {
+     "id": "21-fairness-criteria-group-individual-counterfactual",
+     "en": "Fairness Criteria — Group, Individual, Counterfactual",
+     "zh": "公平判据 —— 群体、个体、反事实",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-alignment4.js"
+     ]
+    },
+    {
+     "id": "22-differential-privacy-for-llms",
+     "en": "Differential Privacy for LLMs",
+     "zh": "面向 LLM 的差分隐私",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-alignment4.js"
+     ]
+    },
+    {
+     "id": "23-watermarking-synthid-stable-signature-c2pa",
+     "en": "Watermarking — SynthID, Stable Signature, C2PA",
+     "zh": "水印 —— SynthID、Stable Signature、C2PA",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-alignment4.js"
+     ]
+    },
+    {
+     "id": "24-regulatory-frameworks-eu-us-uk-korea",
+     "en": "Regulatory Frameworks — EU, US, UK, Korea",
+     "zh": "监管框架 —— 欧盟、美国、英国、韩国",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-alignment4.js"
+     ]
+    },
+    {
+     "id": "25-echoleak-cves-for-ai",
+     "en": "EchoLeak and the Emergence of CVEs for AI",
+     "zh": "EchoLeak 与 AI 之 CVE 的出现",
+     "min": 45,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-alignment4.js"
+     ]
+    },
+    {
+     "id": "26-model-system-dataset-cards",
+     "en": "Model, System, and Dataset Cards",
+     "zh": "模型卡、系统卡与数据集卡",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-alignment4.js"
+     ]
+    },
+    {
+     "id": "27-data-provenance-training-governance",
+     "en": "Data Provenance and Training-Data Governance",
+     "zh": "数据溯源与训练数据治理",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-alignment4.js"
+     ]
+    },
+    {
+     "id": "28-alignment-research-ecosystem",
+     "en": "Alignment Research Ecosystem — MATS, Redwood, Apollo, METR",
+     "zh": "对齐研究生态 —— MATS、Redwood、Apollo、METR",
+     "min": 45,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-alignment2.js"
+     ]
+    },
+    {
+     "id": "29-moderation-systems-openai-perspective-llamaguard",
+     "en": "Moderation Systems — OpenAI, Perspective, Llama Guard",
+     "zh": "审核系统 —— OpenAI、Perspective、Llama Guard",
+     "min": 60,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-alignment4.js"
+     ]
+    },
+    {
+     "id": "30-dual-use-risk-cyber-bio-chem-nuclear",
+     "en": "Dual-Use Risk — Cyber, Bio, Chem, Nuclear Uplift",
+     "zh": "两用风险 —— 网络、生物、化学、核能力提升",
+     "min": 75,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-alignment4.js"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "19-capstone-projects",
+   "en": "Phase 19: Capstone Projects",
+   "zh": "阶段 19：综合项目",
+   "lessons": [
+    {
+     "id": "01-terminal-native-coding-agent",
+     "en": "Capstone 01 — Terminal-Native Coding Agent",
+     "zh": "顶点项目 01 —— 终端原生编码 agent",
+     "min": 35,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/ts/README.md",
+      "code/ts/package.json",
+      "code/ts/src/eval.ts",
+      "code/ts/src/harness.ts",
+      "code/ts/src/hooks.ts",
+      "code/ts/src/index.ts",
+      "code/ts/src/model.ts",
+      "code/ts/src/plan.ts",
+      "code/ts/src/repl.ts",
+      "code/ts/src/tools.ts",
+      "code/ts/src/types.ts",
+      "code/ts/tests/harness.test.ts",
+      "code/ts/tests/tools.test.ts",
+      "code/ts/tsconfig.json"
+     ],
+     "figs": [
+      "figures-capstone-e.js"
+     ]
+    },
+    {
+     "id": "02-rag-over-codebase",
+     "en": "Capstone 02 — RAG over Codebase (Cross-Repo Semantic Search)",
+     "zh": "顶点项目 02 —— 代码库之上的 RAG（跨仓库语义搜索）",
+     "min": 30,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/ts/README.md",
+      "code/ts/package.json",
+      "code/ts/src/corpus.ts",
+      "code/ts/src/index.ts",
+      "code/ts/src/index_store.ts",
+      "code/ts/src/retrieval.ts",
+      "code/ts/src/server.ts",
+      "code/ts/src/types.ts",
+      "code/ts/tests/index_store.test.ts",
+      "code/ts/tests/retrieval.test.ts",
+      "code/ts/tests/server.test.ts",
+      "code/ts/tsconfig.json"
+     ],
+     "figs": [
+      "figures-capstone-e.js"
+     ]
+    },
+    {
+     "id": "03-realtime-voice-assistant",
+     "en": "Capstone 03 — Real-Time Voice Assistant (ASR to LLM to TTS)",
+     "zh": "顶点项目 03 —— 实时语音助手（ASR 到 LLM 到 TTS）",
+     "min": 30,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/ts/README.md",
+      "code/ts/package.json",
+      "code/ts/src/index.ts",
+      "code/ts/src/orchestrator.ts",
+      "code/ts/src/protocol.ts",
+      "code/ts/src/server.ts",
+      "code/ts/src/types.ts",
+      "code/ts/src/vad.ts",
+      "code/ts/tests/orchestrator.test.ts",
+      "code/ts/tests/protocol.test.ts",
+      "code/ts/tests/vad.test.ts",
+      "code/ts/tsconfig.json"
+     ],
+     "figs": [
+      "figures-capstone-e.js"
+     ]
+    },
+    {
+     "id": "04-multimodal-document-qa",
+     "en": "Capstone 04 — Multimodal Document QA (Vision-First PDF, Tables, Charts)",
+     "zh": "顶点项目 04 —— 多模态文档问答（视觉优先的 PDF、表格、图表）",
+     "min": 30,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/ts/README.md",
+      "code/ts/package.json",
+      "code/ts/src/fixtures.ts",
+      "code/ts/src/index.ts",
+      "code/ts/src/render.ts",
+      "code/ts/src/server.ts",
+      "code/ts/src/types.ts",
+      "code/ts/tests/fixtures.test.ts",
+      "code/ts/tests/render.test.ts",
+      "code/ts/tests/server.test.ts",
+      "code/ts/tsconfig.json"
+     ],
+     "figs": [
+      "figures-capstone-e.js"
+     ]
+    },
+    {
+     "id": "05-autonomous-research-agent",
+     "en": "Capstone 05 — Autonomous Research Agent (AI-Scientist Class)",
+     "zh": "顶点项目 05 —— 自主研究 agent（AI-Scientist 级）",
+     "min": 40,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-capstone-e.js"
+     ]
+    },
+    {
+     "id": "06-devops-troubleshooting-agent",
+     "en": "Capstone 06 — DevOps Troubleshooting Agent for Kubernetes",
+     "zh": "顶点项目 06 —— 面向 Kubernetes 的 DevOps 排障 agent",
+     "min": 30,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/ts/README.md",
+      "code/ts/package.json",
+      "code/ts/src/agent.ts",
+      "code/ts/src/blocks.ts",
+      "code/ts/src/index.ts",
+      "code/ts/src/server.ts",
+      "code/ts/src/slack_verify.ts",
+      "code/ts/src/types.ts",
+      "code/ts/tests/agent.test.ts",
+      "code/ts/tests/server.test.ts",
+      "code/ts/tests/slack_verify.test.ts",
+      "code/ts/tsconfig.json"
+     ],
+     "figs": [
+      "figures-capstone-e.js"
+     ]
+    },
+    {
+     "id": "07-end-to-end-fine-tuning-pipeline",
+     "en": "Capstone 07 — End-to-End Fine-Tuning Pipeline (Data to SFT to DPO to Serve)",
+     "zh": "顶点项目 07 —— 端到端微调流水线（数据到 SFT 到 DPO 到服务）",
+     "min": 35,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-capstone-e.js"
+     ]
+    },
+    {
+     "id": "08-production-rag-chatbot",
+     "en": "Capstone 08 — Production RAG Chatbot for a Regulated Vertical",
+     "zh": "顶点项目 08 —— 受监管垂直领域的生产级 RAG 聊天机器人",
+     "min": 30,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/ts/README.md",
+      "code/ts/package.json",
+      "code/ts/src/index.ts",
+      "code/ts/src/server.ts",
+      "code/ts/src/session.ts",
+      "code/ts/src/stream.ts",
+      "code/ts/src/types.ts",
+      "code/ts/tests/server.test.ts",
+      "code/ts/tests/session.test.ts",
+      "code/ts/tests/stream.test.ts",
+      "code/ts/tsconfig.json"
+     ],
+     "figs": [
+      "figures-frontier.js"
+     ]
+    },
+    {
+     "id": "09-code-migration-agent",
+     "en": "Capstone 09 — Code Migration Agent (Repo-Level Language / Runtime Upgrade)",
+     "zh": "顶点项目 09 —— 代码迁移 agent（仓库级语言 / 运行时升级）",
+     "min": 30,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/ts/README.md",
+      "code/ts/package.json",
+      "code/ts/src/cost.ts",
+      "code/ts/src/index.ts",
+      "code/ts/src/migrations.ts",
+      "code/ts/src/server.ts",
+      "code/ts/src/types.ts",
+      "code/ts/tests/cost.test.ts",
+      "code/ts/tests/migrations.test.ts",
+      "code/ts/tsconfig.json"
+     ],
+     "figs": [
+      "figures-capstone-e.js"
+     ]
+    },
+    {
+     "id": "10-multi-agent-software-team",
+     "en": "Capstone 10 — Multi-Agent Software Engineering Team",
+     "zh": "顶点项目 10 —— 多 agent 软件工程团队",
+     "min": 40,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/ts/README.md",
+      "code/ts/package.json",
+      "code/ts/src/agent.ts",
+      "code/ts/src/coordinator.ts",
+      "code/ts/src/index.ts",
+      "code/ts/src/runtime.ts",
+      "code/ts/src/types.ts",
+      "code/ts/src/workspace.ts",
+      "code/ts/tests/coordinator.test.ts",
+      "code/ts/tests/runtime.test.ts",
+      "code/ts/tsconfig.json"
+     ],
+     "figs": [
+      "figures-capstone-e.js"
+     ]
+    },
+    {
+     "id": "11-llm-observability-dashboard",
+     "en": "Capstone 11 — LLM Observability & Eval Dashboard",
+     "zh": "顶点项目 11 —— LLM 可观测性与评测看板",
+     "min": 25,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/ts/README.md",
+      "code/ts/package.json",
+      "code/ts/src/index.ts",
+      "code/ts/src/pricing.ts",
+      "code/ts/src/rollup.ts",
+      "code/ts/src/server.ts",
+      "code/ts/src/spans.ts",
+      "code/ts/src/types.ts",
+      "code/ts/tests/rollup.test.ts",
+      "code/ts/tests/spans.test.ts",
+      "code/ts/tsconfig.json"
+     ],
+     "figs": [
+      "figures-capstone-e.js"
+     ]
+    },
+    {
+     "id": "12-video-understanding-pipeline",
+     "en": "Capstone 12 — Video Understanding Pipeline (Scene, QA, Search)",
+     "zh": "顶点项目 12 —— 视频理解流水线（场景、问答、搜索）",
+     "min": 30,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/ts/README.md",
+      "code/ts/package.json",
+      "code/ts/src/index.ts",
+      "code/ts/src/jobs.ts",
+      "code/ts/src/server.ts",
+      "code/ts/src/stages.ts",
+      "code/ts/src/types.ts",
+      "code/ts/tests/stages.test.ts",
+      "code/ts/tsconfig.json"
+     ],
+     "figs": [
+      "figures-capstone-f.js"
+     ]
+    },
+    {
+     "id": "13-mcp-server-with-registry",
+     "en": "Capstone 13: Stateless MCP Server with Registry and Governance",
+     "zh": "顶点项目 13：带 Registry 和治理的无状态 MCP 服务器",
+     "min": 25,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_main.py",
+      "code/ts/README.md",
+      "code/ts/package.json",
+      "code/ts/src/index.ts",
+      "code/ts/src/protocol.ts",
+      "code/ts/src/tools.ts",
+      "code/ts/src/transport.ts",
+      "code/ts/src/types.ts",
+      "code/ts/tests/protocol.test.ts",
+      "code/ts/tsconfig.json"
+     ],
+     "figs": [
+      "figures-capstone-f.js"
+     ]
+    },
+    {
+     "id": "14-speculative-decoding-server",
+     "en": "Capstone 14 — Speculative-Decoding Inference Server",
+     "zh": "顶点项目 14 —— 推测解码推理服务器",
+     "min": 30,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-capstone-f.js"
+     ]
+    },
+    {
+     "id": "15-constitutional-safety-harness",
+     "en": "Capstone 15 — Constitutional Safety Harness + Red-Team Range",
+     "zh": "顶点项目 15 —— 宪法式安全外壳 + 红队靶场",
+     "min": 25,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-capstone-f.js"
+     ]
+    },
+    {
+     "id": "16-github-issue-to-pr-agent",
+     "en": "Capstone 16 — GitHub Issue-to-PR Autonomous Agent",
+     "zh": "顶点项目 16 —— GitHub Issue 到 PR 的自主 agent",
+     "min": 30,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/ts/README.md",
+      "code/ts/package.json",
+      "code/ts/src/agent.ts",
+      "code/ts/src/index.ts",
+      "code/ts/src/router.ts",
+      "code/ts/src/server.ts",
+      "code/ts/src/types.ts",
+      "code/ts/src/verify.ts",
+      "code/ts/tests/verify.test.ts",
+      "code/ts/tsconfig.json"
+     ],
+     "figs": [
+      "figures-capstone-f.js"
+     ]
+    },
+    {
+     "id": "17-personal-ai-tutor",
+     "en": "Capstone 17 — Personal AI Tutor (Adaptive, Multimodal, with Memory)",
+     "zh": "顶点项目 17 —— 个人 AI 导师（自适应、多模态、带记忆）",
+     "min": 30,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/ts/README.md",
+      "code/ts/package.json",
+      "code/ts/src/curriculum.ts",
+      "code/ts/src/index.ts",
+      "code/ts/src/mastery.ts",
+      "code/ts/src/repetition.ts",
+      "code/ts/src/server.ts",
+      "code/ts/src/types.ts",
+      "code/ts/tests/curriculum.test.ts",
+      "code/ts/tsconfig.json"
+     ],
+     "figs": [
+      "figures-capstone-f.js"
+     ]
+    },
+    {
+     "id": "20-agent-harness-loop-contract",
+     "en": "Agent Harness Loop Contract",
+     "zh": "Agent Harness Loop 契约",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_loop.py"
+     ],
+     "figs": [
+      "figures-capstone-f.js"
+     ]
+    },
+    {
+     "id": "21-tool-registry-schema-validation",
+     "en": "Tool Registry with Schema Validation",
+     "zh": "带 Schema 校验的 Tool Registry",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_registry.py"
+     ],
+     "figs": [
+      "figures-capstone-f.js"
+     ]
+    },
+    {
+     "id": "22-jsonrpc-stdio-transport",
+     "en": "JSON-RPC 2.0 Over Newline-Delimited Stdio",
+     "zh": "基于换行分隔 stdio 的 JSON-RPC 2.0",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_transport.py"
+     ],
+     "figs": [
+      "figures-capstone-f.js"
+     ]
+    },
+    {
+     "id": "23-function-call-dispatcher",
+     "en": "Function Call Dispatcher",
+     "zh": "函数调用分发器",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_dispatcher.py"
+     ],
+     "figs": [
+      "figures-capstone-f.js"
+     ]
+    },
+    {
+     "id": "24-plan-execute-control-flow",
+     "en": "Plan-Execute Control Flow",
+     "zh": "Plan-Execute 控制流",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_agent.py"
+     ],
+     "figs": [
+      "figures-capstone-g.js"
+     ]
+    },
+    {
+     "id": "25-verification-gates-observation-budget",
+     "en": "Capstone Lesson 25: Verification Gates and the Observation Budget",
+     "zh": "顶点课 25：Verification Gate 与 Observation Budget",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_main.py"
+     ],
+     "figs": [
+      "figures-capstone-g.js"
+     ]
+    },
+    {
+     "id": "26-sandbox-runner-denylist",
+     "en": "Capstone Lesson 26: Sandbox Runner with Denylist and Path Jail",
+     "zh": "顶点课 26：带 Denylist 与 Path Jail 的 Sandbox Runner",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_main.py"
+     ],
+     "figs": [
+      "figures-capstone-g.js"
+     ]
+    },
+    {
+     "id": "27-eval-harness-fixture-tasks",
+     "en": "Capstone Lesson 27: Eval Harness with Fixture Tasks",
+     "zh": "顶点课 27：带 Fixture Tasks 的 Eval Harness",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tasks/task_001_fizzbuzz_offbyone/buggy/fizzbuzz.py",
+      "code/tasks/task_001_fizzbuzz_offbyone/expected/fizzbuzz.py",
+      "code/tasks/task_001_fizzbuzz_offbyone/task.json",
+      "code/tasks/task_002_factorial_missing_return/buggy/factorial.py",
+      "code/tasks/task_002_factorial_missing_return/expected/factorial.py",
+      "code/tasks/task_002_factorial_missing_return/task.json",
+      "code/tasks/task_003_error_message_typo/buggy/errors.py",
+      "code/tasks/task_003_error_message_typo/expected/errors.py",
+      "code/tasks/task_003_error_message_typo/task.json",
+      "code/tasks/task_004_empty_reverse/buggy/reverse.py",
+      "code/tasks/task_004_empty_reverse/expected/reverse.py",
+      "code/tasks/task_004_empty_reverse/task.json",
+      "code/tasks/task_005_linked_list_traversal/buggy/linked_list.py",
+      "code/tasks/task_005_linked_list_traversal/expected/linked_list.py",
+      "code/tasks/task_005_linked_list_traversal/task.json",
+      "code/tests/test_main.py"
+     ],
+     "figs": [
+      "figures-frontier.js"
+     ]
+    },
+    {
+     "id": "28-observability-otel-traces",
+     "en": "Capstone Lesson 28: Observability with OTel GenAI Spans and Prometheus Metrics",
+     "zh": "顶点课 28：用 OTel GenAI Span 与 Prometheus Metrics 做 Observability",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_main.py"
+     ],
+     "figs": [
+      "figures-frontier.js"
+     ]
+    },
+    {
+     "id": "29-end-to-end-coding-task-demo",
+     "en": "Capstone Lesson 29: End-to-End Coding Agent on the Harness",
+     "zh": "顶点课 29：把端到端 Coding Agent 跑在 Harness 上",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/fixture_repo/src/fizz.py",
+      "code/fixture_repo/tests/__init__.py",
+      "code/fixture_repo/tests/test_fizz.py",
+      "code/main.py",
+      "code/tests/test_main.py"
+     ],
+     "figs": [
+      "figures-capstone-g.js"
+     ]
+    },
+    {
+     "id": "30-bpe-tokenizer-from-scratch",
+     "en": "BPE Tokenizer From Scratch",
+     "zh": "从零实现 BPE Tokenizer",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_bpe.py"
+     ],
+     "figs": [
+      "figures-capstone-a.js"
+     ]
+    },
+    {
+     "id": "31-tokenized-dataset-sliding-window",
+     "en": "Tokenized Dataset with Sliding Window",
+     "zh": "带 Sliding Window 的 Tokenized Dataset",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_dataset.py"
+     ],
+     "figs": [
+      "figures-capstone-a.js"
+     ]
+    },
+    {
+     "id": "32-token-positional-embeddings",
+     "en": "Token and Positional Embeddings",
+     "zh": "Token Embedding 与 Positional Embedding",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_embeddings.py"
+     ],
+     "figs": [
+      "figures-capstone-c.js"
+     ]
+    },
+    {
+     "id": "33-multihead-self-attention",
+     "en": "Multi-Head Self-Attention",
+     "zh": "多头自注意力",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_attention.py"
+     ],
+     "figs": [
+      "figures-capstone-a.js"
+     ]
+    },
+    {
+     "id": "34-transformer-block",
+     "en": "Transformer Block from Scratch",
+     "zh": "从零实现 Transformer Block",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_block.py"
+     ],
+     "figs": [
+      "figures-capstone-c.js"
+     ]
+    },
+    {
+     "id": "35-gpt-model-assembly",
+     "en": "GPT Model Assembly",
+     "zh": "GPT 模型组装",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_model.py"
+     ],
+     "figs": [
+      "figures-capstone-c.js"
+     ]
+    },
+    {
+     "id": "36-training-loop-eval",
+     "en": "Training Loop and Evaluation",
+     "zh": "训练循环与评估",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_training.py"
+     ],
+     "figs": [
+      "figures-capstone-a.js"
+     ]
+    },
+    {
+     "id": "37-loading-pretrained-weights",
+     "en": "Loading Pretrained Weights",
+     "zh": "加载预训练权重",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_load.py"
+     ],
+     "figs": [
+      "figures-capstone-c.js"
+     ]
+    },
+    {
+     "id": "38-classifier-finetuning",
+     "en": "Capstone Lesson 38: Classifier Fine-Tuning by Head Swap",
+     "zh": "顶点课 38：通过换 Head 做分类微调",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_main.py"
+     ],
+     "figs": [
+      "figures-capstone-a.js"
+     ]
+    },
+    {
+     "id": "39-instruction-tuning-sft",
+     "en": "Capstone Lesson 39: Instruction Tuning by Supervised Fine-Tuning",
+     "zh": "顶点课 39：通过监督微调做 Instruction Tuning",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_main.py"
+     ],
+     "figs": [
+      "figures-capstone-c.js"
+     ]
+    },
+    {
+     "id": "40-dpo-from-scratch",
+     "en": "Capstone Lesson 40: Direct Preference Optimization from Scratch",
+     "zh": "顶点课 40：从零实现 DPO（Direct Preference Optimization）",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_main.py"
+     ],
+     "figs": [
+      "figures-capstone-a.js"
+     ]
+    },
+    {
+     "id": "41-eval-pipeline",
+     "en": "Capstone Lesson 41: Full Evaluation Pipeline",
+     "zh": "顶点课 41：完整评估流水线",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/.gitignore",
+      "code/main.py",
+      "code/tests/test_main.py"
+     ],
+     "figs": [
+      "figures-capstone-g.js"
+     ]
+    },
+    {
+     "id": "42-large-corpus-downloader",
+     "en": "Large Corpus Downloader",
+     "zh": "大规模语料下载器",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/__init__.py",
+      "code/tests/test_downloader.py"
+     ],
+     "figs": [
+      "figures-capstone-a.js"
+     ]
+    },
+    {
+     "id": "43-hdf5-tokenized-corpus",
+     "en": "HDF5 Tokenized Corpus",
+     "zh": "HDF5 分词语料库",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/__init__.py",
+      "code/tests/test_hdf5_corpus.py"
+     ],
+     "figs": [
+      "figures-capstone-c.js"
+     ]
+    },
+    {
+     "id": "44-cosine-lr-warmup",
+     "en": "Cosine LR with Linear Warmup",
+     "zh": "Cosine 学习率 + 线性 Warmup",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/__init__.py",
+      "code/tests/test_schedule.py"
+     ],
+     "figs": [
+      "figures-capstone-a.js"
+     ]
+    },
+    {
+     "id": "45-gradient-clipping-amp",
+     "en": "Gradient Clipping and Mixed Precision",
+     "zh": "Gradient Clipping 与混合精度训练",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/__init__.py",
+      "code/tests/test_amp.py"
+     ],
+     "figs": [
+      "figures-capstone-b.js"
+     ]
+    },
+    {
+     "id": "46-gradient-accumulation",
+     "en": "Gradient Accumulation",
+     "zh": "梯度累积",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/test_main.py"
+     ],
+     "figs": [
+      "figures-capstone-c.js"
+     ]
+    },
+    {
+     "id": "47-checkpoint-save-resume",
+     "en": "Checkpoint Save and Resume",
+     "zh": "Checkpoint 保存与恢复",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/test_main.py"
+     ],
+     "figs": [
+      "figures-capstone-c.js"
+     ]
+    },
+    {
+     "id": "48-distributed-fsdp-ddp",
+     "en": "Distributed Data Parallel and FSDP from Scratch",
+     "zh": "从零实现分布式数据并行与 FSDP",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/test_main.py"
+     ],
+     "figs": [
+      "figures-capstone-g.js"
+     ]
+    },
+    {
+     "id": "49-lm-eval-harness",
+     "en": "Language Model Evaluation Harness",
+     "zh": "语言模型评测框架",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/test_main.py"
+     ],
+     "figs": [
+      "figures-frontier.js"
+     ]
+    },
+    {
+     "id": "50-hypothesis-generator",
+     "en": "Hypothesis Generator",
+     "zh": "假设生成器",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_generator.py"
+     ],
+     "figs": [
+      "figures-capstone-g.js"
+     ]
+    },
+    {
+     "id": "51-literature-retrieval",
+     "en": "Literature Retrieval",
+     "zh": "文献检索",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_retrieval.py"
+     ],
+     "figs": [
+      "figures-capstone-g.js"
+     ]
+    },
+    {
+     "id": "52-experiment-runner",
+     "en": "Experiment Runner",
+     "zh": "实验执行器",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/experiments/crashing_experiment.py",
+      "code/experiments/sparsity_experiment.py",
+      "code/main.py",
+      "code/tests/test_runner.py"
+     ],
+     "figs": [
+      "figures-capstone-g.js"
+     ]
+    },
+    {
+     "id": "53-result-evaluator",
+     "en": "Result Evaluator",
+     "zh": "结果评估器",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_evaluator.py"
+     ],
+     "figs": [
+      "figures-capstone-g.js"
+     ]
+    },
+    {
+     "id": "54-paper-writer",
+     "en": "Paper Writer",
+     "zh": "论文生成器",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_paper_writer.py"
+     ],
+     "figs": [
+      "figures-capstone-h.js"
+     ]
+    },
+    {
+     "id": "55-critic-loop",
+     "en": "Critic Loop",
+     "zh": "评审循环",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_critic_loop.py"
+     ],
+     "figs": [
+      "figures-capstone-h.js"
+     ]
+    },
+    {
+     "id": "56-iteration-scheduler",
+     "en": "Iteration Scheduler",
+     "zh": "迭代调度器",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_scheduler.py"
+     ],
+     "figs": [
+      "figures-capstone-h.js"
+     ]
+    },
+    {
+     "id": "57-end-to-end-research-demo",
+     "en": "End-to-End Research Demo",
+     "zh": "端到端研究 Demo",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_e2e.py"
+     ],
+     "figs": [
+      "figures-capstone-h.js"
+     ]
+    },
+    {
+     "id": "58-vision-encoder-patches",
+     "en": "Vision Encoder Patches",
+     "zh": "Vision Encoder 的 Patch 切分",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/test_main.py"
+     ],
+     "figs": [
+      "figures-capstone-h.js"
+     ]
+    },
+    {
+     "id": "59-vit-transformer",
+     "en": "Vision Transformer Encoder",
+     "zh": "视觉 Transformer 编码器（ViT）",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/test_main.py"
+     ],
+     "figs": [
+      "figures-capstone-h.js"
+     ]
+    },
+    {
+     "id": "60-projection-layer-modality-align",
+     "en": "Projection Layer for Modality Alignment",
+     "zh": "用 Projection Layer 做模态对齐",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/test_main.py"
+     ],
+     "figs": [
+      "figures-capstone-h.js"
+     ]
+    },
+    {
+     "id": "61-cross-attention-fusion",
+     "en": "Cross-Attention Fusion",
+     "zh": "Cross-Attention 融合",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/test_main.py"
+     ],
+     "figs": [
+      "figures-capstone-h.js"
+     ]
+    },
+    {
+     "id": "62-vision-language-pretraining",
+     "en": "Vision-Language Pretraining",
+     "zh": "Vision-Language 预训练",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/test_main.py"
+     ],
+     "figs": [
+      "figures-capstone-h.js"
+     ]
+    },
+    {
+     "id": "63-multimodal-eval",
+     "en": "Multimodal Evaluation",
+     "zh": "多模态评测",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/test_main.py"
+     ],
+     "figs": [
+      "figures-capstone-h.js"
+     ]
+    },
+    {
+     "id": "64-chunking-strategies-advanced",
+     "en": "Chunking Strategies, Compared",
+     "zh": "Chunking 策略横向对比",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_chunkers.py"
+     ],
+     "figs": [
+      "figures-capstone-i.js"
+     ]
+    },
+    {
+     "id": "65-hybrid-retrieval-bm25-dense",
+     "en": "Hybrid Retrieval with BM25 and Dense Embeddings",
+     "zh": "用 BM25 与 Dense Embedding 做 Hybrid Retrieval",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_hybrid.py"
+     ],
+     "figs": [
+      "figures-capstone-b.js"
+     ]
+    },
+    {
+     "id": "66-reranker-cross-encoder",
+     "en": "Cross-Encoder Reranker",
+     "zh": "交叉编码器重排器",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_reranker.py"
+     ],
+     "figs": [
+      "figures-capstone-b.js"
+     ]
+    },
+    {
+     "id": "67-query-rewriting-hyde",
+     "en": "Query Rewriting: HyDE, Multi-Query, and Decomposition",
+     "zh": "Query 改写：HyDE、Multi-Query 与 Decomposition",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_rewriters.py"
+     ],
+     "figs": [
+      "figures-capstone-d.js"
+     ]
+    },
+    {
+     "id": "68-rag-eval-precision-recall",
+     "en": "RAG Evaluation: Precision, Recall, MRR, nDCG, Faithfulness, Answer Relevance",
+     "zh": "RAG 评测：Precision、Recall、MRR、nDCG、Faithfulness、Answer Relevance",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_eval.py"
+     ],
+     "figs": [
+      "figures-capstone-i.js"
+     ]
+    },
+    {
+     "id": "69-end-to-end-rag-system",
+     "en": "End-to-End RAG System",
+     "zh": "端到端 RAG 系统",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_pipeline.py"
+     ],
+     "figs": [
+      "figures-capstone-b.js"
+     ]
+    },
+    {
+     "id": "70-task-spec-format",
+     "en": "Task Spec Format",
+     "zh": "任务规格格式",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_spec.py"
+     ],
+     "figs": [
+      "figures-capstone-i.js"
+     ]
+    },
+    {
+     "id": "71-classical-metrics",
+     "en": "Classical Metrics",
+     "zh": "经典评测指标",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_metrics.py"
+     ],
+     "figs": [
+      "figures-capstone-d.js"
+     ]
+    },
+    {
+     "id": "72-code-exec-metric",
+     "en": "Code Exec Metric",
+     "zh": "代码执行评测指标",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_exec.py"
+     ],
+     "figs": [
+      "figures-capstone-b.js"
+     ]
+    },
+    {
+     "id": "73-perplexity-calibration",
+     "en": "Perplexity and Calibration",
+     "zh": "perplexity 与 calibration",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_calibration.py"
+     ],
+     "figs": [
+      "figures-capstone-d.js"
+     ]
+    },
+    {
+     "id": "74-leaderboard-aggregation",
+     "en": "Leaderboard Aggregation",
+     "zh": "leaderboard 聚合",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_leaderboard.py"
+     ],
+     "figs": [
+      "figures-capstone-i.js"
+     ]
+    },
+    {
+     "id": "75-end-to-end-eval-runner",
+     "en": "End-to-End Eval Runner",
+     "zh": "端到端 eval runner",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/tests/test_runner.py"
+     ],
+     "figs": [
+      "figures-capstone-b.js"
+     ]
+    },
+    {
+     "id": "76-collective-ops-from-scratch",
+     "en": "Collective Ops From Scratch",
+     "zh": "从零实现集合通信",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-capstone-i.js"
+     ]
+    },
+    {
+     "id": "77-data-parallel-ddp",
+     "en": "Data Parallel DDP From Scratch",
+     "zh": "数据并行 DDP",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-capstone-i.js"
+     ]
+    },
+    {
+     "id": "78-zero-parameter-sharding",
+     "en": "ZeRO Optimizer State Sharding",
+     "zh": "ZeRO Optimizer State 分片",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-capstone-d.js"
+     ]
+    },
+    {
+     "id": "79-pipeline-parallel",
+     "en": "Pipeline Parallel and Bubble Analysis",
+     "zh": "Pipeline Parallel 与 Bubble 分析",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-capstone-d.js"
+     ]
+    },
+    {
+     "id": "80-checkpoint-sharded-resume",
+     "en": "Sharded Checkpoint and Atomic Resume",
+     "zh": "分片 Checkpoint 与原子化恢复",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-capstone-i.js"
+     ]
+    },
+    {
+     "id": "81-end-to-end-distributed-train",
+     "en": "End-to-End Distributed Training",
+     "zh": "端到端分布式训练",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py"
+     ],
+     "figs": [
+      "figures-capstone-i.js"
+     ]
+    },
+    {
+     "id": "82-jailbreak-taxonomy",
+     "en": "Capstone 82 — Jailbreak Taxonomy",
+     "zh": "越狱分类法",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/fixtures.py",
+      "code/main.py",
+      "code/tests.py"
+     ],
+     "figs": [
+      "figures-capstone-d.js"
+     ]
+    },
+    {
+     "id": "83-prompt-injection-detector",
+     "en": "Capstone 83 — Prompt Injection Detector",
+     "zh": "Prompt 注入检测器",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/benign.py",
+      "code/main.py",
+      "code/rules.py",
+      "code/tests.py"
+     ],
+     "figs": [
+      "figures-capstone-b.js"
+     ]
+    },
+    {
+     "id": "84-refusal-evaluation",
+     "en": "Capstone 84 — Refusal Evaluation",
+     "zh": "拒答评估",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/mock_llm.py",
+      "code/prompts.py",
+      "code/tests.py"
+     ],
+     "figs": [
+      "figures-capstone-i.js"
+     ]
+    },
+    {
+     "id": "85-content-classifier-integration",
+     "en": "Capstone 85 — Content Classifier Integration",
+     "zh": "内容分类器集成",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/classifiers.py",
+      "code/main.py",
+      "code/tests.py"
+     ],
+     "figs": [
+      "figures-capstone-d.js"
+     ]
+    },
+    {
+     "id": "86-constitutional-rules-engine",
+     "en": "Capstone 86 — Constitutional Rules Engine",
+     "zh": "Constitutional 规则引擎",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/rules.yml",
+      "code/tests.py",
+      "code/yaml_subset.py"
+     ],
+     "figs": [
+      "figures-capstone-d.js"
+     ]
+    },
+    {
+     "id": "87-end-to-end-safety-gate",
+     "en": "Capstone 87 — End-to-End Safety Gate",
+     "zh": "端到端 safety gate",
+     "min": 90,
+     "quiz": true,
+     "code": [
+      "code/main.py",
+      "code/mock_llm_stream.py",
+      "code/safety_gate.py",
+      "code/tests.py"
+     ],
+     "figs": [
+      "figures-capstone-b.js"
+     ]
+    }
+   ]
+  }
+ ]
+}
