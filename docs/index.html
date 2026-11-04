@@ -304,6 +304,8 @@ footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wr
 .doc .en-sec h1, .doc .en-sec h2, .doc .en-sec h3 { font-size: 16px; margin: 8px 0; }
 .doc .en-sec pre, .doc .en-sec .lesson-figure, .doc .en-sec .mermaid, .doc .en-sec .math-display, .doc .en-sec img { display: none; }
 .mcq .en { color: var(--ink3); font-size: 14px; margin: 2px 0 0; }
+.mcq .opts { list-style: none; padding: 0 0 0 26px; margin: 4px 0 0; }
+.mcq .opts li::before { content: "EN · "; opacity: .7; }
 .pbar { display: flex; align-items: center; gap: 16px; margin-top: 18px; font-size: 14px; color: var(--ink2); }
 .pbar .meter, .rtable .meter { width: 220px; height: 6px; background: var(--cell); border-radius: 3px; overflow: hidden; }
 .pbar .meter i, .rtable .meter i { display: block; height: 100%; background: var(--ok); }
@@ -318,6 +320,9 @@ footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wr
 .rtable th, .rtable td { text-align: left; padding: 9px 12px 9px 0; border-bottom: 1px solid var(--rule); vertical-align: middle; }
 .rtable th { font-weight: 600; color: var(--ink3); font-size: 13.5px; }
 .rtable .meter { width: 90px; display: inline-block; margin-right: 8px; vertical-align: middle; }
+.bi { color: var(--ink3); font-weight: 400; margin-left: .45em; font-size: .9em; }
+.part > h2 > .bi, .phase h2 > .bi { margin-right: auto; }
+p > .bi, li > .bi, h1 > .bi, h2 > .bi, h3 > .bi, td > .bi, th > .bi, dd > .bi, .why > .bi, .sec-note > .bi, .small > .bi, .lead .bi { display: block; margin-left: 0; }
 .credit { margin-top: 48px; padding-top: 14px; border-top: 1px solid var(--rule); font-size: 14px; color: var(--ink3); }
 </style>
 </head>
@@ -345,11 +350,23 @@ const pref = { get(k, d) { try { return localStorage.getItem(k) ?? d; } catch (e
 
 // ---------- language: zh, en or both ----------
 let LANG = pref.get("ai90-lang", (navigator.language || "").toLowerCase().startsWith("zh") ? "zh" : "en");
-const t = (zh, en) => LANG === "en" ? en : zh;                                      // interface text
-const pick = (zh, en) => LANG === "en" ? (en ?? zh) : zh;                             // plain content
+const BI = (zh, en) => en && en !== zh && !String(zh).includes(en) ? zh + "\u2063" + en + "\u2064" : zh;
+const t = (zh, en) => LANG === "en" ? en : LANG === "both" ? BI(zh, en) : zh;                // interface text
+const pick = (zh, en) => LANG === "en" ? (en ?? zh) : LANG === "both" ? BI(zh, en) : zh;  // plain content
 const L = (zh, en) => LANG === "en" ? md(en ?? zh) : LANG === "zh" ? md(zh)          // rich content
   : (en && zh !== en ? `${md(zh)}<span class="tr">${md(en)}</span>` : md(zh));
 const CN = ["一", "二", "三", "四", "五", "六", "七"];
+const BOOK_EN = {
+  b_seeing: ["Seeing Theory (visual probability and statistics)"],
+  b_hello: ["Hello Algo (animated, in Chinese and English)"],
+  b_pumpkin: ["PumpkinBook (derivations for the Watermelon Book)"],
+  b_nndl_zh: ["Neural Networks and Deep Learning (Qiu Xipeng)", "Qiu Xipeng, Fudan University"],
+  b_llmbook: ["Large Language Models (LLMBook, Zhao Xin's team at Renmin University)", "Zhao Xin et al."],
+  b_happyllm: ["Happy-LLM: build a large model from scratch"],
+  b_promptguide: ["Prompt Engineering Guide (Chinese and English)"],
+};
+const langName = x => pick(x, x.replace("中文", "Chinese"));
+const bookTitle = (k, b) => pick(b[3], BOOK_EN[k]?.[0] ?? b[3]), bookAuthor = (k, b) => pick(b[4], BOOK_EN[k]?.[1] ?? b[4]);
 const chapLabel = i => t(`第${CN[i]}章`, `Chapter ${i + 1}`);
 const lessonLabel = n => t(`第 ${n} 课`, `Lesson ${n}`);
 const TYPE_EN = { "课程": "Course", "文档": "Docs", "视频": "Video", "练习": "Practice", "书": "Book", "论文": "Paper", "业界实践": "Industry", "最新研究": "Research" };
@@ -357,9 +374,9 @@ const LEVEL_EN = { "入门": "Beginner", "进阶": "Intermediate", "精通": "Ad
 const typeZh = r => r[1].replace(/^[^\p{L}]+/u, "").trim();
 const typeName = r => t(typeZh(r), TYPE_EN[typeZh(r)] || typeZh(r));
 const enTitle = s => { const x = s.replace(/（[^）]*[\u4e00-\u9fff][^）]*）/g, "").replace(/\s+[–-]\s+[^A-Za-z]*[\u4e00-\u9fff].*$/, "").trim(); return x || s; };
-const resTitle = r => LANG === "en" ? enTitle(r[2]) : r[2];
+const resTitle = r => pick(r[2], enTitle(r[2]));
 const splitTerm = s => { const i = s.search(/[A-Za-z]/); return i > 0 && /[\u4e00-\u9fff]/.test(s.slice(0, i)) ? [s.slice(0, i).trim(), s.slice(i).trim()] : [s, s]; };
-const levelName = s => LANG === "en" ? s.replace(/入门|进阶|精通/g, m => LEVEL_EN[m]).replace("→", " to ") : s;
+const levelName = s => pick(s, s.replace(/入门|进阶|精通/g, m => LEVEL_EN[m]).replace("→", " to "));
 const catName = s => LANG === "en" ? (s.match(/[A-Za-z].*$/)?.[0] || s) : s;
 
 // ---------- storage: this browser (same key as the first logbook) ----------
@@ -481,6 +498,29 @@ function cellsFor(p) {
 const chapCount = i => { const p = PHASES[i]; let k = 0; for (let j = p[0]; j <= p[1]; j++) if (isDone(j)) k++; return [k, p[1] - p[0] + 1]; };
 
 
+
+// bilingual mode: turn "zh\u2063en\u2064" into chinese plus an english line
+const MARK = /\u2063([^\u2063\u2064]*)\u2064/g, PLAINTAG = new Set(["OPTION", "TITLE", "TEXTAREA", "SCRIPT", "STYLE"]);
+const plainBI = x => String(x).replace(MARK, " / $1").replace(/[\u2063\u2064]/g, "");
+function fixBI(root) {
+  const walk = document.createTreeWalker(root, NodeFilter.SHOW_TEXT), nodes = [];
+  while (walk.nextNode()) if (/[\u2063\u2064]/.test(walk.currentNode.data)) nodes.push(walk.currentNode);
+  for (const n of nodes) {
+    const parent = n.parentNode; if (!parent) continue;
+    if (PLAINTAG.has(parent.nodeName)) { n.data = plainBI(n.data); continue; }
+    const html = esc(n.data).replace(MARK, '<span class="bi">$1</span>').replace(/[\u2063\u2064]/g, "");
+    parent.replaceChild(document.createRange().createContextualFragment(html), n);
+  }
+  (root.querySelectorAll ? [root, ...root.querySelectorAll("[placeholder], [aria-label], [title]")] : []).forEach(el => {
+    for (const a of ["placeholder", "aria-label", "title"]) { const v = el.getAttribute?.(a); if (v && /[\u2063\u2064]/.test(v)) el.setAttribute(a, plainBI(v)); }
+  });
+  if (/[\u2063\u2064]/.test(document.title)) document.title = plainBI(document.title);
+}
+new MutationObserver(list => { for (const m of list) {
+  if (m.type === "characterData") { if (/[\u2063\u2064]/.test(m.target.data)) fixBI(m.target.parentNode); }
+  else m.addedNodes.forEach(n => { if (n.nodeType === 1) fixBI(n); else if (n.nodeType === 3 && /[\u2063\u2064]/.test(n.data) && n.parentNode) fixBI(n.parentNode); });
+} }).observe(document.documentElement, { childList: true, subtree: true, characterData: true });
+
 // ---------- path: lessons from AI Engineering from Scratch ----------
 let CUR = null, curLoading = false, EX = null;
 // done, quiz scores and phase exams live in S so the backup carries them
@@ -490,7 +530,7 @@ const P = () => S.path;
 const isDoneU = k => !!P().done[k];
 const today = () => new Date().toISOString().slice(0, 10);
 const unitKey = (p, l) => p.id.slice(0, 2) + "-" + l.id.slice(0, 2);
-const unitName = x => LANG === "en" ? x.en : x.zh || x.en;
+const unitName = x => pick(x.zh || x.en, x.en);
 const pct = (a, b) => b ? Math.round(a / b * 100) : 0;
 function loadCur() {
   if (CUR || curLoading) return;
@@ -588,7 +628,7 @@ const fetchQuiz = url => fetch(url).then(r => r.ok ? r.json() : null).then(d => 
 const stageName = s => ({ pre: t("课前", "Before"), check: t("课中", "Check"), post: t("课后", "After") })[s] || "";
 function quizHtml(qs, en, from) {
   return qs.map((q, i) => `<div class="mcq" data-q="${i}"><div class="mq"><small>${esc(from ? from[i] : stageName(q.stage))}</small>${i + 1}. ${esc(q.question)}${en && en[i] ? `<p class="en">${esc(en[i].question)}</p>` : ""}</div>
-    ${q.options.map((o, j) => `<label><input type="radio" name="q${i}" value="${j}"><span>${esc(o)}</span></label>`).join("")}<p class="why" hidden>${esc(q.explanation || "")}${en && en[i] ? `<br><span class="en">${esc(en[i].explanation || "")}</span>` : ""}</p></div>`).join("");
+    ${q.options.map((o, j) => `<label><input type="radio" name="q${i}" value="${j}"><span>${esc(o)}</span></label>`).join("")}${en && en[i] ? `<ul class="en opts">${en[i].options.map(o => `<li>${esc(o)}</li>`).join("")}</ul>` : ""}<p class="why" hidden>${esc(q.explanation || "")}${en && en[i] ? `<br><span class="en">${esc(en[i].explanation || "")}</span>` : ""}</p></div>`).join("");
 }
 function mark(box, q, picked) {
   box.querySelectorAll("label").forEach((lab, j) => { lab.classList.toggle("right", j === q.correct); lab.classList.toggle("wrong", j === picked && j !== q.correct); });
@@ -623,13 +663,13 @@ function pexam() {
 }
 function wireExam2() {
   const p = CUR.phases.find(x => x.id.startsWith(cur.pexam)) || CUR.phases[0], nn = p.id.slice(0, 2), want = cur.pexam;
-  const file = LANG === "en" ? "quiz.json" : "quiz.zh.json";
-  Promise.all(p.lessons.filter(l => l.quiz).map(l => fetchQuiz(`curriculum/${p.id}/${l.id}/${file}`)
-    .then(qs => qs || fetchQuiz(`curriculum/${p.id}/${l.id}/quiz.json`)).then(qs => (qs || []).map(q => [q, unitName(l)]))))
+  const dir = l => `curriculum/${p.id}/${l.id}/`;
+  Promise.all(p.lessons.filter(l => l.quiz).map(l => Promise.all([fetchQuiz(dir(l) + "quiz.json"), LANG === "en" ? null : fetchQuiz(dir(l) + "quiz.zh.json")])
+    .then(([en, zq]) => (zq || en || []).map((q, i) => [q, unitName(l), zq && LANG === "both" ? en?.[i] : null]))))
     .then(lists => {
       if (cur.view !== "pexam" || cur.pexam !== want) return;
       const set = pickN(lists.flat(), 20), qs = set.map(x => x[0]), picked = {};
-      $("#exambox").innerHTML = quizHtml(qs, null, set.map(x => x[1])) + `<p><button class="btn" id="hand">${t("交卷", "Hand in")}</button> <span class="small" id="left"></span></p><div class="qend" id="xres" hidden></div>`;
+      $("#exambox").innerHTML = quizHtml(qs, LANG === "both" ? set.map(x => x[2]) : null, set.map(x => x[1])) + `<p><button class="btn" id="hand">${t("交卷", "Hand in")}</button> <span class="small" id="left"></span></p><div class="qend" id="xres" hidden></div>`;
       $$("#exambox .mcq").forEach(box => box.onchange = e => { picked[+box.dataset.q] = +e.target.value; });
       $("#hand").onclick = () => {
         const left = qs.length - Object.keys(picked).length;
@@ -689,7 +729,7 @@ function wirePath() {
 
 // ---------- overview ----------
 function pickReview() {
-  const pool = DAYS.filter(d => isDone(d.n)).flatMap(d => (LANG === "en" ? d.quiz_en : d.quiz).map(q => [d.n, q]));
+  const pool = DAYS.filter(d => isDone(d.n)).flatMap(d => d.quiz.map((q, i) => [d.n, q, d.quiz_en?.[i]]));
   review = pool.length ? pool[Math.floor(Math.random() * pool.length)] : null;
 }
 function overview() {
@@ -724,7 +764,7 @@ function overview() {
   <section class="later">
     <div class="card">
       <h2>${t("抽一题复习", "Quick review")}</h2>
-      ${review ? `<div class="small">${t("来自已完成的", "From completed ")}${lessonLabel(review[0])}</div><div class="q">${md(review[1])}</div>
+      ${review ? `<div class="small">${t("来自已完成的", "From completed ")}${lessonLabel(review[0])}</div><div class="q">${L(review[1], review[2])}</div>
       <div class="row-btns"><button class="btn ghost sm" id="another">${t("换一题", "Another one")}</button><button class="textlink" data-go-lesson="${review[0]}">${t("回到这一课", "Open that lesson")}</button></div>`
       : `<p class="small">${t("完成第一课后，这里会抽题给你复习。", "Finish a lesson and questions from it will show up here.")}</p>`}
     </div>
@@ -747,7 +787,7 @@ function courseTable(list, grouped) {
     <td class="code"><b>${esc(c.code)}</b><span>${esc(c.school)}</span></td>
     <td class="what">${LANG === "zh" ? `${esc(c.zh)}<div class="zh">${esc(c.title)}</div>` : LANG === "en" ? esc(c.title) : `${esc(c.title)}<div class="zh">${esc(c.zh)}</div>`}</td>
     <td class="where">${[...new Set(c.use.map(u => u[0]))].map(n => `<button data-go-lesson="${n}" data-peek="${n}">${n}</button>`).join("")}</td>
-    <td class="lang">${esc(c.lang)}</td>
+    <td class="lang">${esc(langName(c.lang))}</td>
     <td class="go"><a href="${esc(c.url)}" target="_blank" rel="noopener">${t("课程主页", "Course page")}</a>${Object.entries(c.links).slice(0, 1).map(([k, u]) => `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(k)}</a>`).join("")}</td></tr>`;
   if (!grouped) return `<table class="read">${head}${list.map(row).join("")}</table>`;
   let body = "";
@@ -759,11 +799,11 @@ function courseTable(list, grouped) {
 // ---------- lesson ----------
 function lesson() {
   const n = cur.lesson, d = DAYS[n - 1], ci = chapOf(n), p = PHASES[ci], st = dayState(n), light = REVIEW.has(n);
-  const tasks = [...(LANG === "en" ? d.tasks_en : d.tasks).map((x, i) => ["t" + i, x]), ["p", LANG === "en" ? d.project_en : d.project]];
-  const ticked = tasks.filter(([k]) => st.tasks[k]).length, quiz = LANG === "en" ? d.quiz_en : d.quiz;
+  const tasks = [...d.tasks.map((x, i) => ["t" + i, x, d.tasks_en?.[i]]), ["p", d.project, d.project_en]];
+  const ticked = tasks.filter(([k]) => st.tasks[k]).length, quiz = d.quiz.map((x, i) => [x, d.quiz_en?.[i]]);
   const withC = coursesFor(n), S_ = STATUS();
   const resRow = (k, note) => { const r = RES[k]; if (!r) return ""; return `<li><span class="k">${esc(typeName(r))}</span><a href="${esc(r[3])}" target="_blank" rel="noopener">${esc(resTitle(r))}</a>${note ? `<span class="n">${t("这一课看：", "For this lesson: ")}${esc(note)}</span>` : `<span class="n">${esc(pick(r[4], r[5]))}</span>`}${accNote(k)}</li>`; };
-  const bookRow = k => { const b = BOOKS[k]; if (!b) return ""; return `<li><span class="k">${t("电子书", "E-book")}</span><a href="${esc(b[5])}" target="_blank" rel="noopener">${esc(b[3])}</a><span class="n">${esc(b[4])} · ${esc(levelName(b[1]))}</span>${accNote(k, true)}</li>`; };
+  const bookRow = k => { const b = BOOKS[k]; if (!b) return ""; return `<li><span class="k">${t("电子书", "E-book")}</span><a href="${esc(b[5])}" target="_blank" rel="noopener">${esc(bookTitle(k, b))}</a><span class="n">${esc(b[4])} · ${esc(levelName(b[1]))}</span>${accNote(k, true)}</li>`; };
   const sched = light ? [[t("复习", "Review"), "20–30 min"], [t("小测或重写", "Quiz or rewrite"), "60 min"], [t("项目", "Project"), "30–45 min"], [t("打卡", "Check-in"), "20–30 min"]]
     : [[t("理论", "Theory"), "30–45 min"], [t("编码", "Coding"), "60–90 min"], [t("项目", "Project"), "45–75 min"], [t("测试与复盘", "Tests and review"), "15–30 min"]];
   const parts = [["job", t("工作中", "At work")], withC.length ? ["uni", t("公开课", "Lectures")] : null, ["con", t("概念", "Concepts")], ["res", t("资料", "Reading")], ["task", t("练习", "Exercises")], ["quiz", t("自测", "Self-test")], ["log", t("打卡", "Check-in")]].filter(Boolean);
@@ -810,13 +850,13 @@ function lesson() {
 
       <section class="part" id="task"><h2>${t("练习", "Exercises")}<small id="tickN">${ticked} / ${tasks.length}</small></h2>
         <div class="sched">${sched.map(s => `<span>${s[0]} <b>${s[1]}</b></span>`).join("")}</div>
-        <div class="tasks">${tasks.map(([k, x]) => `<label class="${st.tasks[k] ? "ticked" : ""}"><input type="checkbox" data-task="${k}" ${st.tasks[k] ? "checked" : ""}><span>${k === "p" ? `<em>${t("项目", "Project")}</em>` : ""}${md(x)}</span></label>`).join("")}</div>
-        <div class="kv"><span>${t("做完要交", "Hand in")}</span><span>${md(pick(d.out, d.out_en))}</span><span>${t("对应需求", "Covers")}</span><span>${esc(pick(d.req, d.req_en))}</span>
+        <div class="tasks">${tasks.map(([k, x, xe]) => `<label class="${st.tasks[k] ? "ticked" : ""}"><input type="checkbox" data-task="${k}" ${st.tasks[k] ? "checked" : ""}><span>${k === "p" ? `<em>${t("项目", "Project")}</em>` : ""}${L(x, xe)}</span></label>`).join("")}</div>
+        <div class="kv"><span>${t("做完要交", "Hand in")}</span><span>${L(d.out, d.out_en)}</span><span>${t("对应需求", "Covers")}</span><span>${esc(pick(d.req, d.req_en))}</span>
           <span>${t("用 AI 的规则", "Using AI")}</span><span>${t("先自己试 20 分钟，再只问提示，必要时看参考，最后关掉答案自己重写。", "Try on your own for 20 minutes, then ask only for hints, look at a reference if you must, then close it and rewrite it yourself.")}</span></div>
       </section>
 
-      <section class="part" id="quiz"><h2>${t("自测", "Self-test")}<small>${t("先自己想，写下答案，再诚实打分", "Think first, write your answer, then rate yourself honestly")}</small></h2>${quiz.map((x, i) => `
-        <div class="qi"><div class="top"><span class="no2">${i + 1}.</span><div>${md(x)}</div><div class="seg" data-rate="${i}"><button class="ok ${rate[i] === "ok" ? "on" : ""}" data-v="ok">${t("会", "Got it")}</button><button class="no ${rate[i] === "no" ? "on" : ""}" data-v="no">${t("要复习", "Review")}</button></div></div>
+      <section class="part" id="quiz"><h2>${t("自测", "Self-test")}<small>${t("先自己想，写下答案，再诚实打分", "Think first, write your answer, then rate yourself honestly")}</small></h2>${quiz.map(([x, xe], i) => `
+        <div class="qi"><div class="top"><span class="no2">${i + 1}.</span><div>${L(x, xe)}</div><div class="seg" data-rate="${i}"><button class="ok ${rate[i] === "ok" ? "on" : ""}" data-v="ok">${t("会", "Got it")}</button><button class="no ${rate[i] === "no" ? "on" : ""}" data-v="no">${t("要复习", "Review")}</button></div></div>
         <textarea data-qa="${i}" placeholder="${t("我的回答", "My answer")}">${esc(st.answers[i] || "")}</textarea></div>`).join("")}</section>
 
       <section class="part" id="log"><h2>${t("打卡", "Check-in")}<small>${t("哪天做都可以，不影响进度", "Any day is fine; it never counts against you")}</small></h2><div class="log">
@@ -843,7 +883,7 @@ function filterRow(groups, ph) {
   return `<div class="filters">${groups.map(([lab, key, opts]) => `<div class="grp">${lab ? `<span class="lab">${lab}</span>` : ""}${opts.map(([v, x]) => `<button class="${cur[key] === v ? "on" : ""}" data-f="${key}" data-val="${v}">${x}</button>`).join("")}</div>`).join("")}
     ${ph ? `<input class="find" id="q" placeholder="${ph}" value="${esc(cur.q)}">` : ""}</div>`;
 }
-const chapOpts = () => [[0, t("全部", "All")], ...PHASES.map((p, i) => [i + 1, LANG === "en" ? String(i + 1) : CN[i]])];
+const chapOpts = () => [[0, t("全部", "All")], ...PHASES.map((p, i) => [i + 1, t(CN[i], String(i + 1))])];
 function courses() {
   const q = cur.q.toLowerCase();
   const list = C.filter(c => (!cur.phase || c.phase === cur.phase) && (cur.kind === "all" || c.kind === cur.kind) && (cur.lang === "all" || c.lang.includes(cur.lang))
@@ -851,7 +891,7 @@ function courses() {
   return `<h1 class="page">${t("名校课表", "Course list")}</h1>
   <p class="sec-note">${t("每一门都标出它在本计划里用在第几课；把鼠标移到课号上可以预览那一课。只放官方链接，讲义和视频的版权归原作者。", "Each course shows which lessons use it; hover a lesson number to preview it. Links only: notes and videos belong to their authors.")}</p>
   ${filterRow([[t("来源", "Source"), "kind", [["all", t("全部", "All")], ["uni", t("大学", "University")], ["oss", t("开源", "Open source")]]],
-    [t("语言", "Language"), "lang", [["all", t("全部", "All")], ["中文", "中文"], ["EN", "English"]]],
+    [t("语言", "Language"), "lang", [["all", t("全部", "All")], ["中文", t("中文", "Chinese")], ["EN", "English"]]],
     [t("章", "Chapter"), "phase", chapOpts()], ["", "saved", [[false, t("全部课程", "All courses")], [true, `★ ${t("我的收藏", "Saved")} (${S.saved.length})`]]]], t("找学校、课号或主题", "Search a school, code or topic"))}
   <div class="found">${t(`找到 ${list.length} 门`, `${list.length} course${list.length === 1 ? "" : "s"}`)}</div>
   ${courseTable(list, true)}`;
@@ -875,7 +915,7 @@ function resources() {
 const RUBRIC_V = [["达标", "Met"], ["部分达标", "Partly met"], ["未达标", "Not met"]];
 function tests() {
   if (cur.exam) return examPage();
-  const rub = LANG === "en" ? D.rubric_en : D.rubric;
+  const rub = D.rubric.map((r, i) => r.map((c, j) => pick(c, D.rubric_en[i][j])));
   return `<h1 class="page">${t("考试与验收", "Exams and checkpoints")}</h1>
   <p class="sec-note">${t("每个验收是选择题（自动评分）加一道独立编程题（照通过标准自评），两项都达标才算通过，没过的会自动进补强清单。", "Each checkpoint is multiple choice (marked for you) plus a coding task you mark against the pass criteria. You pass only when both are met; anything missed goes on the catch-up list.")}</p>
   <div class="exam-list">${EXAMS.map(e => { const s = S.exams[e.id] || {}, pass = examPassed(e.id);
@@ -901,11 +941,11 @@ function examPage() {
   <div class="row-btns"><span class="bigclock" id="eclock">${ex.minutes}:00</span><button class="btn ghost sm" id="estart">${t("开始计时", "Start the clock")}</button></div>
   <h2 class="sec">${t(`A 部分：选择题（${ex.mcq.length} 题）`, `Part A: multiple choice (${ex.mcq.length} questions)`)}</h2>
   <div id="mcqs">${ex.mcq.map((q, i) => `<div class="mcq" data-q="${i}"><div class="qq">${i + 1}. ${L(q.q, q.q_en)}</div>
-    ${(LANG === "en" ? q.o_en : q.o).map((o, j) => `<label class="opt" data-o="${j}"><input type="radio" name="q${i}" value="${j}"><span>${String.fromCharCode(65 + j)}. ${md(o)}</span></label>`).join("")}
+    ${q.o.map((o, j) => `<label class="opt" data-o="${j}"><input type="radio" name="q${i}" value="${j}"><span>${String.fromCharCode(65 + j)}. ${L(o, q.o_en?.[j])}</span></label>`).join("")}
     <div class="expl" hidden></div></div>`).join("")}</div>
   <div class="row-btns"><button class="btn" id="submit">${t("交卷并评分", "Submit and mark")}</button><span id="result" style="font-weight:600"></span></div>
   <h2 class="sec">${t("B 部分：独立编程题", "Part B: coding task")}</h2>
-  ${(LANG === "en" ? ex.coding_en : ex.coding).map(c => `<p>${md(c)}</p>`).join("")}
+  ${ex.coding.map((c, i) => `<p>${L(c, ex.coding_en?.[i])}</p>`).join("")}
   <div class="form2"><label><span>${t("自评结果", "Your result")}</span><select id="cp"><option value="">${t("还没做", "Not done")}</option><option value="pass">${t("达到通过标准", "Met the pass criteria")}</option><option value="fail">${t("没达标（进补强）", "Not met (goes to catch-up)")}</option></select></label></div>
   <label class="stack" style="margin-top:14px"><span>${t("仓库链接、用时、遇到的问题", "Repo link, time taken, problems")}</span><textarea id="cn">${esc(s.codingNote)}</textarea></label>`;
 }
@@ -921,7 +961,7 @@ function wireExam() {
     ex.mcq.forEach((q, i) => { const box = document.querySelector(`[data-q="${i}"]`), p = picks[i];
       box.querySelectorAll(".opt").forEach(o => { const j = +o.dataset.o; if (j === q.a) o.classList.add("right"); else if (j === p) o.classList.add("wrong"); o.querySelector("input").disabled = true; });
       if (p === q.a) c++; const ex2 = box.querySelector(".expl"); ex2.hidden = false;
-      ex2.innerHTML = (p === q.a ? "✓ " : t(`✗ 正确答案是 ${String.fromCharCode(65 + q.a)}。`, `✗ The answer is ${String.fromCharCode(65 + q.a)}. `)) + md(pick(q.e, q.e_en)); });
+      ex2.innerHTML = (p === q.a ? "✓ " : t(`✗ 正确答案是 ${String.fromCharCode(65 + q.a)}。`, `✗ The answer is ${String.fromCharCode(65 + q.a)}. `)) + L(q.e, q.e_en); });
     const pct = Math.round(c / ex.mcq.length * 100); s.attempts.push({ at: new Date().toISOString(), pct }); s.best = Math.max(s.best ?? 0, pct); saveAll();
     $("#result").textContent = `${c} / ${ex.mcq.length} · ${pct}% · ${pct >= ex.pass_pct ? t("通过", "passed") : t("没通过", "not passed")}`; toast(t("成绩已记录", "Score saved")); };
 }
@@ -935,7 +975,7 @@ function weekly() {
   <p class="sec-note">${t(`第 ${ds[0].n}–${ds[ds.length - 1].n} 课。闭卷 15–20 分钟，每题 0 不会、1 部分、2 完整，低于 60% 的主题会进补强清单。`, `Lessons ${ds[0].n}–${ds[ds.length - 1].n}. Closed book, 15–20 minutes. Score each question 0 (no idea), 1 (partly) or 2 (fully); topics under 60% go on the catch-up list.`)}</p>
   ${filterRow([[t("周", "Week"), "week", Array.from({ length: 13 }, (_, i) => [i + 1, String(i + 1)])]])}
   <div class="found">${t("得分", "Score")} ${tot} / ${max}</div>
-  ${ds.map(d => `<div class="qi"><div class="top"><span class="no2">${d.n}</span><div>${md((LANG === "en" ? d.quiz_en : d.quiz)[0])}</div><div class="seg" data-ws="${d.n}">${[0, 1, 2].map(v => `<button class="${String(s.scores[d.n]) === String(v) ? "on" : ""}" data-v="${v}">${v}</button>`).join("")}</div></div></div>`).join("")}
+  ${ds.map(d => `<div class="qi"><div class="top"><span class="no2">${d.n}</span><div>${L(d.quiz[0], d.quiz_en?.[0])}</div><div class="seg" data-ws="${d.n}">${[0, 1, 2].map(v => `<button class="${String(s.scores[d.n]) === String(v) ? "on" : ""}" data-v="${v}">${v}</button>`).join("")}</div></div></div>`).join("")}
   <h2 class="sec">${t("复盘", "Retrospective")}</h2>
   <div class="stack">
     <label><span>${t("最有收获的一件事", "The one thing that helped most")}</span><textarea id="w-win">${esc(s.win)}</textarea></label>
@@ -946,10 +986,10 @@ function weekly() {
 
 // ---------- projects, books, report, goals, settings ----------
 function projects() {
-  const ps = LANG === "en" ? D.projects_en.map((p, i) => [p[0], D.projects[i][1], p[1], p[2]]) : D.projects;
+  const ps = D.projects.map((p, i) => { const e = D.projects_en[i]; return [pick(p[0], e[0]), p[1], L(p[2], e[1]), p[3].map((m, j) => pick(m, e[2][j]))]; });
   return `<h1 class="page">${t("作品集项目", "Portfolio projects")}</h1>
   <p class="sec-note">${t("三个项目各自是独立的仓库。交付的代码、README、架构图、测试和演示结果必须跟实际完成的一致。", "Each project is its own repo. Code, README, architecture diagram, tests and demo results must match what was really built.")}</p>
-  ${ps.map(p => `<section class="part"><h2>${esc(p[0])}<small>repo: ${esc(p[1])}</small></h2><p>${md(p[2])}</p>
+  ${ps.map(p => `<section class="part"><h2>${esc(p[0])}<small>repo: ${esc(p[1])}</small></h2><p>${p[2]}</p>
     <div class="milestones">${p[3].map(m => { const n = +m.match(/[DL](\d+)/)[1]; return `<button class="${isDone(n) ? "ok" : ""}" data-go-lesson="${n}">${esc(m)}</button>`; }).join("")}</div></section>`).join("")}`;
 }
 function books() {
@@ -959,13 +999,13 @@ function books() {
   <p class="sec-note">${t(`${Object.keys(BOOKS).length} 本，全部是作者或出版方官方免费提供的版本。`, `${Object.keys(BOOKS).length} books, all free editions from their authors or publishers.`)}</p>
   ${filterRow([[t("分类", "Topic"), "bcat", [["", t("全部", "All")], ...cats.map(c => [c, catName(c)])]], [t("难度", "Level"), "blvl", [["", t("全部", "All")], ...D.levels.map(l => [l, t(l, LEVEL_EN[l])])]], [t("语言", "Language"), "blang", [["", t("全部", "All")], ["中文", "中文"], ["EN", "English"]]]], t("找书名或作者", "Search title or author"))}
   <div class="found">${t(`找到 ${list.length} 本`, `${list.length} books`)}</div>
-  <div class="books">${list.map(([k, b]) => `<article class="book"><h3><a href="${esc(b[5])}" target="_blank" rel="noopener">${esc(b[3])}</a></h3><div class="au">${esc(b[4])}</div>
-    <p>${L(b[6], b[7])}</p>${accNote(k, true)}<div class="meta">${esc(catName(b[0]))} · ${esc(levelName(b[1]))} · ${esc(b[2])}${b[8].length ? ` · ${t("用在", "Lessons")} ${b[8].map(n => `<button data-go-lesson="${n}">${n}</button>`).join("")}` : ""}</div></article>`).join("")}</div>`;
+  <div class="books">${list.map(([k, b]) => `<article class="book"><h3><a href="${esc(b[5])}" target="_blank" rel="noopener">${esc(bookTitle(k, b))}</a></h3><div class="au">${esc(bookAuthor(k, b))}</div>
+    <p>${L(b[6], b[7])}</p>${accNote(k, true)}<div class="meta">${esc(catName(b[0]))} · ${esc(levelName(b[1]))} · ${esc(langName(b[2]))}${b[8].length ? ` · ${t("用在", "Lessons")} ${b[8].map(n => `<button data-go-lesson="${n}">${n}</button>`).join("")}` : ""}</div></article>`).join("")}</div>`;
 }
 function report() {
   const weak = DAYS.filter(d => ["partial", "missed"].includes(status(d.n)) || (S.days[d.n]?.understand && +S.days[d.n].understand <= 2));
   const exFail = EXAMS.filter(e => S.exams[e.id]?.best != null && !examPassed(e.id));
-  const rub = LANG === "en" ? D.rubric_en : D.rubric, rbFail = rub.map((r, i) => [r, S.rubric[i]]).filter(([r, v]) => v && v !== "达标");
+  const rub = D.rubric.map((r, i) => r.map((c, j) => pick(c, D.rubric_en[i][j]))), rbFail = rub.map((r, i) => [r, S.rubric[i]]).filter(([r, v]) => v && v !== "达标");
   const wkLow = Object.entries(S.weeks).filter(([w, s]) => { const ds = DAYS.filter(d => Math.ceil(d.n / 7) === +w), tt = ds.reduce((a, d) => a + (+s.scores?.[d.n] || 0), 0); return Object.keys(s.scores || {}).length && tt / (ds.length * 2) < .6; });
   const mocks = Object.values(S.mock).map(m => +m.score).filter(Boolean), S_ = STATUS();
   const none = !(weak.length + exFail.length + rbFail.length + wkLow.length);
@@ -986,9 +1026,9 @@ function report() {
   </table></section>`;
 }
 function reqs() {
-  const rq = LANG === "en" ? D.reqs_en : D.reqs;
+  const rq = D.reqs.map((r, i) => [pick(r[0], D.reqs_en[i][0]), L(r[1], D.reqs_en[i][1])]);
   return `<h1 class="page">${t("需求与路线", "Goals and roadmap")}</h1>
-  <table class="read" style="margin-top:22px"><tr><th>${t("主题", "Topic")}</th><th>${t("要求", "What it means")}</th></tr>${rq.map(r => `<tr><td style="width:240px"><b>${esc(r[0])}</b></td><td>${md(r[1])}</td></tr>`).join("")}</table>
+  <table class="read" style="margin-top:22px"><tr><th>${t("主题", "Topic")}</th><th>${t("要求", "What it means")}</th></tr>${rq.map(r => `<tr><td style="width:240px"><b>${esc(r[0])}</b></td><td>${r[1]}</td></tr>`).join("")}</table>
   <h2 class="sec">${t("路线", "Roadmap")}</h2>
   <table class="read"><tr><th>${t("章", "Chapter")}</th><th>${t("课", "Lessons")}</th><th>${t("主题", "Topic")}</th></tr>${PHASES.map((p, i) => `<tr><td>${chapLabel(i)}</td><td>${p[0]}–${p[1]}</td><td>${L(p[3], p[4])}</td></tr>`).join("")}</table>`;
 }
@@ -1018,6 +1058,7 @@ function settings() {
     <p class="small">${t("授权：本站自己写的教学内容（课程计划、练习、测验和说明）采用 CC BY-NC-SA 4.0；程序代码采用 MIT。外部链接的内容不在此授权范围内。", "Licence: the original study content here (plan, tasks, quizzes and notes) is CC BY-NC-SA 4.0; the code is MIT. Linked third-party material is not covered by these licences.")}</p></section>`;
 }
 function buildWorkbook() {
+  if (LANG === "both") { LANG = "zh"; try { return buildWorkbook(); } finally { LANG = "both"; } }
   const wb = XLSX.utils.book_new();
   const plan = DAYS.map(d => { const st = S.days[d.n] || {}, p = PHASES[chapOf(d.n)]; return {
     "Lesson": d.n, "Chapter": p[2] + " " + p[4], "主题": d.zh, "Topic": d.en,
