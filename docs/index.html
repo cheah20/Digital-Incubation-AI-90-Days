@@ -304,6 +304,20 @@ footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wr
 .doc .en-sec h1, .doc .en-sec h2, .doc .en-sec h3 { font-size: 16px; margin: 8px 0; }
 .doc .en-sec pre, .doc .en-sec .lesson-figure, .doc .en-sec .mermaid, .doc .en-sec .math-display, .doc .en-sec img { display: none; }
 .mcq .en { color: var(--ink3); font-size: 14px; margin: 2px 0 0; }
+.pbar { display: flex; align-items: center; gap: 16px; margin-top: 18px; font-size: 14px; color: var(--ink2); }
+.pbar .meter, .rtable .meter { width: 220px; height: 6px; background: var(--cell); border-radius: 3px; overflow: hidden; }
+.pbar .meter i, .rtable .meter i { display: block; height: 100%; background: var(--ok); }
+.units .sc { color: var(--ok); font-weight: 600; margin-right: 12px; }
+.phx { margin: 12px 0 0; }
+.qend { margin-top: 16px; padding: 12px 16px; background: var(--soft); border-radius: 8px; }
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 28px 0; }
+.stats div { border-top: 2px solid var(--ink); padding-top: 10px; }
+.stats b { display: block; font: 800 34px/1.1 var(--serif); }
+.stats span { font-size: 14px; color: var(--ink3); }
+.rtable { width: 100%; border-collapse: collapse; font-size: 15px; }
+.rtable th, .rtable td { text-align: left; padding: 9px 12px 9px 0; border-bottom: 1px solid var(--rule); vertical-align: middle; }
+.rtable th { font-weight: 600; color: var(--ink3); font-size: 13.5px; }
+.rtable .meter { width: 90px; display: inline-block; margin-right: 8px; vertical-align: middle; }
 .credit { margin-top: 48px; padding-top: 14px; border-top: 1px solid var(--rule); font-size: 14px; color: var(--ink3); }
 </style>
 </head>
@@ -410,7 +424,7 @@ const cellClass = n => { const s = status(n); return [n === nextLesson() ? "next
 // ---------- navigation ----------
 let cur = { view: "overview", lesson: 1, phase: 0, kind: "all", lang: "all", q: "", rtype: "all", rphase: 0, saved: false, exam: null, week: null, bcat: "", blvl: "", blang: "" }, firstPaint = true, review = null, timer = { left: 1500, run: null }, examTimer = null;
 const MAIN = () => [["overview", t("总览", "Overview")], ["lesson", t("课程", "Lessons")], ["path", t("课程路线", "Path")], ["courses", t("名校课表", "Courses")], ["resources", t("资源", "Resources")], ["tests", t("考试", "Exams")]];
-const MORE = () => [["weekly", t("周复盘", "Weekly review")], ["projects", t("作品集项目", "Portfolio projects")], ["books", t("电子书库", "Free e-books")], ["report", t("补强与报告", "Catch-up and report")], ["reqs", t("需求与路线", "Goals and roadmap")], ["settings", t("设置与备份", "Settings and backup")]];
+const MORE = () => [["results", t("路线成果", "Path results")], ["weekly", t("周复盘", "Weekly review")], ["projects", t("作品集项目", "Portfolio projects")], ["books", t("电子书库", "Free e-books")], ["report", t("补强与报告", "Catch-up and report")], ["reqs", t("需求与路线", "Goals and roadmap")], ["settings", t("设置与备份", "Settings and backup")]];
 const VIEWS = () => [...MAIN(), ...MORE()].map(x => x[0]);
 
 function chrome() {
@@ -434,7 +448,7 @@ $("#brand").onclick = () => go("overview");
 function go(v, extra = {}) {
   if (!("q" in extra)) cur.q = "";
   Object.assign(cur, { view: v }, extra);
-  const h = v === "lesson" ? "lesson-" + cur.lesson : v === "unit" ? "unit-" + cur.unit : v;
+  const h = v === "lesson" ? "lesson-" + cur.lesson : v === "unit" ? "unit-" + cur.unit : v === "pexam" ? "pexam-" + cur.pexam : v;
   if (location.hash.slice(1) !== h) history.pushState(null, "", "#" + h);
   chrome(); render(); window.scrollTo({ top: 0 });
 }
@@ -442,6 +456,7 @@ function fromHash() {
   const h = location.hash.slice(1), m = /^(?:lesson|day)-(\d{1,2})$/.exec(h);   // day-N keeps the links in the GitHub issues working
   if (m && +m[1] >= 1 && +m[1] <= 90) { cur.view = "lesson"; cur.lesson = +m[1]; }
   else if (/^unit-\d{2}-\d{2}$/.test(h)) { cur.view = "unit"; cur.unit = h.slice(5); }
+  else if (/^pexam-\d{2}$/.test(h)) { cur.view = "pexam"; cur.pexam = h.slice(6); }
   else if (VIEWS().includes(h)) cur.view = h;
   else cur.lesson = nextLesson();
 }
@@ -451,10 +466,10 @@ function toast(msg) { const el = $("#toast"); el.textContent = msg; el.hidden = 
 function render() {
   if (!D) return;
   clearInterval(timer.run); timer.run = null; clearInterval(examTimer); examTimer = null;
-  const views = { overview, lesson, path, unit, courses, resources, tests, weekly, projects, books, report, reqs, settings };
+  const views = { overview, lesson, path, unit, pexam, results, courses, resources, tests, weekly, projects, books, report, reqs, settings };
   $("#app").innerHTML = views[cur.view]();
   wire();
-  if (cur.view === "path" || cur.view === "unit") wirePath();
+  if (["path", "unit", "pexam", "results"].includes(cur.view)) wirePath();
   if (cur.view === "overview" && firstPaint) { firstPaint = false; requestAnimationFrame(() => $(".map")?.classList.add("ink")); }
 }
 
@@ -467,11 +482,16 @@ const chapCount = i => { const p = PHASES[i]; let k = 0; for (let j = p[0]; j <=
 
 
 // ---------- path: lessons from AI Engineering from Scratch ----------
-let CUR = null, curLoading = false;
-const DONE = new Set(JSON.parse(pref.get("aip-done", "[]")));
-const saveDone = () => pref.set("aip-done", JSON.stringify([...DONE]));
+let CUR = null, curLoading = false, EX = null;
+// done, quiz scores and phase exams live in S so the backup carries them
+S.path ||= { done: {}, quiz: {}, exam: {} };
+try { for (const k of JSON.parse(pref.get("aip-done", "[]"))) S.path.done[k] ||= "earlier"; localStorage.removeItem("aip-done"); } catch (e) {}
+const P = () => S.path;
+const isDoneU = k => !!P().done[k];
+const today = () => new Date().toISOString().slice(0, 10);
 const unitKey = (p, l) => p.id.slice(0, 2) + "-" + l.id.slice(0, 2);
 const unitName = x => LANG === "en" ? x.en : x.zh || x.en;
+const pct = (a, b) => b ? Math.round(a / b * 100) : 0;
 function loadCur() {
   if (CUR || curLoading) return;
   curLoading = true;
@@ -482,15 +502,22 @@ function findUnit(key) {
   for (const p of CUR.phases) for (const l of p.lessons) if (unitKey(p, l) === key) return [p, l];
   return [CUR.phases[0], CUR.phases[0].lessons[0]];
 }
+function phaseStats(p) {
+  const keys = p.lessons.map(l => unitKey(p, l)), scored = keys.map(k => P().quiz[k]).filter(Boolean);
+  const right = scored.reduce((a, q) => a + q.best, 0), total = scored.reduce((a, q) => a + q.total, 0);
+  return { done: keys.filter(isDoneU).length, n: keys.length, avg: scored.length ? pct(right, total) : null, exam: P().exam[p.id.slice(0, 2)] };
+}
+const loadingMsg = () => `<p class="loading">${t("载入中…", "Loading…")}</p>`;
 function path() {
-  if (!CUR) { loadCur(); return `<p class="loading">${t("载入中…", "Loading…")}</p>`; }
-  const all = CUR.phases.flatMap(p => p.lessons.map(l => unitKey(p, l))), done = all.filter(k => DONE.has(k)).length;
+  if (!CUR) { loadCur(); return loadingMsg(); }
+  const all = CUR.phases.flatMap(p => p.lessons.map(l => unitKey(p, l))), done = all.filter(isDoneU).length;
   return `<h1 class="page">${t("课程路线", "Learning path")}</h1>
-  <p class="small" style="max-width:62ch">${t("课文、练习代码和测验来自开源课程 AI Engineering from Scratch，中文由社群翻译。按自己的节奏学，进度只存在这部电脑。", "Lessons, code and quizzes come from the open course AI Engineering from Scratch, with a community Chinese translation. Go at your own pace; progress stays on this computer.")}
-  ${done} / ${all.length} ${t("课完成", "lessons done")}</p>
-  ${CUR.phases.map(p => { const k = p.lessons.filter(l => DONE.has(unitKey(p, l))).length;
-    return `<section class="phase"><h2>${esc(unitName(p))}<small>${k} / ${p.lessons.length}</small></h2><ul class="units">${p.lessons.map((l, i) => `
-      <li class="${DONE.has(unitKey(p, l)) ? "done" : ""}"><span class="n">${i + 1}</span><button data-unit="${unitKey(p, l)}">${esc(unitName(l))}</button><span class="m">${l.min ? l.min + " min" : ""}</span></li>`).join("")}</ul></section>`; }).join("")}
+  <p class="small" style="max-width:62ch">${t("课文、练习代码和测验来自开源课程 AI Engineering from Scratch，中文由社群翻译。按自己的节奏学，进度只存在这部电脑，可在设置里备份。", "Lessons, code and quizzes come from the open course AI Engineering from Scratch, with a community Chinese translation. Go at your own pace; progress stays on this computer and can be backed up in Settings.")}</p>
+  <div class="pbar"><div class="meter"><i style="width:${pct(done, all.length)}%"></i></div><span>${done} / ${all.length} ${t("课完成", "lessons done")}</span><button class="textlink" data-go="results">${t("查看我的成果", "See my results")}</button></div>
+  ${CUR.phases.map(p => { const st = phaseStats(p), nn = p.id.slice(0, 2);
+    return `<section class="phase"><h2>${esc(unitName(p))}<small>${st.done} / ${st.n}${st.avg !== null ? ` · ${t("测验平均", "quiz avg")} ${st.avg}%` : ""}${st.exam ? ` · ${t("阶段考最高", "exam best")} ${pct(st.exam.best, st.exam.total)}%` : ""}</small></h2><ul class="units">${p.lessons.map((l, i) => { const k = unitKey(p, l), q = P().quiz[k];
+      return `<li class="${isDoneU(k) ? "done" : ""}"><span class="n">${i + 1}</span><button data-unit="${k}">${esc(unitName(l))}</button><span class="m">${q ? `<b class="sc">${q.best} / ${q.total}</b>` : ""}${l.min ? l.min + " min" : ""}</span></li>`; }).join("")}</ul>
+      <p class="phx"><button class="btn ghost sm" data-pexam="${nn}">${t("阶段考", "Phase exam")}</button></p></section>`; }).join("")}
   <p class="credit">${credit()}</p>`;
 }
 function credit() {
@@ -499,24 +526,24 @@ function credit() {
     `Lessons from <a href="${s.upstream}" target="_blank" rel="noopener">AI Engineering from Scratch</a> by Rohit Ghumare and contributors (MIT). Chinese translation from <a href="${s.translation}" target="_blank" rel="noopener">ai-engineering-from-scratch-zh</a> (MIT).`);
 }
 function unit() {
-  if (!CUR) { loadCur(); return `<p class="loading">${t("载入中…", "Loading…")}</p>`; }
-  const [p, l] = findUnit(cur.unit), i = p.lessons.indexOf(l), key = unitKey(p, l);
-  const flat = CUR.phases.flatMap(q => q.lessons.map(x => unitKey(q, x))), at = flat.indexOf(key);
+  if (!CUR) { loadCur(); return loadingMsg(); }
+  const [p, l] = findUnit(cur.unit), i = p.lessons.indexOf(l), key = unitKey(p, l), q = P().quiz[key];
+  const flat = CUR.phases.flatMap(x => x.lessons.map(y => unitKey(x, y))), at = flat.indexOf(key);
   const repo = `https://github.com/cheah20/DigitalIncubation/blob/main/docs/curriculum/${p.id}/${l.id}/`;
   return `<div class="handout">
     <aside class="margin">
       <div class="no">${i + 1}</div>
       <div class="chapname">${esc(unitName(p))}</div>
-      <div class="state">${l.min ? `${l.min} min` : ""}</div>
-      <ul class="ulist">${p.lessons.map(x => `<li class="${unitKey(p, x) === key ? "here" : ""} ${DONE.has(unitKey(p, x)) ? "done" : ""}"><button data-unit="${unitKey(p, x)}">${esc(unitName(x))}</button></li>`).join("")}</ul>
+      <div class="state">${l.min ? `${l.min} min` : ""}${q ? ` · ${t("测验最高", "best quiz")} <b>${q.best} / ${q.total}</b>` : ""}</div>
+      <ul class="ulist">${p.lessons.map(x => `<li class="${unitKey(p, x) === key ? "here" : ""} ${isDoneU(unitKey(p, x)) ? "done" : ""}"><button data-unit="${unitKey(p, x)}">${esc(unitName(x))}</button></li>`).join("")}</ul>
       <div class="pn">${at > 0 ? `<button class="textlink" data-unit="${flat[at - 1]}">${t("上一课", "Previous")}</button>` : "<span></span>"}${at < flat.length - 1 ? `<button class="textlink" data-unit="${flat[at + 1]}">${t("下一课", "Next")}</button>` : ""}</div>
       <p class="small"><button class="textlink" data-go="path">${t("回到课程路线", "Back to the path")}</button></p>
     </aside>
     <article class="body">
       <div class="doc" id="doc"><p class="loading">${t("载入课文…", "Loading the lesson…")}</p></div>
-      ${l.code.length ? `<section class="part"><h2>${t("练习代码", "Code")}</h2><ul class="plain">${l.code.map(f => `<li><a href="${repo}${esc(f)}" target="_blank" rel="noopener">${esc(f)}</a></li>`).join("")}</ul></section>` : ""}
-      ${l.quiz ? `<section class="part" id="mcq"><h2>${t("测验", "Quiz")}</h2><div id="quizbox"></div></section>` : ""}
-      <section class="part"><button class="btn ${DONE.has(key) ? "ghost" : ""}" id="udone">${DONE.has(key) ? t("已完成，取消", "Done, undo") : t("标记为完成", "Mark as done")}</button></section>
+      ${l.code.length ? `<section class="part"><h2>${t("练习代码", "Code")}<small>${t("先自己写，卡住再看", "Try it yourself first")}</small></h2><ul class="plain">${l.code.map(f => `<li><a href="${repo}${esc(f)}" target="_blank" rel="noopener">${esc(f)}</a></li>`).join("")}</ul></section>` : ""}
+      ${l.quiz ? `<section class="part" id="mcq"><h2>${t("测验", "Quiz")}<small id="qscore"></small></h2><div id="quizbox"></div></section>` : ""}
+      <section class="part"><button class="btn ${isDoneU(key) ? "ghost" : ""}" id="udone">${isDoneU(key) ? t("已完成，取消", "Done, undo") : t("标记为完成", "Mark as done")}</button></section>
       <p class="credit">${credit()}</p>
     </article>
   </div>`;
@@ -556,21 +583,97 @@ function loadFigs(files) {
     const s = document.createElement("script"); s.src = "vendor/aiefs/" + f; s.onload = s.onerror = ok; document.head.appendChild(s);
   })), Promise.resolve());
 }
-function renderQuiz(qs, en) {
-  const stage = { pre: t("课前", "Before"), check: t("课中", "Check"), post: t("课后", "After") };
-  $("#quizbox").innerHTML = qs.map((q, i) => `<div class="mcq" data-q="${i}"><div class="mq"><small>${esc(stage[q.stage] || "")}</small>${i + 1}. ${esc(q.question)}${en && en[i] ? `<p class="en">${esc(en[i].question)}</p>` : ""}</div>
+// quiz files are either a list or { questions: [...] }
+const fetchQuiz = url => fetch(url).then(r => r.ok ? r.json() : null).then(d => d && (Array.isArray(d) ? d : d.questions), () => null);
+const stageName = s => ({ pre: t("课前", "Before"), check: t("课中", "Check"), post: t("课后", "After") })[s] || "";
+function quizHtml(qs, en, from) {
+  return qs.map((q, i) => `<div class="mcq" data-q="${i}"><div class="mq"><small>${esc(from ? from[i] : stageName(q.stage))}</small>${i + 1}. ${esc(q.question)}${en && en[i] ? `<p class="en">${esc(en[i].question)}</p>` : ""}</div>
     ${q.options.map((o, j) => `<label><input type="radio" name="q${i}" value="${j}"><span>${esc(o)}</span></label>`).join("")}<p class="why" hidden>${esc(q.explanation || "")}${en && en[i] ? `<br><span class="en">${esc(en[i].explanation || "")}</span>` : ""}</p></div>`).join("");
+}
+function mark(box, q, picked) {
+  box.querySelectorAll("label").forEach((lab, j) => { lab.classList.toggle("right", j === q.correct); lab.classList.toggle("wrong", j === picked && j !== q.correct); });
+  box.querySelectorAll("input").forEach(x => x.disabled = true);
+  box.querySelector(".why").hidden = false;
+}
+function renderQuiz(qs, en, key) {
+  const got = {}, out = $("#qscore");
+  $("#quizbox").innerHTML = quizHtml(qs, en) + `<div class="qend" id="qend" hidden></div>`;
   $$("#quizbox .mcq").forEach(box => box.onchange = e => {
-    const q = qs[+box.dataset.q], pickd = +e.target.value;
-    box.querySelectorAll("label").forEach((lab, j) => { lab.classList.toggle("right", j === q.correct); lab.classList.toggle("wrong", j === pickd && j !== q.correct); });
-    box.querySelector(".why").hidden = false;
+    const i = +box.dataset.q, picked = +e.target.value;
+    got[i] = picked === qs[i].correct; mark(box, qs[i], picked);
+    const n = Object.keys(got).length, right = Object.values(got).filter(Boolean).length;
+    out.textContent = `${right} / ${n}`;
+    if (n < qs.length) return;
+    const old = P().quiz[key], best = Math.max(right, old ? old.best : 0);
+    P().quiz[key] = { best, last: right, total: qs.length, at: today() }; saveAll();
+    $("#qend").hidden = false;
+    $("#qend").innerHTML = `<b>${t("得分", "Score")} ${right} / ${qs.length}</b>${old ? ` · ${t("最高", "best")} ${best} / ${qs.length}` : ""} <button class="textlink" id="qagain">${t("重做", "Try again")}</button>`;
+    $("#qagain").onclick = () => { out.textContent = ""; renderQuiz(qs, en, key); };
   });
+}
+// phase exam: up to 20 random questions from every lesson in the phase
+const pickN = (arr, n) => { const a = arr.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a.slice(0, n); };
+function pexam() {
+  if (!CUR) { loadCur(); return loadingMsg(); }
+  const p = CUR.phases.find(x => x.id.startsWith(cur.pexam)) || CUR.phases[0], rec = P().exam[p.id.slice(0, 2)];
+  return `<h1 class="page">${t("阶段考", "Phase exam")}：${esc(unitName(p))}</h1>
+  <p class="small">${t("从这个阶段所有课的测验随机抽最多 20 题。全部答完再交卷。", "Up to 20 random questions from every quiz in this phase. Answer them all, then hand in.")}
+  ${rec ? `${t("最高分", "Best")} ${rec.best} / ${rec.total}（${rec.at}）` : ""} <button class="textlink" data-go="path">${t("回到课程路线", "Back to the path")}</button></p>
+  <div class="body" style="max-width:72ch"><div id="exambox"><p class="loading">${t("出题中…", "Picking questions…")}</p></div></div>`;
+}
+function wireExam2() {
+  const p = CUR.phases.find(x => x.id.startsWith(cur.pexam)) || CUR.phases[0], nn = p.id.slice(0, 2), want = cur.pexam;
+  const file = LANG === "en" ? "quiz.json" : "quiz.zh.json";
+  Promise.all(p.lessons.filter(l => l.quiz).map(l => fetchQuiz(`curriculum/${p.id}/${l.id}/${file}`)
+    .then(qs => qs || fetchQuiz(`curriculum/${p.id}/${l.id}/quiz.json`)).then(qs => (qs || []).map(q => [q, unitName(l)]))))
+    .then(lists => {
+      if (cur.view !== "pexam" || cur.pexam !== want) return;
+      const set = pickN(lists.flat(), 20), qs = set.map(x => x[0]), picked = {};
+      $("#exambox").innerHTML = quizHtml(qs, null, set.map(x => x[1])) + `<p><button class="btn" id="hand">${t("交卷", "Hand in")}</button> <span class="small" id="left"></span></p><div class="qend" id="xres" hidden></div>`;
+      $$("#exambox .mcq").forEach(box => box.onchange = e => { picked[+box.dataset.q] = +e.target.value; });
+      $("#hand").onclick = () => {
+        const left = qs.length - Object.keys(picked).length;
+        if (left) { $("#left").textContent = t(`还有 ${left} 题没答`, `${left} still unanswered`); return; }
+        let right = 0;
+        $$("#exambox .mcq").forEach(box => { const i = +box.dataset.q; if (picked[i] === qs[i].correct) right++; mark(box, qs[i], picked[i]); });
+        const old = P().exam[nn], best = Math.max(right, old ? old.best : 0);
+        P().exam[nn] = { best, last: right, total: qs.length, at: old && old.best >= right ? old.at : today(), tries: (old ? old.tries || 1 : 0) + 1 }; saveAll();
+        $("#hand").remove(); $("#left").textContent = "";
+        $("#xres").hidden = false;
+        $("#xres").innerHTML = `<b>${t("得分", "Score")} ${right} / ${qs.length}（${pct(right, qs.length)}%）</b> · ${t("最高", "best")} ${best} / ${qs.length} <button class="textlink" id="xagain">${t("再考一次", "Take it again")}</button>`;
+        $("#xagain").onclick = () => render();
+        $("#xres").scrollIntoView({ behavior: "smooth", block: "center" });
+      };
+    });
+}
+// results: one page to show what has been learned
+function results() {
+  if (!CUR) { loadCur(); return loadingMsg(); }
+  const rows = CUR.phases.map(p => [p, phaseStats(p)]);
+  const done = rows.reduce((a, [, s]) => a + s.done, 0), n = rows.reduce((a, [, s]) => a + s.n, 0);
+  const quizzes = Object.values(P().quiz), right = quizzes.reduce((a, q) => a + q.best, 0), total = quizzes.reduce((a, q) => a + q.total, 0);
+  const exams = Object.values(P().exam);
+  return `<h1 class="page">${t("我的成果", "My results")}</h1>
+  <p class="small">${t("课程路线的学习记录，截至", "Learning path record as of")} ${today()}. <button class="textlink" data-go="path">${t("回到课程路线", "Back to the path")}</button></p>
+  <div class="stats">
+    <div><b>${done}</b><span>/ ${n} ${t("课完成", "lessons done")}</span></div>
+    <div><b>${quizzes.length}</b><span>${t("课做了测验", "lesson quizzes taken")}</span></div>
+    <div><b>${total ? pct(right, total) + "%" : "–"}</b><span>${t("测验平均（最高分）", "quiz average (best tries)")}</span></div>
+    <div><b>${exams.length}</b><span>/ ${CUR.phases.length} ${t("个阶段考过", "phase exams taken")}</span></div>
+  </div>
+  <table class="rtable"><thead><tr><th>${t("阶段", "Phase")}</th><th>${t("完成", "Done")}</th><th>${t("测验平均", "Quiz avg")}</th><th>${t("阶段考最高", "Exam best")}</th><th>${t("日期", "Date")}</th></tr></thead><tbody>
+  ${rows.map(([p, s]) => `<tr><td>${esc(unitName(p))}</td><td><div class="meter"><i style="width:${pct(s.done, s.n)}%"></i></div>${s.done} / ${s.n}</td><td>${s.avg !== null ? s.avg + "%" : "–"}</td><td>${s.exam ? `${s.exam.best} / ${s.exam.total}（${pct(s.exam.best, s.exam.total)}%）` : "–"}</td><td>${s.exam ? s.exam.at : ""}</td></tr>`).join("")}
+  </tbody></table>
+  <p class="small">${t("分数存在这部电脑。到「设置与备份」下载进度，换电脑时恢复。", "Scores are kept on this computer. Download a backup in Settings and restore it on another one.")}</p>`;
 }
 function wirePath() {
   $$("[data-unit]").forEach(b => b.onclick = () => go("unit", { unit: b.dataset.unit }));
-  if (cur.view !== "unit" || !CUR) return;
+  $$("[data-pexam]").forEach(b => b.onclick = () => go("pexam", { pexam: b.dataset.pexam }));
+  if (!CUR) return;
+  if (cur.view === "pexam") return wireExam2();
+  if (cur.view !== "unit") return;
   const [p, l] = findUnit(cur.unit), key = unitKey(p, l), base = `curriculum/${p.id}/${l.id}/`, zh = LANG !== "en";
-  $("#udone").onclick = () => { DONE.has(key) ? DONE.delete(key) : DONE.add(key); saveDone(); render(); };
+  $("#udone").onclick = () => { if (isDoneU(key)) delete P().done[key]; else P().done[key] = today(); saveAll(); render(); };
   const want = cur.unit;
   const get = f => fetch(base + f).then(r => r.ok ? r.text() : "");
   Promise.all([get("docs/en.md"), zh ? get("docs/zh.md") : ""])
@@ -580,9 +683,8 @@ function wirePath() {
       renderDoc(text, base);
       if (window.mountLessonFigures) mountLessonFigures($("#doc"));
     }));
-  const quiz = f => fetch(base + f).then(r => r.ok ? r.json() : null).then(d => d && (Array.isArray(d) ? d : d.questions));
-  if (l.quiz) Promise.all([quiz("quiz.json"), zh ? quiz("quiz.zh.json") : null])
-    .then(([en, zq]) => { if (cur.unit === want && $("#quizbox")) renderQuiz(zq || en || [], LANG === "both" && zq ? en : null); });
+  if (l.quiz) Promise.all([fetchQuiz(base + "quiz.json"), zh ? fetchQuiz(base + "quiz.zh.json") : null])
+    .then(([en, zq]) => { if (cur.unit === want && $("#quizbox")) renderQuiz(zq || en || [], LANG === "both" && zq ? en : null, key); });
 }
 
 // ---------- overview ----------
@@ -1020,7 +1122,7 @@ function wireSettings() {
   $("#bk").onclick = () => { download("progress.json", new Blob([JSON.stringify({ version: 1, savedAt: new Date().toISOString(), data: S }, null, 2)], { type: "application/json" })); $("#bmsg").textContent = t("已下载 progress.json", "progress.json downloaded"); };
   $("#rs").onchange = async e => { const f = e.target.files[0]; if (!f) return;
     try { const j = JSON.parse(await f.text()); if (!j.data || !j.data.days) throw 0;
-      S = Object.assign({ settings: {}, days: {}, exams: {}, weeks: {}, mock: {}, rubric: {}, seen: {}, saved: [] }, j.data); cacheLocal(); $("#bmsg").textContent = t("已恢复 ", "Restored ") + (j.savedAt || "").slice(0, 10); }
+      S = Object.assign({ settings: {}, days: {}, exams: {}, weeks: {}, mock: {}, rubric: {}, seen: {}, saved: [], path: { done: {}, quiz: {}, exam: {} } }, j.data); cacheLocal(); $("#bmsg").textContent = t("已恢复 ", "Restored ") + (j.savedAt || "").slice(0, 10); }
     catch (err) { $("#bmsg").textContent = t("这个文件不是进度备份", "That file is not a progress backup"); } };
   $("#xl").onclick = () => { try { if (!window.XLSX) throw new Error(t("Excel 组件还没载入，请检查网络后重新整理。", "The Excel library did not load; check your connection and refresh."));
       const buf = XLSX.write(buildWorkbook(), { bookType: "xlsx", type: "array" });
